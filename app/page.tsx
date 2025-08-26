@@ -31,11 +31,11 @@ export default function Home() {
         <div className="absolute bottom-0 left-0 w-1/4 h-1/4 bg-purple-500/15 rounded-tr-full blur-3xl"></div>
 
         <div className="container mx-auto px-4 md:px-6 relative z-10">
-          <div className="flex items-center justify-center h-full">
+          <div className="flex items-center justify-center h-full pt-20">
             <div className="text-center animate-fade-in">
               <BlurText 
                 text="Bereit für die volle Kontrolle?" 
-                className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-white"
+                className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-white text-center"
                 duration={1.2}
               />
             </div>

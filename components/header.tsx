@@ -5,7 +5,6 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import FluidGlassNavbar from "@/components/fluid-glass-navbar"
 import { cn } from "@/lib/utils"
 
 const navigation = [
@@ -21,8 +20,56 @@ export default function Header() {
   const pathname = usePathname()
 
   return (
-    <header className="sticky top-0 z-50">
-      <FluidGlassNavbar onMobileMenuToggle={() => setMobileMenuOpen(true)} />
+    <header className="sticky top-0 z-50 bg-transparent backdrop-blur-md border-b border-white/10">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="flex h-16 items-center justify-between">
+          {/* Logo */}
+          <div className="flex-shrink-0">
+            <Link href="/" className="text-2xl font-bold text-white">
+              Lead<span className="text-purple-300">boom</span>
+            </Link>
+          </div>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex lg:space-x-8">
+            {navigation.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className={cn(
+                  "px-3 py-2 text-sm font-medium transition-colors duration-200 rounded-md",
+                  pathname === item.href
+                    ? "text-purple-300 bg-white/10"
+                    : "text-white hover:text-purple-300 hover:bg-white/5"
+                )}
+              >
+                {item.name}
+              </Link>
+            ))}
+          </nav>
+
+          {/* Desktop CTA */}
+          <div className="hidden lg:flex">
+            <Button asChild className="bg-purple-600 hover:bg-purple-700 text-white">
+              <Link href="/kontakt">
+                Demo anfordern
+              </Link>
+            </Button>
+          </div>
+
+          {/* Mobile menu button */}
+          <div className="lg:hidden">
+            <button
+              type="button"
+              className="text-white p-2 hover:bg-white/10 rounded-md transition-colors"
+              onClick={() => setMobileMenuOpen(true)}
+            >
+              <span className="sr-only">Menü öffnen</span>
+              <Menu className="h-6 w-6" />
+            </button>
+          </div>
+        </div>
+      </div>
 
       {/* Mobile menu */}
       <div className={cn("lg:hidden", mobileMenuOpen ? "fixed inset-0 z-50" : "hidden")}>

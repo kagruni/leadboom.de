@@ -2,7 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import BlurText from "@/components/blur-text"
+import BlurText from "@/components/BlurText"
 import {
   ArrowRight,
   Database,
@@ -24,23 +24,60 @@ import {
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section - Keeping as is since it's already very good */}
-      <section className="relative overflow-hidden h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800">
-        {/* Decorative elements */}
-        <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-purple-600/20 rounded-bl-full blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-1/4 h-1/4 bg-purple-500/15 rounded-tr-full blur-3xl"></div>
-
-        <div className="container mx-auto px-4 md:px-6 relative z-10">
-          <div className="flex items-center justify-center h-full pt-20">
-            <div className="text-center animate-fade-in">
-              <BlurText 
-                text="Bereit für die volle Kontrolle?" 
-                className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-white text-center"
-                duration={1.2}
-              />
+      {/* Hero Section */}
+      <section className="relative h-screen bg-black overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/10 to-black/50"></div>
+        
+        <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 pt-20">
+          <div className="w-full mx-auto">
+            <BlurText
+              text="Bereit für die volle Kontrolle?"
+              delay={150}
+              animateBy="words"
+              direction="top"
+              className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight text-white mb-8 whitespace-nowrap"
+            />
+            
+            <p className="text-xl md:text-2xl lg:text-3xl text-gray-300 mb-12 leading-relaxed">
+              Die ultimative Plattform für 
+              <span className="text-white font-semibold"> Lead-Generierung</span> und 
+              <span className="text-white font-semibold"> Kundengewinnung</span>
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+              <Button size="lg" className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 text-lg rounded-full">
+                <Link href="/kontakt" className="flex items-center">
+                  Jetzt starten
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+              
+              <Button size="lg" variant="outline" className="border-gray-600 text-gray-300 hover:text-white hover:border-white px-8 py-4 text-lg rounded-full">
+                <Link href="/leistungen">
+                  Mehr erfahren
+                </Link>
+              </Button>
+            </div>
+            
+            <div className="mt-16 flex items-center justify-center space-x-8 text-gray-400">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-white">5M+</div>
+                <div className="text-sm">Leads</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-white">500+</div>
+                <div className="text-sm">Kunden</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-white">35%</div>
+                <div className="text-sm">Öffnungsrate</div>
+              </div>
             </div>
           </div>
         </div>
+        
+        {/* Subtle background animation */}
+        <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 animate-pulse"></div>
       </section>
 
       {/* Enhanced Features Section with better visuals and layout */}

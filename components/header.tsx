@@ -21,7 +21,7 @@ export default function Header() {
   const pathname = usePathname()
 
   return (
-    <header className="absolute top-6 left-1/2 transform -translate-x-1/2 z-50">
+    <header className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50">
       <GlassSurface 
         width={800}
         height={56}

@@ -108,7 +108,7 @@ export default function Services() {
                 title: "CRM-System",
                 description:
                   "Intuitives CRM-System mit Telefon-Bot für effizientes Lead-Management und Nachverfolgung.",
-                ink: "#crm-system",
+                link: "#crm-system",
               },
             ].map((product, index) => (
               <Card

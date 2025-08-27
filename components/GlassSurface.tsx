@@ -1,4 +1,4 @@
-import { useEffect, useRef, useId } from "react";
+import { useEffect, useRef, useId, useState } from "react";
 import "./GlassSurface.css";
 
 const GlassSurface = ({
@@ -34,6 +34,7 @@ const GlassSurface = ({
   const greenChannelRef = useRef(null);
   const blueChannelRef = useRef(null);
   const gaussianBlurRef = useRef(null);
+  const [hasSVGSupport, setHasSVGSupport] = useState(false);
 
   const generateDisplacementMap = () => {
     const rect = containerRef.current?.getBoundingClientRect();
@@ -139,19 +140,22 @@ const GlassSurface = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [width, height]);
 
-  const supportsSVGFilters = () => {
-    const isWebkit =
-      /Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent);
-    const isFirefox = /Firefox/.test(navigator.userAgent);
+  // Check SVG support on mount to avoid hydration mismatch
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const isWebkit =
+        /Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent);
+      const isFirefox = /Firefox/.test(navigator.userAgent);
 
-    if (isWebkit || isFirefox) {
-      return false;
+      if (isWebkit || isFirefox) {
+        setHasSVGSupport(false);
+      } else {
+        const div = document.createElement("div");
+        div.style.backdropFilter = `url(#${filterId})`;
+        setHasSVGSupport(div.style.backdropFilter !== "");
+      }
     }
-
-    const div = document.createElement("div");
-    div.style.backdropFilter = `url(#${filterId})`;
-    return div.style.backdropFilter !== "";
-  };
+  }, [filterId]);
 
   const containerStyle = {
     ...style,
@@ -166,7 +170,7 @@ const GlassSurface = ({
   return (
     <div
       ref={containerRef}
-      className={`glass-surface ${supportsSVGFilters() ? "glass-surface--svg" : "glass-surface--fallback"} ${className}`}
+      className={`glass-surface ${hasSVGSupport ? "glass-surface--svg" : "glass-surface--fallback"} ${className}`}
       style={containerStyle}
     >
       <svg className="glass-surface__filter" xmlns="http://www.w3.org/2000/svg">

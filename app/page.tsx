@@ -3,6 +3,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import BlurText from "@/components/BlurText"
+import TargetCursor from "@/components/TargetCursor"
 import {
   ArrowRight,
   Database,
@@ -623,6 +624,12 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Target Cursor Effect */}
+      <TargetCursor 
+        spinDuration={2}
+        hideDefaultCursor={true}
+      />
     </div>
   )
 }

@@ -3,6 +3,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import BlurText from "@/components/BlurText"
+import TrueFocus from "@/components/TrueFocus"
 import TargetCursor from "@/components/TargetCursor"
 import {
   ArrowRight,
@@ -79,6 +80,30 @@ export default function Home() {
         
         {/* Subtle background animation */}
         <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 animate-pulse"></div>
+      </section>
+
+      {/* TrueFocus Section */}
+      <section className="py-20 bg-black relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/10 to-transparent"></div>
+        
+        <div className="container mx-auto px-4 md:px-6 relative z-10">
+          <div className="text-center">
+            <div className="flex flex-col items-center">
+              <TrueFocus 
+                sentence="Echter Focus"
+                manualMode={false}
+                blurAmount={5}
+                borderColor="#a855f7"
+                glowColor="rgba(168, 85, 247, 0.6)"
+                animationDuration={0.8}
+                pauseBetweenAnimations={1.5}
+              />
+              <p className="text-white text-2xl md:text-3xl lg:text-4xl font-light mt-4">
+                auf das Wesentliche im Geschäft.
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Enhanced Features Section with better visuals and layout */}

@@ -109,6 +109,18 @@
     opacity: 0;
   }
 
+  .animate-fade-in-delayed {
+    animation: fade-in 1s ease-out forwards;
+    animation-delay: 2s;
+    opacity: 0;
+  }
+
+  .animate-fade-in-button {
+    animation: fade-in 1s ease-out forwards;
+    animation-delay: 3.2s;
+    opacity: 0;
+  }
+
   .animate-slide-left {
     animation: slide-left 1s ease-out forwards;
     opacity: 0;

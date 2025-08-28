@@ -68,7 +68,7 @@ export default function Header() {
             <div className="hidden lg:flex">
               <Button asChild size="sm" className="bg-purple-600 hover:bg-purple-700 text-white rounded-full">
                 <Link href="/kontakt">
-                  Demo
+                  Log in
                 </Link>
               </Button>
             </div>

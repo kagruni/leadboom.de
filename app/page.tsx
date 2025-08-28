@@ -73,23 +73,15 @@ export default function Home() {
               className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight text-white mb-8 whitespace-nowrap"
             />
             
-            <p className="text-xl md:text-2xl lg:text-3xl text-gray-300 mb-12 leading-relaxed">
-              Die ultimative Plattform für 
-              <span className="text-white font-semibold"> Lead-Generierung</span> und 
-              <span className="text-white font-semibold"> Kundengewinnung</span>
+            <p className="text-xl md:text-2xl lg:text-3xl text-gray-300 mb-12 leading-relaxed opacity-0 animate-fade-in-delayed">
+              Die ultimative Plattform für Sales, Fulfillment und hochwertige Leads.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <Button size="lg" className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 text-lg rounded-full">
+            <div className="flex justify-center items-center">
+              <Button size="lg" className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 text-lg rounded-full animate-fade-in-button">
                 <Link href="/kontakt" className="flex items-center">
-                  Jetzt starten
+                  Demo anfordern
                   <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-              
-              <Button size="lg" variant="outline" className="border-gray-600 text-gray-300 hover:text-white hover:border-white px-8 py-4 text-lg rounded-full">
-                <Link href="/leistungen">
-                  Mehr erfahren
                 </Link>
               </Button>
             </div>

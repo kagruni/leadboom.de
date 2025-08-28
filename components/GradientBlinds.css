@@ -1,0 +1,12 @@
+.gradient-blinds-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: auto;
+}
+
+.gradient-blinds-container canvas {
+  pointer-events: auto;
+  z-index: 1;
+}

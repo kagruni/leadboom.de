@@ -1,9 +1,12 @@
+"use client";
+
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import BlurText from "@/components/BlurText"
 import TrueFocus from "@/components/TrueFocus"
+import GradientBlinds from "@/components/GradientBlinds"
 import TargetCursor from "@/components/TargetCursor"
 import {
   ArrowRight,
@@ -27,7 +30,37 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-screen bg-black overflow-hidden">
+      <section className="relative h-screen bg-black overflow-hidden" 
+        onMouseMove={(e) => {
+          const rect = e.currentTarget.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = rect.height - (e.clientY - rect.top);
+          
+          // Dispatch custom event to the GradientBlinds component
+          const canvas = document.querySelector('.gradient-blinds-container canvas') as HTMLCanvasElement;
+          if (canvas) {
+            const customEvent = new CustomEvent('heroMouseMove', {
+              detail: { x, y, width: rect.width, height: rect.height }
+            });
+            canvas.dispatchEvent(customEvent);
+          }
+        }}>
+        <div style={{ width: '100%', height: '100vh', position: 'absolute', top: 0, left: 0 }}>
+          <GradientBlinds
+            gradientColors={['#000000', '#4c1d95', '#7c3aed', '#a855f7']}
+            angle={45}
+            noise={0.1}
+            blindCount={12}
+            blindMinWidth={50}
+            spotlightRadius={0.3}
+            spotlightSoftness={2}
+            spotlightOpacity={2}
+            mouseDampening={0.05}
+            distortAmount={0}
+            shineDirection="left"
+            mixBlendMode="lighten"
+          />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/10 to-black/50"></div>
         
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 pt-20">

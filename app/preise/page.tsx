@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
-import { CheckCircle, XCircle, HelpCircle, ArrowRight, Sparkles, Shield, Clock, Zap, Users, Award } from "lucide-react"
+import { CheckCircle, XCircle, HelpCircle, ArrowRight, Sparkles, Shield, Clock, Zap, Users, Award, Building2, TrendingUp, Star } from "lucide-react"
 
 export default function Preise() {
   return (
@@ -15,15 +15,15 @@ export default function Preise() {
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="max-w-3xl mx-auto text-center animate-fade-in">
             <div className="inline-flex items-center px-4 py-2 bg-purple-100 rounded-full text-purple-800 text-sm font-medium mb-4">
-              <Sparkles className="h-4 w-4 mr-2" />
-              <span>Transparente Preisgestaltung</span>
+              <Building2 className="h-4 w-4 mr-2" />
+              <span>Agentur-optimierte Preismodelle</span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter mb-6">
-              Unsere <span className="text-gradient-purple animate-gradient">Preise</span>
+              Das <span className="text-gradient-purple animate-gradient">Betriebssystem</span> für Ihre Agentur
             </h1>
             <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-              Wählen Sie das Paket, das am besten zu Ihren Bedürfnissen passt. Alle Pläne beinhalten Zugang zu unseren
-              leistungsstarken Tools für Lead-Generierung und -Management.
+              Von der Lead-Generierung bis zur Projekt-Lieferung – eine Plattform für alles. 
+              Preise basierend auf Ihrer Teamgröße, nicht auf Lead-Volumen.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="purple-glow">
@@ -33,7 +33,7 @@ export default function Preise() {
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="purple-glow">
-                <Link href="#vergleich">Leistungsvergleich</Link>
+                <Link href="#roi-garantie">ROI Garantie</Link>
               </Button>
             </div>
           </div>
@@ -49,107 +49,120 @@ export default function Preise() {
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="text-center mb-16 animate-fade-in">
             <div className="inline-block bg-purple-100 px-4 py-2 rounded-full text-purple-800 text-sm font-medium mb-4">
-              Preismodelle
+              Agentur-Preismodelle
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Wählen Sie Ihren Plan</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Wählen Sie Ihre Agentur-Größe</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Wir bieten flexible Preismodelle, die auf die Bedürfnisse von Marketing-Agenturen jeder Größe
-              zugeschnitten sind.
+              Preismodelle basierend auf Teamgröße und Automatisierungsgrad - nicht auf Lead-Volumen.
+              Skalieren Sie Ihr Business, ohne linear mehr zu bezahlen.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                title: "Starter",
-                price: "€499",
+                title: "Starter Agency",
+                price: "€799",
                 period: "/Monat",
-                description: "Ideal für kleine Agenturen, die gerade erst mit der Lead-Generierung beginnen.",
+                teamSize: "1-5 Mitarbeiter",
+                description: "Perfekt für kleine Agenturen, die ihre Prozesse automatisieren wollen.",
                 popular: false,
+                badge: "Ideal für Start-ups",
                 features: [
-                  "500 verifizierte Leads pro Monat",
-                  "Coldmailer mit 5.000 E-Mails/Monat",
-                  "Basis CRM-Funktionen",
-                  "E-Mail-Support",
-                  "1 Benutzer-Zugang",
-                  "Wöchentliche Lead-Updates",
-                  "Grundlegende Reporting-Funktionen",
+                  "Vollständige Plattform-Zugriffe",
+                  "1.000 qualifizierte Leads/Monat",
+                  "Basic Workflow-Automatisierung",
+                  "WhatsApp Business Integration",
+                  "Lead-Scoring & Qualifizierung",
+                  "Basis CRM & Pipeline Management",
+                  "E-Mail Outreach Kampagnen",
+                  "Standard Reporting Dashboard",
+                  "E-Mail Support",
                 ],
                 cta: "Jetzt starten",
-                link: "/kontakt?plan=starter",
+                link: "/kontakt?plan=starter-agency",
               },
               {
-                title: "Professional",
-                price: "€999",
+                title: "Growth Agency",
+                price: "€1.499",
                 period: "/Monat",
-                description: "Perfekt für wachsende Agenturen mit steigendem Lead-Bedarf.",
+                teamSize: "6-15 Mitarbeiter",
+                description: "Die beliebteste Wahl für wachsende Agenturen mit erweiterten Anforderungen.",
                 popular: true,
+                badge: "MOST POPULAR",
                 features: [
-                  "2.000 verifizierte Leads pro Monat",
-                  "Coldmailer mit 20.000 E-Mails/Monat",
-                  "Vollständiges CRM-System",
-                  "Telefon-Bot (100 Anrufe/Monat)",
-                  "Prioritäts-Support",
-                  "5 Benutzer-Zugänge",
-                  "Tägliche Lead-Updates",
-                  "Erweiterte Reporting-Funktionen",
-                  "A/B-Testing für E-Mail-Kampagnen",
-                  "Integrationen mit gängigen Tools",
+                  "Alle Starter Features +",
+                  "5.000 qualifizierte Leads/Monat",
+                  "Erweiterte Workflow-Automatisierung + KI",
+                  "Voice Automation Engine",
+                  "Digital Contract Suite",
+                  "Fulfillment Automation",
+                  "Client Collaboration Hub",
+                  "Erweiterte Analytics & KPIs",
+                  "Prioritäts-Support + Training",
+                  "API Zugang & Integrationen",
                 ],
                 cta: "Beliebteste Wahl",
-                link: "/kontakt?plan=professional",
+                link: "/kontakt?plan=growth-agency",
               },
               {
-                title: "Enterprise",
-                price: "€2499",
+                title: "Enterprise Agency",
+                price: "€2.999",
                 period: "/Monat",
-                description: "Die umfassende Lösung für etablierte Agenturen mit hohem Lead-Volumen.",
+                teamSize: "16+ Mitarbeiter",
+                description: "Für etablierte Agenturen, die maximale Automatisierung und Skalierung benötigen.",
                 popular: false,
+                badge: "Maximale Skalierung",
                 features: [
-                  "Unbegrenzte verifizierte Leads",
-                  "Coldmailer mit unbegrenzten E-Mails",
-                  "Premium CRM-System mit API-Zugang",
-                  "Telefon-Bot (unbegrenzte Anrufe)",
-                  "Dedizierter Account Manager",
-                  "White-Label-Option",
-                  "Unbegrenzte Benutzer-Zugänge",
-                  "Echtzeit-Lead-Updates",
-                  "Benutzerdefinierte Reporting-Dashboards",
-                  "Fortschrittliche A/B-Testing-Funktionen",
+                  "Alle Growth Features +",
+                  "Unbegrenzte qualifizierte Leads",
+                  "Custom Workflows + White-Label",
+                  "Vollständiger API-Zugang",
                   "Benutzerdefinierte Integrationen",
+                  "Dedizierter Success Manager",
+                  "Custom Onboarding & Training",
                   "Strategische Beratung",
+                  "SLA-Garantien (4h Response)",
+                  "Multi-Standort Management",
+                  "Enterprise Security Features",
                 ],
                 cta: "Kontakt aufnehmen",
-                link: "/kontakt?plan=enterprise",
+                link: "/kontakt?plan=enterprise-agency",
               },
             ].map((plan, index) => (
               <Card
                 key={index}
-                className={`bg-white relative border-none shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 ${plan.popular ? "md:scale-105 z-10" : ""}`}
+                className={`bg-white relative border-none shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 ${
+                  plan.popular ? "md:scale-105 z-10 ring-2 ring-purple-500/20" : ""
+                }`}
               >
                 {plan.popular && (
-                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm font-medium">
-                    Beliebt
+                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-purple-600 to-purple-700 text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg">
+                    <Star className="h-3 w-3 inline mr-1" />
+                    {plan.badge}
                   </div>
                 )}
-                <CardHeader className={`text-center pb-2 ${plan.popular ? "bg-purple-50 rounded-t-lg" : ""}`}>
+                <CardHeader className={`text-center pb-2 ${plan.popular ? "bg-purple-50/50 rounded-t-lg" : ""}`}>
+                  <div className="inline-block bg-purple-100 px-3 py-1 rounded-full text-purple-800 text-xs font-medium mb-2">
+                    {plan.teamSize}
+                  </div>
                   <CardTitle className="text-2xl">{plan.title}</CardTitle>
                   <div className="mt-4">
                     <span className="text-4xl font-bold">{plan.price}</span>
                     <span className="text-base font-normal text-gray-500">{plan.period}</span>
                   </div>
-                  <CardDescription className="mt-2">{plan.description}</CardDescription>
+                  <CardDescription className="mt-2 text-sm">{plan.description}</CardDescription>
                 </CardHeader>
                 <CardContent className="pt-4">
                   <ul className="space-y-3 mb-6">
                     {plan.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-start">
-                        <CheckCircle className="h-5 w-5 text-primary mr-2 mt-0.5" />
-                        <span>{feature}</span>
+                      <li key={featureIndex} className="flex items-start text-sm">
+                        <CheckCircle className="h-4 w-4 text-primary mr-2 mt-0.5 flex-shrink-0" />
+                        <span className={feature.includes("Alle") ? "font-semibold text-purple-700" : ""}>{feature}</span>
                       </li>
                     ))}
                   </ul>
-                  <Button asChild className={`w-full ${plan.popular ? "bg-primary hover:bg-primary/90" : ""}`}>
+                  <Button asChild className={`w-full ${plan.popular ? "bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 shadow-lg" : ""}`}>
                     <Link href={plan.link}>{plan.cta}</Link>
                   </Button>
                 </CardContent>
@@ -159,7 +172,7 @@ export default function Preise() {
 
           <div className="text-center mt-12">
             <p className="text-gray-600 mb-4">
-              Alle Preise verstehen sich zzgl. MwSt. Jährliche Abonnements erhalten 2 Monate gratis.
+              Alle Preise verstehen sich zzgl. MwSt. Jährliche Abonnements erhalten 2 Monate gratis (16% Ersparnis).
             </p>
             <p className="text-gray-600">
               Benötigen Sie eine individuelle Lösung?{" "}
@@ -172,6 +185,93 @@ export default function Preise() {
         </div>
       </section>
 
+      {/* ROI Guarantee Section */}
+      <section id="roi-garantie" className="py-20 bg-gradient-to-br from-purple-50 to-white relative overflow-hidden">
+        <div className="absolute top-1/4 right-0 w-64 h-64 bg-purple-200/30 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-purple-200/30 rounded-full blur-3xl"></div>
+
+        <div className="container mx-auto px-4 md:px-6 relative z-10">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12 animate-fade-in">
+              <div className="inline-block bg-green-100 px-4 py-2 rounded-full text-green-800 text-sm font-medium mb-4">
+                <TrendingUp className="h-4 w-4 inline mr-2" />
+                ROI Garantie
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                Wir garantieren Ihren <span className="text-gradient-purple">Erfolg</span>
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+                Leadboom ist so effektiv, dass wir eine ROI-Garantie geben können. 
+                Oder wir erstatten die Differenz zurück.
+              </p>
+            </div>
+
+            <Card className="border-none shadow-2xl bg-white/80 backdrop-blur-sm overflow-hidden">
+              <CardContent className="p-8 md:p-12">
+                <div className="text-center mb-8">
+                  <div className="inline-flex items-center bg-gradient-to-r from-green-500 to-green-600 text-white px-6 py-3 rounded-full text-lg font-bold shadow-lg mb-6">
+                    <Award className="h-5 w-5 mr-2" />
+                    3x ROI in 90 Tagen - Garantiert!
+                  </div>
+                  <p className="text-lg text-gray-700 mb-6">
+                    Unsere durchschnittlichen Kunden sehen eine <strong>3-fache Rendite ihrer Investition</strong> innerhalb der ersten 90 Tage.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                  <div className="text-center">
+                    <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Clock className="h-8 w-8 text-purple-600" />
+                    </div>
+                    <h3 className="text-xl font-bold mb-2">85% Zeitersparnis</h3>
+                    <p className="text-gray-600">
+                      Automatisierung eliminiert manuelle Routineaufgaben und gibt Ihnen Zeit für strategisches Wachstum.
+                    </p>
+                  </div>
+                  <div className="text-center">
+                    <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <TrendingUp className="h-8 w-8 text-purple-600" />
+                    </div>
+                    <h3 className="text-xl font-bold mb-2">40% mehr Umsatz</h3>
+                    <p className="text-gray-600">
+                      Durch optimierte Prozesse und bessere Lead-Conversion steigt Ihr Umsatz nachweislich.
+                    </p>
+                  </div>
+                  <div className="text-center">
+                    <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Users className="h-8 w-8 text-purple-600" />
+                    </div>
+                    <h3 className="text-xl font-bold mb-2">25% höhere Margen</h3>
+                    <p className="text-gray-600">
+                      Reduzierte operative Kosten und effizientere Prozesse verbessern Ihre Gewinnmargen deutlich.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="bg-gradient-to-r from-purple-50 to-purple-100 rounded-lg p-6 text-center">
+                  <p className="text-lg font-semibold text-purple-800 mb-2">
+                    Garantie-Bedingungen
+                  </p>
+                  <p className="text-gray-700">
+                    Falls Sie in den ersten 90 Tagen nicht mindestens das 3-fache Ihrer monatlichen Investition 
+                    als zusätzlichen Umsatz generieren, erstatten wir Ihnen die Differenz zurück.
+                  </p>
+                </div>
+
+                <div className="text-center mt-8">
+                  <Button asChild size="lg" className="purple-glow">
+                    <Link href="/kontakt?guarantee=true" className="flex items-center">
+                      ROI Garantie einlösen
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Feature Comparison Section */}
       <section id="vergleich" className="py-20 bg-gray-50 relative overflow-hidden">
         <div className="absolute top-1/4 right-0 w-64 h-64 bg-purple-200/30 rounded-full blur-3xl"></div>
@@ -180,11 +280,11 @@ export default function Preise() {
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="text-center mb-16 animate-fade-in">
             <div className="inline-block bg-purple-100 px-4 py-2 rounded-full text-purple-800 text-sm font-medium mb-4">
-              Leistungsvergleich
+              Agentur-Vergleich
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Vergleichen Sie unsere Pläne</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Detaillierter Funktionsvergleich</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Detaillierter Vergleich aller Features und Leistungen unserer Preismodelle.
+              Verstehen Sie genau, welche Automatisierungsfeatures in jedem Agentur-Paket enthalten sind.
             </p>
           </div>
 
@@ -192,115 +292,134 @@ export default function Preise() {
             <div className="min-w-[800px]">
               <div className="grid grid-cols-4 gap-4 mb-4">
                 <div className="font-bold text-lg">Feature</div>
-                <div className="text-center font-bold text-lg">Starter</div>
-                <div className="text-center font-bold text-lg">Professional</div>
-                <div className="text-center font-bold text-lg">Enterprise</div>
+                <div className="text-center font-bold text-lg">Starter Agency</div>
+                <div className="text-center font-bold text-lg">Growth Agency</div>
+                <div className="text-center font-bold text-lg">Enterprise Agency</div>
               </div>
 
               {[
                 {
-                  category: "Lead-Listen",
+                  category: "Team & Benutzer",
                   features: [
                     {
-                      name: "Verifizierte Leads",
-                      starter: "500/Monat",
-                      professional: "2.000/Monat",
-                      enterprise: "Unbegrenzt",
+                      name: "Team-Mitglieder",
+                      starter: "1-5 Benutzer",
+                      professional: "6-15 Benutzer",
+                      enterprise: "16+ Benutzer",
                     },
-                    { name: "Lead-Updates", starter: "Wöchentlich", professional: "Täglich", enterprise: "Echtzeit" },
+                    { name: "Rollen & Berechtigungen", starter: "Basic", professional: "Erweitert", enterprise: "Vollständig" },
                     {
-                      name: "Branchenspezifische Segmentierung",
-                      starter: "Grundlegend",
+                      name: "Multi-Standort Management",
+                      starter: "Nein",
+                      professional: "Nein",
+                      enterprise: "Ja",
+                    },
+                    {
+                      name: "Team Performance Analytics",
+                      starter: "Basic",
                       professional: "Erweitert",
-                      enterprise: "Premium",
-                    },
-                    {
-                      name: "Benutzerdefinierte Lead-Filter",
-                      starter: "Begrenzt",
-                      professional: "Standard",
-                      enterprise: "Unbegrenzt",
+                      enterprise: "Custom Dashboards",
                     },
                   ],
                 },
                 {
-                  category: "Coldmailer",
+                  category: "Lead Acquisition Engine",
                   features: [
                     {
-                      name: "E-Mail-Volumen",
-                      starter: "5.000/Monat",
-                      professional: "20.000/Monat",
+                      name: "Qualifizierte Leads/Monat",
+                      starter: "1.000",
+                      professional: "5.000",
                       enterprise: "Unbegrenzt",
                     },
-                    { name: "E-Mail-Vorlagen", starter: "10", professional: "50", enterprise: "Unbegrenzt" },
-                    { name: "A/B-Testing", starter: "Nein", professional: "Ja", enterprise: "Erweitert" },
+                    { name: "KI-Voice Call Automation", starter: "Basic", professional: "Erweitert + KI", enterprise: "Premium + Custom" },
+                    { name: "Multi-Channel Outreach", starter: "E-Mail + WhatsApp", professional: "Alle Kanäle", enterprise: "Custom Channels" },
                     {
-                      name: "Automatisierte Sequenzen",
-                      starter: "Basis",
+                      name: "Lead-Scoring & Qualifizierung",
+                      starter: "Regelbasiert",
+                      professional: "KI-gestützt",
+                      enterprise: "Custom AI Models",
+                    },
+                  ],
+                },
+                {
+                  category: "Workflow Automation",
+                  features: [
+                    { name: "Workflow Templates", starter: "10 Standard", professional: "50 + Custom", enterprise: "Unbegrenzt + White-Label" },
+                    { name: "WhatsApp Business Hub", starter: "Basic", professional: "Vollständig", enterprise: "Premium + Templates" },
+                    { name: "Sales Pipeline Automation", starter: "Standard", professional: "Erweitert + KI", enterprise: "Vollständig + Custom" },
+                    {
+                      name: "Contract & Billing Suite",
+                      starter: "Basic",
+                      professional: "Vollständig",
+                      enterprise: "Premium + Custom",
+                    },
+                  ],
+                },
+                {
+                  category: "Client Management",
+                  features: [
+                    {
+                      name: "Client Collaboration Hub",
+                      starter: "Basic",
                       professional: "Erweitert",
-                      enterprise: "Premium",
+                      enterprise: "Premium + Whiteboards",
+                    },
+                    {
+                      name: "Project Management",
+                      starter: "Task Workflows",
+                      professional: "Vollständig",
+                      enterprise: "Custom + Automation",
+                    },
+                    {
+                      name: "Document Management",
+                      starter: "Basic",
+                      professional: "Vollständig",
+                      enterprise: "Enterprise + Security",
+                    },
+                    {
+                      name: "Client Portal",
+                      starter: "Standard",
+                      professional: "Erweitert",
+                      enterprise: "White-Label",
                     },
                   ],
                 },
                 {
-                  category: "CRM-System",
-                  features: [
-                    { name: "CRM-Funktionen", starter: "Basis", professional: "Vollständig", enterprise: "Premium" },
-                    { name: "Benutzer-Zugänge", starter: "1", professional: "5", enterprise: "Unbegrenzt" },
-                    { name: "API-Zugang", starter: "Nein", professional: "Begrenzt", enterprise: "Vollständig" },
-                    {
-                      name: "Integrationen",
-                      starter: "Keine",
-                      professional: "Standard",
-                      enterprise: "Benutzerdefiniert",
-                    },
-                  ],
-                },
-                {
-                  category: "Telefon-Bot",
+                  category: "Analytics & Reporting",
                   features: [
                     {
-                      name: "Anruf-Volumen",
-                      starter: "Nicht enthalten",
-                      professional: "100/Monat",
-                      enterprise: "Unbegrenzt",
+                      name: "Dashboard Analytics",
+                      starter: "Standard Reports",
+                      professional: "Erweiterte KPIs",
+                      enterprise: "Custom Dashboards",
                     },
                     {
-                      name: "Gesprächsskripte",
-                      starter: "Nicht enthalten",
-                      professional: "5",
-                      enterprise: "Unbegrenzt",
+                      name: "ROI Tracking",
+                      starter: "Basic",
+                      professional: "Erweitert",
+                      enterprise: "Real-time + Predictions",
                     },
-                    {
-                      name: "Sprachoptionen",
-                      starter: "Nicht enthalten",
-                      professional: "DE",
-                      enterprise: "DE, EN, FR",
-                    },
-                    {
-                      name: "KI-Anpassung",
-                      starter: "Nicht enthalten",
-                      professional: "Basis",
-                      enterprise: "Erweitert",
-                    },
+                    { name: "Performance Monitoring", starter: "Team-Level", professional: "Projekt-Level", enterprise: "Granular + AI Insights" },
+                    { name: "API & Integrationen", starter: "Nein", professional: "Standard", enterprise: "Vollständig + Custom" },
                   ],
                 },
                 {
                   category: "Support & Service",
                   features: [
                     {
-                      name: "Support",
-                      starter: "E-Mail",
-                      professional: "E-Mail & Telefon",
-                      enterprise: "Dedizierter Manager",
+                      name: "Support-Level",
+                      starter: "E-Mail Support",
+                      professional: "Priorität + Training",
+                      enterprise: "Dedicated Manager",
                     },
                     {
                       name: "Reaktionszeit",
-                      starter: "48 Stunden",
-                      professional: "24 Stunden",
-                      enterprise: "4 Stunden",
+                      starter: "24-48h",
+                      professional: "4-8h",
+                      enterprise: "4h SLA",
                     },
-                    { name: "Onboarding", starter: "Selbst", professional: "Geführt", enterprise: "Persönlich" },
-                    { name: "Strategische Beratung", starter: "Nein", professional: "Begrenzt", enterprise: "Ja" },
+                    { name: "Onboarding", starter: "Self-Service", professional: "Geführt + Training", enterprise: "Custom + Strategisch" },
+                    { name: "Strategische Beratung", starter: "Nein", professional: "Basis", enterprise: "Vollständig" },
                   ],
                 },
               ].map((section, sectionIndex) => (
@@ -353,11 +472,11 @@ export default function Preise() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-16 animate-fade-in">
             <div className="inline-block bg-purple-100 px-4 py-2 rounded-full text-purple-800 text-sm font-medium mb-4">
-              Sonderangebote
+              Agentur-Vorteile
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Spezielle Angebote für Sie</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Zusätzliche Vorteile für Agenturen</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Profitieren Sie von unseren exklusiven Sonderangeboten und Rabatten.
+              Profitieren Sie von unseren exklusiven Vorteilen und Garantien für Agenturen.
             </p>
           </div>
 
@@ -389,19 +508,19 @@ export default function Preise() {
               <CardContent className="p-8">
                 <div className="flex items-center mb-4">
                   <div className="bg-purple-100 w-12 h-12 rounded-full flex items-center justify-center mr-4">
-                    <Users className="h-6 w-6 text-purple-600" />
+                    <Building2 className="h-6 w-6 text-purple-600" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold">Startup-Rabatt</h3>
-                    <p className="text-purple-600">25% Rabatt für Startups</p>
+                    <h3 className="text-xl font-bold">Agentur-Startup Bonus</h3>
+                    <p className="text-purple-600">25% Rabatt für neue Agenturen</p>
                   </div>
                 </div>
                 <p className="text-gray-600 mb-6">
-                  Startups unter 2 Jahren erhalten 25% Rabatt auf alle Pläne im ersten Jahr. Unterstützen Sie Ihr
-                  Wachstum mit unseren leistungsstarken Tools.
+                  Agenturen unter 2 Jahren erhalten 25% Rabatt auf alle Pläne im ersten Jahr. 
+                  Starten Sie Ihre Automatisierungs-Reise mit einem besonderen Vorteil.
                 </p>
                 <Button asChild className="w-full">
-                  <Link href="/kontakt?offer=startup">Rabatt beantragen</Link>
+                  <Link href="/kontakt?offer=agency-startup">Agentur-Bonus sichern</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -461,11 +580,11 @@ export default function Preise() {
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="text-center mb-16 animate-fade-in">
             <div className="inline-block bg-purple-100 px-4 py-2 rounded-full text-purple-800 text-sm font-medium mb-4">
-              Kundenstimmen
+              Erfolgsgeschichten
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Was unsere Kunden über uns sagen</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Agenturen, die bereits profitieren</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Erfahren Sie, wie Leadboom anderen Marketing-Agenturen geholfen hat, ihr Geschäft zu skalieren.
+              Erfahren Sie, wie andere Agenturen mit Leadboom ihr Business automatisiert und skaliert haben.
             </p>
           </div>
 
@@ -473,27 +592,27 @@ export default function Preise() {
             {[
               {
                 quote:
-                  "Leadboom hat unseren ROI um 300% gesteigert. Die Qualität der Leads ist hervorragend und der Support ist erstklassig. Das Professional-Paket bietet ein ausgezeichnetes Preis-Leistungs-Verhältnis.",
+                  "Das Growth Agency Paket hat unsere komplette Agentur transformiert. 85% weniger manuelle Arbeit, 40% mehr Umsatz und unsere Kunden sind glücklicher als je zuvor. Die Automatisierung ist ein Gamechanger!",
                 author: "Sarah Müller",
-                company: "Digital Marketing GmbH",
+                company: "Digital Growth Agency (12 Mitarbeiter)",
                 image: "SM",
-                plan: "Professional",
+                plan: "Growth Agency",
               },
               {
                 quote:
-                  "Wir haben mit dem Starter-Paket begonnen und sind schnell auf Enterprise umgestiegen. Die unbegrenzten Leads und der dedizierte Account Manager haben unsere Lead-Generierung revolutioniert.",
+                  "Wir haben von mehreren Tools auf Leadboom gewechselt und konnten unsere operativen Kosten um 60% reduzieren. Der dedicated Success Manager hilft uns, ständig neue Optimierungen zu finden. ROI nach 2 Monaten erreicht.",
                 author: "Thomas Schmidt",
-                company: "Schmidt & Partner",
+                company: "Schmidt Digital Solutions (25 Mitarbeiter)",
                 image: "TS",
-                plan: "Enterprise",
+                plan: "Enterprise Agency",
               },
               {
                 quote:
-                  "Als kleine Agentur war ich zunächst skeptisch, aber das Starter-Paket hat sich bereits im ersten Monat amortisiert. Die Lead-Qualität ist beeindruckend und der Preis absolut fair.",
+                  "Als kleine 4-Personen-Agentur waren wir überwältigt von der Komplexität des Geschäfts. Leadboom hat uns das Betriebssystem gegeben, das wir brauchten. Jetzt skalieren wir endlich profitabel!",
                 author: "Julia Wagner",
-                company: "Wagner Marketing",
+                company: "Wagner Creative Studio (4 Mitarbeiter)",
                 image: "JW",
-                plan: "Starter",
+                plan: "Starter Agency",
               },
             ].map((testimonial, index) => (
               <Card
@@ -545,19 +664,19 @@ export default function Preise() {
           <div className="max-w-3xl mx-auto space-y-6">
             {[
               {
-                question: "Gibt es versteckte Kosten?",
+                question: "Sind die Preise wirklich teamgrößen-basiert?",
                 answer:
-                  "Nein, bei Leadboom gibt es keine versteckten Kosten. Alle Preise sind transparent und beinhalten alle  bei Leadboom gibt es keine versteckten Kosten. Alle Preise sind transparent und beinhalten alle in den Paketen aufgeführten Leistungen. Zusätzliche Dienste oder Erweiterungen werden immer klar kommuniziert.",
+                  "Ja! Anders als andere Anbieter berechnen wir nicht nach Lead-Volumen, sondern nach Ihrer Teamgröße. Das bedeutet: Egal ob Sie 100 oder 10.000 Leads verarbeiten - der Preis bleibt gleich. So können Sie profitabel skalieren ohne lineare Kostensteigerung.",
               },
               {
-                question: "Kann ich zwischen den Plänen wechseln?",
+                question: "Was passiert, wenn mein Team wächst?",
                 answer:
-                  "Ja, Sie können jederzeit zu einem höheren Plan upgraden. Ein Downgrade ist zum Ende der aktuellen Vertragslaufzeit möglich. Kontaktieren Sie einfach unseren Kundenservice, und wir helfen Ihnen beim Wechsel.",
+                  "Perfekt! Das ist genau unser Ziel. Sie können jederzeit zum nächsthöheren Paket upgraden, wenn Ihr Team die Grenze überschreitet. Bei 6 Mitarbeitern wechseln Sie von Starter zu Growth Agency, bei 16+ zu Enterprise Agency. Ein Downgrade ist zum Ende der Vertragslaufzeit möglich.",
               },
               {
-                question: "Wie funktioniert die Abrechnung?",
+                question: "Wie funktioniert die ROI-Garantie?",
                 answer:
-                  "Die Abrechnung erfolgt monatlich oder jährlich im Voraus. Sie können zwischen monatlicher und jährlicher Zahlung wählen, wobei die jährliche Zahlung einen Rabatt von 16% (2 Monate gratis) bietet. Wir akzeptieren alle gängigen Zahlungsmethoden wie Kreditkarte, PayPal und Überweisung.",
+                  "Unsere ROI-Garantie ist einfach: Wenn Sie in den ersten 90 Tagen nicht mindestens das 3-fache Ihrer monatlichen Investition als zusätzlichen Umsatz generieren, erstatten wir die Differenz. Diese Garantie gilt für alle Pakete und zeigt unser Vertrauen in die Plattform.",
               },
               {
                 question: "Gibt es eine Mindestvertragslaufzeit?",
@@ -565,9 +684,9 @@ export default function Preise() {
                   "Bei monatlicher Zahlung beträgt die Mindestvertragslaufzeit einen Monat. Bei jährlicher Zahlung beträgt die Mindestvertragslaufzeit ein Jahr. Alle Verträge verlängern sich automatisch, können aber jederzeit vor der Verlängerung gekündigt werden.",
               },
               {
-                question: "Sind die Lead-Listen DSGVO-konform?",
+                question: "Wie schnell kann ich mit der Automatisierung starten?",
                 answer:
-                  "Ja, alle unsere Lead-Listen sind DSGVO-konform. Wir bieten Ihnen alle notwendigen Informationen und Tools für eine datenschutzkonforme Nutzung. Unsere Experten beraten Sie gerne zu den rechtlichen Aspekten der Lead-Nutzung im DACH-Raum.",
+                  "Sehr schnell! Das Starter Agency Paket kann sofort eingerichtet werden. Growth Agency Kunden erhalten ein geführtes Onboarding innerhalb von 5-7 Werktagen. Enterprise Kunden bekommen einen dedizierten Success Manager für ein vollständig maßgeschneidertes Setup binnen 2 Wochen.",
               },
               {
                 question: "Kann ich ein individuelles Angebot erhalten?",
@@ -630,15 +749,15 @@ export default function Preise() {
         <div className="container relative z-10 mx-auto px-4 md:px-6 text-center">
           <div className="mx-auto max-w-3xl">
             <h2 className="mb-6 text-3xl md:text-5xl font-bold text-white animate-fade-in">
-              Bereit, mit{" "}
+              Bereit, Ihre Agentur zu{" "}
               <span className="relative inline-block">
-                <span className="relative z-10">Leads</span>
+                <span className="relative z-10">automatisieren</span>
                 <span className="absolute bottom-0 left-0 w-full h-3 bg-purple-400/30 -rotate-1"></span>
               </span>{" "}
-              überschüttet zu werden?
+              ?
             </h2>
             <p className="mb-10 text-xl text-purple-100 animate-fade-in animate-delay-200 max-w-2xl mx-auto">
-              Wählen Sie den Plan, der zu Ihnen passt, und starten Sie noch heute mit Leadboom.
+              Wählen Sie das Agentur-Paket, das zu Ihrer Teamgröße passt, und starten Sie noch heute Ihre Automatisierungs-Reise.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in animate-delay-400">

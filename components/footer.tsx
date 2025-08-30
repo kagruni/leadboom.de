@@ -46,7 +46,7 @@ export default function Footer() {
 
       {/* Main Footer Content */}
       <div className="relative z-10 mx-auto max-w-7xl px-6 py-12">
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-5">
           <div className="space-y-4">
             <Link href="/" className="inline-block">
               <div className="flex items-center space-x-2">
@@ -138,11 +138,11 @@ export default function Footer() {
           </div>
 
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-white">Leistungen</h3>
+            <h3 className="text-lg font-semibold text-white">Plattform</h3>
             <ul className="space-y-3">
               <li>
                 <Link
-                  href="/leistungen"
+                  href="/platform"
                   className="group flex items-center text-gray-400 transition-colors hover:text-purple-300"
                 >
                   <span className="mr-2 h-1 w-0 rounded-full bg-purple-400 transition-all duration-300 group-hover:w-3"></span>
@@ -151,29 +151,113 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/leistungen#lead-listen"
+                  href="/platform/dashboard"
                   className="group flex items-center text-gray-400 transition-colors hover:text-purple-300"
                 >
                   <span className="mr-2 h-1 w-0 rounded-full bg-purple-400 transition-all duration-300 group-hover:w-3"></span>
-                  Lead-Listen
+                  Command Center
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/leistungen#coldmailer"
+                  href="/platform/leads"
                   className="group flex items-center text-gray-400 transition-colors hover:text-purple-300"
                 >
                   <span className="mr-2 h-1 w-0 rounded-full bg-purple-400 transition-all duration-300 group-hover:w-3"></span>
-                  Coldmailer
+                  Lead Management
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/leistungen#crm-system"
+                  href="/platform/whatsapp"
                   className="group flex items-center text-gray-400 transition-colors hover:text-purple-300"
                 >
                   <span className="mr-2 h-1 w-0 rounded-full bg-purple-400 transition-all duration-300 group-hover:w-3"></span>
-                  CRM-System
+                  WhatsApp Hub
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold text-white">Lösungen</h3>
+            <ul className="space-y-3">
+              <li>
+                <Link
+                  href="/solutions"
+                  className="group flex items-center text-gray-400 transition-colors hover:text-purple-300"
+                >
+                  <span className="mr-2 h-1 w-0 rounded-full bg-purple-400 transition-all duration-300 group-hover:w-3"></span>
+                  Übersicht
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/solutions/marketing-agencies"
+                  className="group flex items-center text-gray-400 transition-colors hover:text-purple-300"
+                >
+                  <span className="mr-2 h-1 w-0 rounded-full bg-purple-400 transition-all duration-300 group-hover:w-3"></span>
+                  Marketing Agencies
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/solutions/sales-organizations"
+                  className="group flex items-center text-gray-400 transition-colors hover:text-purple-300"
+                >
+                  <span className="mr-2 h-1 w-0 rounded-full bg-purple-400 transition-all duration-300 group-hover:w-3"></span>
+                  Sales Organizations
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/solutions/service-providers"
+                  className="group flex items-center text-gray-400 transition-colors hover:text-purple-300"
+                >
+                  <span className="mr-2 h-1 w-0 rounded-full bg-purple-400 transition-all duration-300 group-hover:w-3"></span>
+                  Service Providers
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold text-white">Resources</h3>
+            <ul className="space-y-3">
+              <li>
+                <Link
+                  href="/resources"
+                  className="group flex items-center text-gray-400 transition-colors hover:text-purple-300"
+                >
+                  <span className="mr-2 h-1 w-0 rounded-full bg-purple-400 transition-all duration-300 group-hover:w-3"></span>
+                  Resource Center
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/demo"
+                  className="group flex items-center text-gray-400 transition-colors hover:text-purple-300"
+                >
+                  <span className="mr-2 h-1 w-0 rounded-full bg-purple-400 transition-all duration-300 group-hover:w-3"></span>
+                  Platform Demo
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/resources/success-stories"
+                  className="group flex items-center text-gray-400 transition-colors hover:text-purple-300"
+                >
+                  <span className="mr-2 h-1 w-0 rounded-full bg-purple-400 transition-all duration-300 group-hover:w-3"></span>
+                  Success Stories
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/resources/api"
+                  className="group flex items-center text-gray-400 transition-colors hover:text-purple-300"
+                >
+                  <span className="mr-2 h-1 w-0 rounded-full bg-purple-400 transition-all duration-300 group-hover:w-3"></span>
+                  API Docs
                 </Link>
               </li>
             </ul>

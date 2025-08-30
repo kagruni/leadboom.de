@@ -7,6 +7,11 @@ import TrueFocus from "@/components/TrueFocus"
 import GradientBlinds from "@/components/GradientBlinds"
 import TargetCursor from "@/components/TargetCursor"
 import StackingCards from "@/components/StackingCards"
+import BusinessProcessFlow from "@/components/BusinessProcessFlow"
+import { PageTracker, Analytics } from "@/components/analytics/tracking"
+import { LazySection, SectionSkeleton } from "@/components/performance/lazy-section"
+import { StructuredData } from "@/components/structured-data"
+import { STRUCTURED_DATA } from "@/lib/seo-config"
 import {
   ArrowRight,
 } from "lucide-react"
@@ -14,6 +19,17 @@ import {
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
+      {/* Page Tracking */}
+      <PageTracker />
+      
+      {/* Structured Data for Homepage */}
+      <StructuredData 
+        data={STRUCTURED_DATA.breadcrumb([
+          { name: 'Home', url: '/' }
+        ])} 
+        id="homepage-breadcrumb"
+      />
+      
       {/* Hero Section */}
       <section className="relative h-screen bg-black overflow-hidden" 
         onMouseMove={(e) => {
@@ -51,20 +67,24 @@ export default function Home() {
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 pt-20">
           <div className="w-full mx-auto">
             <BlurText
-              text="Bereit für die volle Kontrolle?"
+              text="Das Betriebssystem für erfolgreiche Agenturen"
               delay={150}
               animateBy="words"
               direction="top"
-              className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight text-white mb-8 whitespace-nowrap"
+              className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight text-white mb-8"
             />
             
             <p className="text-xl md:text-2xl lg:text-3xl text-gray-300 mb-12 leading-relaxed opacity-0 animate-fade-in-delayed">
-              Die ultimative Plattform für Sales, Fulfillment und hochwertige Leads.
+              Von der Lead-Generierung bis zur Projekt-Lieferung – eine Plattform für alles
             </p>
             
             <div className="flex justify-center items-center">
-              <Button size="lg" className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 text-lg rounded-full animate-fade-in-button">
-                <Link href="/kontakt" className="flex items-center">
+              <Button 
+                size="lg" 
+                className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 text-lg rounded-full animate-fade-in-button"
+                onClick={() => Analytics.trackCTAClick('demo', 'hero')}
+              >
+                <Link href="/demo" className="flex items-center">
                   Demo anfordern
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
@@ -73,16 +93,16 @@ export default function Home() {
             
             <div className="mt-16 flex items-center justify-center space-x-8 text-gray-400">
               <div className="text-center">
-                <div className="text-3xl font-bold text-white">5M+</div>
-                <div className="text-sm">Leads</div>
-              </div>
-              <div className="text-center">
                 <div className="text-3xl font-bold text-white">500+</div>
-                <div className="text-sm">Kunden</div>
+                <div className="text-sm">Agenturen vertrauen uns</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-white">35%</div>
-                <div className="text-sm">Öffnungsrate</div>
+                <div className="text-3xl font-bold text-white">5M+</div>
+                <div className="text-sm">verarbeitete Leads</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-white">85%</div>
+                <div className="text-sm">Prozessautomatisierung</div>
               </div>
             </div>
           </div>
@@ -116,15 +136,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stacking Cards Section */}
-      <section className="bg-black relative overflow-hidden">
+      {/* Stacking Cards Section - Lazy Loaded */}
+      <LazySection
+        fallback={<SectionSkeleton height="800px" />}
+        className="bg-black relative overflow-hidden"
+      >
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/5 to-transparent"></div>
         
         {/* Section Header */}
         <div className="relative z-10 text-center py-20 px-4">
           <div className="container mx-auto">
             <div className="inline-block bg-purple-100/10 px-4 py-2 rounded-full text-purple-300 text-sm font-medium mb-4">
-              Unsere Komponenten
+              Unsere Module
             </div>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8">
               Die perfekte
@@ -136,14 +159,17 @@ export default function Home() {
               </span>
             </h2>
             <p className="text-xl md:text-2xl text-gray-300 mb-16 max-w-3xl mx-auto leading-relaxed">
-              Vier mächtige Komponenten, die zusammen Ihr Business revolutionieren.
+              Neun mächtige Module, die zusammen Ihr Agentur-Business revolutionieren.
             </p>
           </div>
         </div>
 
         {/* Stacking Cards Component */}
         <StackingCards />
-      </section>
+      </LazySection>
+
+      {/* Business Process Flow Section */}
+      <BusinessProcessFlow />
 
       {/* Enhanced CTA Section with better visuals */}
       <section className="relative overflow-hidden py-24">
@@ -180,8 +206,9 @@ export default function Home() {
                 size="lg"
                 variant="outline"
                 className="group bg-white text-purple-700 border-2 border-white hover:bg-transparent hover:text-white cta-button-shine"
+                onClick={() => Analytics.trackCTAClick('demo', 'bottom_cta')}
               >
-                <Link href="/kontakt">
+                <Link href="/demo">
                   <span className="flex items-center">
                     Demo anfordern
                     <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
@@ -194,10 +221,11 @@ export default function Home() {
                 size="lg"
                 variant="gradient"
                 className="group border-2 border-purple-400/30 hover:border-purple-400/50 cta-button btn-pulse"
+                onClick={() => Analytics.trackCTAClick('platform', 'bottom_cta')}
               >
-                <Link href="/leistungen">
+                <Link href="/platform">
                   <span className="flex items-center">
-                    Produkte entdecken
+                    Plattform entdecken
                     <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
                   </span>
                 </Link>

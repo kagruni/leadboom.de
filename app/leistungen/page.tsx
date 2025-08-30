@@ -5,19 +5,25 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import {
   CheckCircle,
   ArrowRight,
-  Database,
-  Mail,
+  BarChart3,
+  Target,
+  MessageSquare,
+  TrendingUp,
+  FileText,
+  Cog,
   Users,
+  Calendar,
   Phone,
-  BarChart,
-  Search,
   Shield,
   Zap,
   RefreshCw,
   Sparkles,
+  Building2,
+  Workflow,
+  Clock,
 } from "lucide-react"
 
-export default function Services() {
+export default function PlatformOverview() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section - Enhanced with better visuals */}
@@ -30,24 +36,24 @@ export default function Services() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 animate-fade-in">
               <div className="inline-flex items-center px-4 py-2 bg-purple-100 rounded-full text-purple-800 text-sm font-medium mb-2">
-                <Sparkles className="h-4 w-4 mr-2" />
-                <span>Innovative Lösungen für Ihr Business</span>
+                <Building2 className="h-4 w-4 mr-2" />
+                <span>Das Betriebssystem für erfolgreiche Agenturen</span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter">
-                Unsere <span className="text-gradient-purple animate-gradient">Produkte</span>
+                Die komplette <span className="text-gradient-purple animate-gradient">Plattform</span>
               </h1>
               <p className="text-xl text-gray-600 max-w-md">
-                Entdecken Sie unsere leistungsstarken Tools für erfolgreiches Lead-Management und Kundengewinnung.
+                Von der Lead-Generierung bis zur Projekt-Lieferung – eine einzige Plattform für Ihr gesamtes Agentur-Management.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button asChild size="lg" className="purple-glow">
                   <Link href="/kontakt" className="flex items-center">
-                    Demo anfordern
+                    Platform Demo anfordern
                     <ArrowRight className="ml-2 h-4 w-4 animate-bounce-x" />
                   </Link>
                 </Button>
                 <Button asChild variant="outline" size="lg" className="purple-glow">
-                  <Link href="#lead-listen">Zu den Produkten</Link>
+                  <Link href="#platform-modules">Zu den Modulen</Link>
                 </Button>
               </div>
             </div>
@@ -60,7 +66,7 @@ export default function Services() {
                 className="object-cover rounded-2xl shadow-xl"
               />
               <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-white rounded-xl shadow-lg flex items-center justify-center rotate-6 animate-float-slow">
-                <span className="text-purple-600 font-bold text-xl">500+ Kunden</span>
+                <span className="text-purple-600 font-bold text-sm text-center">500+ Agenturen</span>
               </div>
             </div>
           </div>
@@ -75,42 +81,69 @@ export default function Services() {
             <div className="inline-block bg-purple-100 px-4 py-2 rounded-full text-purple-800 text-sm font-medium mb-4">
               Übersicht
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Unsere Produkte im Überblick</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Plattform-Module im Überblick</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Leadboom bietet eine umfassende Suite an Tools, die Marketing-Agenturen dabei unterstützen, mehr Leads zu
-              generieren und zu konvertieren.
+              Eine einzige Plattform für alle Geschäftsprozesse – vom ersten Kundenkontakt bis zur erfolgreichen Projektlieferung.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8" id="platform-modules">
             {[
               {
-                icon: <Database className="h-6 w-6 text-purple-600" />,
-                title: "Lead-Listen",
-                description: "Zielgruppenspezifische Lead-Listen mit privaten Kontaktdaten für maximalen Erfolg.",
-                link: "#lead-listen",
+                icon: <BarChart3 className="h-6 w-6 text-purple-600" />,
+                title: "Command Center",
+                description: "Zentrale Steuerung mit Cash Flow Analytics, KPI-Dashboards und Team Performance Metrics.",
+                link: "#command-center",
               },
               {
-                icon: <Search className="h-6 w-6 text-purple-600" />,
-                title: "Lead-Scraping",
-                description: "Automatisierte Tools zum Sammeln von qualifizierten Leads aus verschiedenen Quellen.",
-                link: "#lead-scraping",
+                icon: <Target className="h-6 w-6 text-purple-600" />,
+                title: "Lead Acquisition",
+                description: "Automatisierte Lead-Generierung mit KI-gestützter Voice Call Automation und Multi-Channel Outreach.",
+                link: "#lead-acquisition",
               },
               {
-                icon: <Mail className="h-6 w-6 text-purple-600" />,
-                title: "Coldmailer",
-                description:
-                  "Leistungsstarkes E-Mail-Marketing-Tool für personalisierte Kampagnen mit hohen Erfolgsquoten.",
-                link: "#coldmailer",
+                icon: <MessageSquare className="h-6 w-6 text-purple-600" />,
+                title: "WhatsApp Business Hub",
+                description: "KI-gesteuerte Messenger-Automatisierung mit Template Campaigns und Conversation Analytics.",
+                link: "#whatsapp-hub",
+              },
+              {
+                icon: <TrendingUp className="h-6 w-6 text-purple-600" />,
+                title: "Sales Pipeline",
+                description: "Verkaufsprozess-Optimierung mit automatischen Follow-ups und Conversion Analytics.",
+                link: "#sales-pipeline",
+              },
+              {
+                icon: <FileText className="h-6 w-6 text-purple-600" />,
+                title: "Digital Contract Suite",
+                description: "Papierlose Vertragsabwicklung mit Quote Generation, Digital Signatures und Payment Tracking.",
+                link: "#contract-suite",
+              },
+              {
+                icon: <Cog className="h-6 w-6 text-purple-600" />,
+                title: "Fulfillment Automation",
+                description: "Projektabwicklung mit automatisierten Workflows, Progress Tracking und Team Collaboration.",
+                link: "#fulfillment-automation",
               },
               {
                 icon: <Users className="h-6 w-6 text-purple-600" />,
-                title: "CRM-System",
-                description:
-                  "Intuitives CRM-System mit Telefon-Bot für effizientes Lead-Management und Nachverfolgung.",
-                link: "#crm-system",
+                title: "Client Collaboration",
+                description: "Kunde-Agentur Zusammenarbeit mit Digital Whiteboards und Project Communication Center.",
+                link: "#client-collaboration",
               },
-            ].map((product, index) => (
+              {
+                icon: <Calendar className="h-6 w-6 text-purple-600" />,
+                title: "Smart Calendar",
+                description: "Intelligentes Terminmanagement mit Google Integration und automatischen Booking Links.",
+                link: "#smart-calendar",
+              },
+              {
+                icon: <Phone className="h-6 w-6 text-purple-600" />,
+                title: "Voice Automation",
+                description: "KI-Telefonie mit Natural Language Processing und Multi-Language Support.",
+                link: "#voice-automation",
+              },
+            ].map((module, index) => (
               <Card
                 key={index}
                 className="bg-white card-hover animate-fade-in border-none shadow-lg hover:shadow-xl transition-all duration-300"
@@ -118,15 +151,15 @@ export default function Services() {
               >
                 <CardHeader>
                   <div className="bg-purple-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
-                    {product.icon}
+                    {module.icon}
                   </div>
-                  <CardTitle>{product.title}</CardTitle>
+                  <CardTitle className="text-lg">{module.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600 mb-6">{product.description}</p>
+                  <p className="text-gray-600 mb-6 text-sm">{module.description}</p>
                   <Button asChild variant="outline" className="w-full purple-glow">
-                    <Link href={product.link} className="flex items-center justify-center">
-                      Mehr erfahren <ArrowRight className="ml-2 h-4 w-4" />
+                    <Link href={module.link} className="flex items-center justify-center">
+                      Details <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
                 </CardContent>
@@ -136,8 +169,8 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Lead Lists - Enhanced with better layout and visuals */}
-      <section id="lead-listen" className="py-20 bg-gray-50 relative overflow-hidden">
+      {/* Command Center Dashboard - Enhanced with better layout and visuals */}
+      <section id="command-center" className="py-20 bg-gray-50 relative overflow-hidden">
         <div className="absolute top-1/4 right-0 w-64 h-64 bg-purple-200/30 rounded-full blur-3xl"></div>
         <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-purple-200/30 rounded-full blur-3xl"></div>
 
@@ -147,31 +180,29 @@ export default function Services() {
               <div className="absolute -z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-purple-100/30 rounded-full blur-xl"></div>
               <Image
                 src="/placeholder.svg?height=400&width=600"
-                alt="Lead-Listen"
+                alt="Command Center Dashboard"
                 fill
                 className="object-cover rounded-2xl shadow-xl"
               />
               <div className="absolute -top-6 -left-6 w-24 h-24 bg-white rounded-xl shadow-lg flex items-center justify-center rotate-6 animate-float-slow">
-                <span className="text-purple-600 font-bold text-xl">5M+ Leads</span>
+                <span className="text-purple-600 font-bold text-sm text-center">Real-time KPIs</span>
               </div>
             </div>
             <div className="space-y-6 animate-slide-right">
               <div className="inline-block bg-purple-100 px-3 py-1 rounded-full text-purple-600 text-sm font-medium">
-                Lead-Listen
+                Command Center
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold">Qualifizierte Leads für jede Zielgruppe</h2>
+              <h2 className="text-3xl md:text-4xl font-bold">Zentrale Steuerung Ihrer Agentur</h2>
               <p className="text-lg text-gray-600">
-                Unsere Lead-Listen bieten Ihnen Zugang zu tausenden qualifizierten Kontakten mit privaten
-                E-Mail-Adressen und detaillierten Informationen. Alle Listen sind nach Branchen, Positionen und Regionen
-                segmentiert, um Ihnen genau die Leads zu liefern, die Sie benötigen.
+                Behalten Sie den Überblick über alle wichtigen Kennzahlen Ihrer Agentur. Von Cash Flow Analytics bis zu Team Performance Metrics – alles in einem zentralen Dashboard.
               </p>
               <ul className="space-y-4">
                 {[
-                  "Über 5 Millionen verifizierte Kontakte im DACH-Raum",
-                  "Private E-Mail-Adressen mit hoher Zustellrate",
-                  "Detaillierte Informationen zu jedem Kontakt",
-                  "Regelmäßige Updates und Verifizierung",
-                  "Branchenspezifische Segmentierung",
+                  "Cash Flow & Revenue Analytics in Echtzeit",
+                  "Customer Acquisition Cost (CAC) Tracking",
+                  "Lifetime Value (LTV) Monitoring",
+                  "Team Performance Metrics & Auslastung",
+                  "Automatische KPI-Berichte und Alerts",
                 ].map((feature, index) => (
                   <li key={index} className="flex items-start group">
                     <div className="mt-1 mr-3 flex-shrink-0 w-5 h-5 rounded-full bg-purple-100 flex items-center justify-center group-hover:bg-purple-600 transition-colors duration-300">
@@ -183,7 +214,7 @@ export default function Services() {
               </ul>
               <Button asChild className="purple-glow mt-4">
                 <Link href="/kontakt" className="flex items-center">
-                  Lead-Listen anfragen
+                  Dashboard Demo anfordern
                   <ArrowRight className="ml-2 h-4 w-4 animate-bounce-x" />
                 </Link>
               </Button>
@@ -192,8 +223,8 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Lead Scraping - Enhanced with better layout and visuals */}
-      <section id="lead-scraping" className="py-20 bg-white relative overflow-hidden">
+      {/* WhatsApp Business Hub - Enhanced with better layout and visuals */}
+      <section id="whatsapp-hub" className="py-20 bg-white relative overflow-hidden">
         <div className="absolute top-1/4 left-0 w-64 h-64 bg-purple-200/30 rounded-full blur-3xl"></div>
         <div className="absolute bottom-1/4 right-0 w-64 h-64 bg-purple-200/30 rounded-full blur-3xl"></div>
 
@@ -201,21 +232,19 @@ export default function Services() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 md:order-first order-last animate-slide-left">
               <div className="inline-block bg-primary/10 px-3 py-1 rounded-full text-primary text-sm font-medium">
-                Lead-Scraping
+                WhatsApp Business Hub
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold">Automatisierte Lead-Generierung</h2>
+              <h2 className="text-3xl md:text-4xl font-bold">Messenger Automatisierung</h2>
               <p className="text-lg text-gray-600">
-                Unser Lead-Scraping-Tool sammelt automatisch qualifizierte Leads aus verschiedenen Quellen wie sozialen
-                Netzwerken, Unternehmenswebseiten und Branchenverzeichnissen. Sie erhalten kontinuierlich frische Leads,
-                die genau Ihren Zielgruppenkriterien entsprechen.
+                Revolutionieren Sie Ihre Kundenkommunikation mit KI-gesteuerten WhatsApp Conversations. Automatisierte Template Campaigns, intelligente Terminbuchung und umfassende Conversation Analytics.
               </p>
               <ul className="space-y-4">
                 {[
-                  "Automatisierte Lead-Generierung rund um die Uhr",
-                  "Präzise Zielgruppendefinition",
-                  "Extraktion von Kontaktdaten und relevanten Informationen",
-                  "Automatische Verifizierung und Validierung der Kontaktdaten",
-                  "Nahtlose Integration mit unserem CRM-System",
+                  "KI-gesteuerte Unterhaltungen mit natürlicher Spracherkennung",
+                  "Automatisierte Template Message Campaigns",
+                  "Intelligente Terminbuchung direkt im Chat",
+                  "Conversation Tracking & detaillierte Analytics",
+                  "Multi-Agent Support für Teamarbeit",
                 ].map((feature, index) => (
                   <li key={index} className="flex items-start group">
                     <div className="mt-1 mr-3 flex-shrink-0 w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center group-hover:bg-primary transition-colors duration-300">
@@ -227,7 +256,7 @@ export default function Services() {
               </ul>
               <Button asChild className="mt-4">
                 <Link href="/kontakt" className="flex items-center">
-                  Lead-Scraping testen
+                  WhatsApp Hub testen
                   <ArrowRight className="ml-2 h-4 w-4 animate-bounce-x" />
                 </Link>
               </Button>
@@ -236,20 +265,20 @@ export default function Services() {
               <div className="absolute -z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-purple-100/30 rounded-full blur-xl"></div>
               <Image
                 src="/placeholder.svg?height=400&width=600"
-                alt="Lead-Scraping"
+                alt="WhatsApp Business Hub"
                 fill
                 className="object-cover rounded-2xl shadow-xl"
               />
               <div className="absolute -top-6 -right-6 w-24 h-24 bg-white rounded-xl shadow-lg flex items-center justify-center rotate-6 animate-float-slow">
-                <span className="text-purple-600 font-bold text-xl">24/7 Aktiv</span>
+                <span className="text-purple-600 font-bold text-sm text-center">KI-gestützt</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Coldmailer - Enhanced with better layout and visuals */}
-      <section id="coldmailer" className="py-20 bg-gray-50 relative overflow-hidden">
+      {/* Digital Contract Suite - Enhanced with better layout and visuals */}
+      <section id="contract-suite" className="py-20 bg-gray-50 relative overflow-hidden">
         <div className="absolute top-1/4 right-0 w-64 h-64 bg-purple-200/30 rounded-full blur-3xl"></div>
         <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-purple-200/30 rounded-full blur-3xl"></div>
 
@@ -259,31 +288,29 @@ export default function Services() {
               <div className="absolute -z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-purple-100/30 rounded-full blur-xl"></div>
               <Image
                 src="/placeholder.svg?height=400&width=600"
-                alt="Coldmailer"
+                alt="Digital Contract Suite"
                 fill
                 className="object-cover rounded-2xl shadow-xl"
               />
               <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-white rounded-xl shadow-lg flex items-center justify-center rotate-6 animate-float-slow">
-                <span className="text-purple-600 font-bold text-xl">35% Öffnungsrate</span>
+                <span className="text-purple-600 font-bold text-sm text-center">Papierlos</span>
               </div>
             </div>
             <div className="space-y-6 animate-slide-right">
               <div className="inline-block bg-primary/10 px-3 py-1 rounded-full text-primary text-sm font-medium">
-                Coldmailer
+                Digital Contract Suite
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold">Professionelles E-Mail-Marketing</h2>
+              <h2 className="text-3xl md:text-4xl font-bold">Papierlose Vertragsabwicklung</h2>
               <p className="text-lg text-gray-600">
-                Unser Coldmailer ist ein leistungsstarkes E-Mail-Marketing-Tool, das speziell für die Erstansprache und
-                Nachverfolgung von Leads entwickelt wurde. Mit personalisierten Kampagnen, automatisierten Follow-ups
-                und detaillierten Analysen maximieren Sie Ihre Conversion-Rate.
+                Revolutionieren Sie Ihren Vertragsabschluss mit automatischer Quote Generation, digitalen Signaturen und integriertem Payment Tracking. Von der Anfrage bis zur Bezahlung – alles digital.
               </p>
               <ul className="space-y-4">
                 {[
-                  "Personalisierte E-Mail-Kampagnen",
-                  "Automatisierte Follow-up-Sequenzen",
-                  "A/B-Testing für optimale Ergebnisse",
-                  "Detaillierte Analysen und Berichte",
-                  "Hohe Zustellraten durch optimierte Versandinfrastruktur",
+                  "Automatische Quote & Proposal Generation",
+                  "Digitale Signatur-Workflows mit Rechtssicherheit",
+                  "Invoice & Credit Note Management",
+                  "Integriertes Payment Tracking",
+                  "Compliance-konforme Dokumentenverwaltung",
                 ].map((feature, index) => (
                   <li key={index} className="flex items-start group">
                     <div className="mt-1 mr-3 flex-shrink-0 w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center group-hover:bg-primary transition-colors duration-300">
@@ -295,7 +322,7 @@ export default function Services() {
               </ul>
               <Button asChild className="mt-4">
                 <Link href="/kontakt" className="flex items-center">
-                  Coldmailer testen
+                  Contract Suite testen
                   <ArrowRight className="ml-2 h-4 w-4 animate-bounce-x" />
                 </Link>
               </Button>
@@ -304,8 +331,8 @@ export default function Services() {
         </div>
       </section>
 
-      {/* CRM System - Enhanced with better layout and visuals */}
-      <section id="crm-system" className="py-20 bg-white relative overflow-hidden">
+      {/* Fulfillment Automation - Enhanced with better layout and visuals */}
+      <section id="fulfillment-automation" className="py-20 bg-white relative overflow-hidden">
         <div className="absolute top-1/4 left-0 w-64 h-64 bg-purple-200/30 rounded-full blur-3xl"></div>
         <div className="absolute bottom-1/4 right-0 w-64 h-64 bg-purple-200/30 rounded-full blur-3xl"></div>
 
@@ -313,21 +340,19 @@ export default function Services() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 md:order-first order-last animate-slide-left">
               <div className="inline-block bg-primary/10 px-3 py-1 rounded-full text-primary text-sm font-medium">
-                CRM-System
+                Fulfillment Automation
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold">Effizientes Lead-Management</h2>
+              <h2 className="text-3xl md:text-4xl font-bold">Automatisierte Projektabwicklung</h2>
               <p className="text-lg text-gray-600">
-                Unser intuitives CRM-System hilft Ihnen, Ihre Leads effizient zu verwalten und zu konvertieren. Mit dem
-                integrierten Telefon-Bot automatisieren Sie die Nachverfolgung und sparen wertvolle Zeit bei der
-                Kundenakquise.
+                Revolutionieren Sie Ihre Projektabwicklung mit kundenspezifischen Task-Workflows. Automatische Task-Population, Progress Tracking und nahtlose Team Collaboration für maximale Effizienz.
               </p>
               <ul className="space-y-4">
                 {[
-                  "Übersichtliches Lead-Management",
-                  "Integrierter Telefon-Bot für automatisierte Anrufe",
-                  "Nahtlose Integration mit Coldmailer und Lead-Listen",
-                  "Automatisierte Workflows und Erinnerungen",
-                  "Umfassende Reporting- und Analysefunktionen",
+                  "Client-specific Task Workflows mit Automatisierung",
+                  "Intelligente automatische Task Population",
+                  "Real-time Progress Tracking & Reporting",
+                  "Team Collaboration Tools mit Kommentaren",
+                  "Deadline-Management mit automatischen Alerts",
                 ].map((feature, index) => (
                   <li key={index} className="flex items-start group">
                     <div className="mt-1 mr-3 flex-shrink-0 w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center group-hover:bg-primary transition-colors duration-300">
@@ -339,7 +364,7 @@ export default function Services() {
               </ul>
               <Button asChild className="mt-4">
                 <Link href="/kontakt" className="flex items-center">
-                  CRM-System testen
+                  Fulfillment System testen
                   <ArrowRight className="ml-2 h-4 w-4 animate-bounce-x" />
                 </Link>
               </Button>
@@ -348,20 +373,20 @@ export default function Services() {
               <div className="absolute -z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-purple-100/30 rounded-full blur-xl"></div>
               <Image
                 src="/placeholder.svg?height=400&width=600"
-                alt="CRM-System"
+                alt="Fulfillment Automation"
                 fill
                 className="object-cover rounded-2xl shadow-xl"
               />
               <div className="absolute -top-6 -right-6 w-24 h-24 bg-white rounded-xl shadow-lg flex items-center justify-center rotate-6 animate-float-slow">
-                <span className="text-purple-600 font-bold text-xl">All-in-One</span>
+                <span className="text-purple-600 font-bold text-sm text-center">85% Automatisiert</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Telephone Bot - Enhanced with better layout and visuals */}
-      <section id="telefon-bot" className="py-20 bg-gray-50 relative overflow-hidden">
+      {/* Client Collaboration Hub - Enhanced with better layout and visuals */}
+      <section id="client-collaboration" className="py-20 bg-gray-50 relative overflow-hidden">
         <div className="absolute top-1/4 right-0 w-64 h-64 bg-purple-200/30 rounded-full blur-3xl"></div>
         <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-purple-200/30 rounded-full blur-3xl"></div>
 
@@ -371,30 +396,29 @@ export default function Services() {
               <div className="absolute -z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-purple-100/30 rounded-full blur-xl"></div>
               <Image
                 src="/placeholder.svg?height=400&width=600"
-                alt="Telefon-Bot"
+                alt="Client Collaboration Hub"
                 fill
                 className="object-cover rounded-2xl shadow-xl"
               />
               <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-white rounded-xl shadow-lg flex items-center justify-center rotate-6 animate-float-slow">
-                <span className="text-purple-600 font-bold text-xl">KI-gestützt</span>
+                <span className="text-purple-600 font-bold text-sm text-center">Kollaborativ</span>
               </div>
             </div>
             <div className="space-y-6 animate-slide-right">
               <div className="inline-block bg-primary/10 px-3 py-1 rounded-full text-primary text-sm font-medium">
-                Telefon-Bot
+                Client Collaboration Hub
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold">Automatisierte Telefonakquise</h2>
+              <h2 className="text-3xl md:text-4xl font-bold">Kunde-Agentur Zusammenarbeit</h2>
               <p className="text-lg text-gray-600">
-                Unser innovativer Telefon-Bot revolutioniert Ihre Telefonakquise. Er führt automatisierte Erstgespräche,
-                qualifiziert Leads und vereinbart Termine – rund um die Uhr und in mehreren Sprachen.
+                Fördern Sie die Zusammenarbeit mit Ihren Kunden durch gemeinsame Digital Whiteboards, zentrales Document Management und ein integriertes Project Communication Center.
               </p>
               <ul className="space-y-4">
                 {[
-                  "KI-gestützte Gesprächsführung",
-                  "Automatische Lead-Qualifizierung",
-                  "Terminvereinbarung direkt im Kalender",
-                  "Mehrsprachige Unterstützung (DE, AT, CH)",
-                  "Nahtlose Integration mit dem CRM-System",
+                  "Shared Digital Whiteboards für Brainstorming",
+                  "Zentrales Document Management System",
+                  "Project Communication Center mit Chat",
+                  "Client Portal Access für Transparenz",
+                  "Feedback-Workflows mit Approval-System",
                 ].map((feature, index) => (
                   <li key={index} className="flex items-start group">
                     <div className="mt-1 mr-3 flex-shrink-0 w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center group-hover:bg-primary transition-colors duration-300">
@@ -406,7 +430,7 @@ export default function Services() {
               </ul>
               <Button asChild className="mt-4">
                 <Link href="/kontakt" className="flex items-center">
-                  Telefon-Bot testen
+                  Collaboration Hub testen
                   <ArrowRight className="ml-2 h-4 w-4 animate-bounce-x" />
                 </Link>
               </Button>
@@ -415,70 +439,165 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Features - Enhanced with better cards */}
+      {/* Business Process Flow - New Section */}
+      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center mb-16">
+            <div className="inline-block bg-purple-100 px-4 py-2 rounded-full text-purple-800 text-sm font-medium mb-4">
+              Prozess-Automatisierung
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Vom Lead bis zur Lieferung – alles automatisiert</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Sehen Sie, wie unsere Platform jeden Schritt Ihres Geschäftsprozesses optimiert und automatisiert.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                step: "01",
+                title: "Lead Generation",
+                description: "KI Voice Outreach & Multi-Channel Campaigns generieren qualifizierte Leads automatisch",
+                icon: <Target className="h-8 w-8 text-purple-600" />,
+                automation: "85% automatisiert"
+              },
+              {
+                step: "02",
+                title: "Qualification",
+                description: "WhatsApp & Voice Automation qualifizieren Leads und buchen Termine direkt in Ihren Kalender",
+                icon: <MessageSquare className="h-8 w-8 text-purple-600" />,
+                automation: "90% automatisiert"
+              },
+              {
+                step: "03",
+                title: "Contract & Payment",
+                description: "Digitale Vertragsabwicklung mit automatischen Quotes, Signaturen und Payment Tracking",
+                icon: <FileText className="h-8 w-8 text-purple-600" />,
+                automation: "95% automatisiert"
+              },
+              {
+                step: "04",
+                title: "Fulfillment & Delivery",
+                description: "Client-spezifische Workflows mit automatischer Task-Population und Progress Tracking",
+                icon: <Cog className="h-8 w-8 text-purple-600" />,
+                automation: "80% automatisiert"
+              },
+            ].map((process, index) => (
+              <div key={index} className="relative">
+                <Card className="h-full bg-white shadow-lg border-none hover:shadow-xl transition-all duration-300">
+                  <CardHeader className="text-center pb-4">
+                    <div className="mx-auto w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-4">
+                      {process.icon}
+                    </div>
+                    <div className="text-sm font-bold text-purple-600 mb-2">{process.step}</div>
+                    <CardTitle className="text-lg">{process.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="text-center">
+                    <p className="text-gray-600 text-sm mb-4">{process.description}</p>
+                    <div className="inline-block bg-purple-50 px-3 py-1 rounded-full text-purple-700 text-xs font-medium">
+                      {process.automation}
+                    </div>
+                  </CardContent>
+                </Card>
+                {index < 3 && (
+                  <div className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2">
+                    <ArrowRight className="h-8 w-8 text-purple-300" />
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <div className="bg-gradient-to-r from-purple-50 to-purple-100 rounded-2xl p-8">
+              <h3 className="text-2xl font-bold text-purple-900 mb-4">Prozess-Automatisierung Statistiken</h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-purple-700">85%</div>
+                  <div className="text-sm text-purple-600">Routine-Tasks automatisiert</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-purple-700">60%</div>
+                  <div className="text-sm text-purple-600">Schnellere Projektlieferung</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-purple-700">40%</div>
+                  <div className="text-sm text-purple-600">Höhere Kundenzufriedenheit</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-purple-700">25%</div>
+                  <div className="text-sm text-purple-600">Höhere Gewinnmargen</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Platform Benefits - Enhanced with better cards */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-16">
             <div className="inline-block bg-purple-100 px-4 py-2 rounded-full text-purple-800 text-sm font-medium mb-4">
               Vorteile
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Warum Leadboom?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Platform-Vorteile</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Unsere Plattform bietet einzigartige Vorteile, die Ihnen helfen, Ihre Lead-Generierung zu revolutionieren.
+              Das einzige System, das Agenturen brauchen, um ihr gesamtes Geschäft zu betreiben, zu wachsen und zu skalieren.
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {[
               {
+                icon: <Workflow className="h-6 w-6 text-primary" />,
+                title: "85% Prozessautomatisierung",
+                description:
+                  "Automatisieren Sie 85% Ihrer Routine-Tasks und gewinnen Sie 20+ Stunden pro Woche für strategische Arbeit zurück.",
+              },
+              {
+                icon: <TrendingUp className="h-6 w-6 text-primary" />,
+                title: "25% Höhere Gewinnmargen",
+                description:
+                  "Durch optimierte Workflows und reduzierte manuelle Arbeit steigern unsere Kunden ihre Profitabilität um durchschnittlich 25%.",
+              },
+              {
+                icon: <Clock className="h-6 w-6 text-primary" />,
+                title: "60% Schnellere Projektlieferung",
+                description:
+                  "Mit automatisierten Fulfillment-Workflows liefern Sie Projekte 60% schneller und steigern die Kundenzufriedenheit nachhaltig.",
+              },
+              {
+                icon: <BarChart3 className="h-6 w-6 text-primary" />,
+                title: "Real-time Analytics",
+                description:
+                  "Behalten Sie mit unserem Command Center Dashboard alle wichtigen KPIs im Blick – von Cash Flow bis Team Performance.",
+              },
+              {
                 icon: <Shield className="h-6 w-6 text-primary" />,
-                title: "Datenschutzkonform",
+                title: "Enterprise-Security",
                 description:
-                  "Unsere Prozesse sind so gestaltet, dass Sie rechtssicher arbeiten können. Wir bieten Ihnen alle notwendigen Informationen und Tools für eine datenschutzkonforme Nutzung.",
+                  "DSGVO-konform und bankensicher – unsere Plattform erfüllt höchste Sicherheitsstandards für Ihre sensiblen Geschäftsdaten.",
               },
               {
-                icon: <Zap className="h-6 w-6 text-primary" />,
-                title: "Hohe Erfolgsquoten",
+                icon: <Building2 className="h-6 w-6 text-primary" />,
+                title: "Skalierbarkeit ohne Grenzen",
                 description:
-                  "Durch die Kombination aus qualitativ hochwertigen Leads und optimierten Kampagnen erzielen unsere Kunden überdurchschnittliche Erfolgsquoten bei der Neukundengewinnung.",
+                  "Wachsen Sie ohne lineare Kostensteigerung – unsere Plattform skaliert mit Ihrem Erfolg und unterstützt Agenturen von 5 bis 500+ Mitarbeiter.",
               },
-              {
-                icon: <RefreshCw className="h-6 w-6 text-primary" />,
-                title: "All-in-One-Lösung",
-                description:
-                  "Von der Lead-Generierung über die Kontaktaufnahme bis hin zum Abschluss – unsere integrierte Plattform deckt den gesamten Prozess der Kundengewinnung ab.",
-              },
-              {
-                icon: <BarChart className="h-6 w-6 text-primary" />,
-                title: "Detaillierte Analysen",
-                description:
-                  "Umfassende Berichte und Analysen geben Ihnen tiefe Einblicke in die Performance Ihrer Kampagnen und helfen Ihnen, Ihre Strategie kontinuierlich zu optimieren.",
-              },
-              {
-                icon: <Phone className="h-6 w-6 text-primary" />,
-                title: "Persönlicher Support",
-                description:
-                  "Unser erfahrenes Support-Team steht Ihnen jederzeit zur Verfügung, um Ihnen bei Fragen zu helfen und sicherzustellen, dass Sie das Maximum aus unseren Tools herausholen.",
-              },
-              {
-                icon: <Users className="h-6 w-6 text-primary" />,
-                title: "Spezialisiert auf Agenturen",
-                description:
-                  "Unsere Produkte sind speziell auf die Bedürfnisse von Marketing-Agenturen zugeschnitten und bieten Ihnen die Tools, die Sie benötigen, um Ihre Kunden erfolgreich zu machen.",
-              },
-            ].map((feature, index) => (
+            ].map((benefit, index) => (
               <Card
                 key={index}
                 className="bg-white border-none shadow-lg hover:shadow-xl transition-all duration-300 group overflow-hidden"
               >
                 <CardHeader>
                   <div className="bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center mb-4 group-hover:bg-primary transition-all duration-300">
-                    <div className="group-hover:text-white transition-all duration-300">{feature.icon}</div>
+                    <div className="group-hover:text-white transition-all duration-300">{benefit.icon}</div>
                   </div>
-                  <CardTitle>{feature.title}</CardTitle>
+                  <CardTitle>{benefit.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600">{feature.description}</p>
+                  <p className="text-gray-600">{benefit.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -496,48 +615,50 @@ export default function Services() {
             <div className="inline-block bg-purple-100 px-4 py-2 rounded-full text-purple-800 text-sm font-medium mb-4">
               Preise
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Preismodelle</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Platform-Preise</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Wählen Sie das Paket, das am besten zu Ihren Bedürfnissen passt.
+              Transparent, skalierbar, ROI-garantiert – wählen Sie die passende Lösung für Ihre Agentur.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                title: "Starter",
-                price: "€499",
+                title: "Starter Agency",
+                price: "€799",
                 popular: false,
                 features: [
-                  "500 verifizierte Leads pro Monat",
-                  "Coldmailer mit 5.000 E-Mails/Monat",
-                  "Basis CRM-Funktionen",
+                  "Team: 1-5 Mitarbeiter",
+                  "1.000 qualifizierte Leads/Monat",
+                  "Basis Workflow-Automatisierung",
+                  "Core Platform Module",
                   "E-Mail-Support",
                 ],
               },
               {
-                title: "Professional",
-                price: "€999",
+                title: "Growth Agency",
+                price: "€1.499",
                 popular: true,
                 features: [
-                  "2.000 verifizierte Leads pro Monat",
-                  "Coldmailer mit 20.000 E-Mails/Monat",
-                  "Vollständiges CRM-System",
-                  "Telefon-Bot (100 Anrufe/Monat)",
-                  "Prioritäts-Support",
+                  "Team: 6-15 Mitarbeiter",
+                  "5.000 qualifizierte Leads/Monat",
+                  "Erweiterte Workflows + KI-Features",
+                  "Vollständige Platform + Analytics",
+                  "Priority Support + Training",
+                  "WhatsApp & Voice Automation",
                 ],
               },
               {
-                title: "Enterprise",
-                price: "€2499",
+                title: "Enterprise Agency",
+                price: "€2.999",
                 popular: false,
                 features: [
-                  "Unbegrenzte verifizierte Leads",
-                  "Coldmailer mit unbegrenzten E-Mails",
-                  "Premium CRM-System mit API-Zugang",
-                  "Telefon-Bot (unbegrenzte Anrufe)",
-                  "Dedizierter Account Manager",
-                  "White-Label-Option",
+                  "Team: 16+ Mitarbeiter",
+                  "Unbegrenzte Leads",
+                  "Custom Workflows + White-Label",
+                  "API-Zugang + Integrations",
+                  "Dedicated Success Manager",
+                  "SLA-Garantien + Premium Support",
                 ],
               },
             ].map((plan, index) => (
@@ -573,6 +694,30 @@ export default function Services() {
               </Card>
             ))}
           </div>
+
+          {/* ROI Guarantee Section */}
+          <div className="text-center mt-16">
+            <div className="max-w-4xl mx-auto bg-gradient-to-r from-purple-900 to-purple-800 rounded-3xl p-8 text-white">
+              <h3 className="text-2xl md:text-3xl font-bold mb-4">ROI-Garantie für Ihre Agentur</h3>
+              <p className="text-lg text-purple-100 mb-6">
+                Oder wir erstatten die Differenz zurück. Unsere durchschnittlichen Kunden sehen einen 3x ROI innerhalb von 90 Tagen.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                <div>
+                  <div className="text-3xl font-bold text-purple-200">20+</div>
+                  <div className="text-sm text-purple-300">Stunden pro Woche gespart</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-purple-200">3x</div>
+                  <div className="text-sm text-purple-300">ROI in 90 Tagen</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-purple-200">25%</div>
+                  <div className="text-sm text-purple-300">Höhere Gewinnmargen</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -593,15 +738,15 @@ export default function Services() {
         <div className="container relative z-10 mx-auto px-4 md:px-6 text-center">
           <div className="mx-auto max-w-3xl">
             <h2 className="mb-6 text-3xl md:text-5xl font-bold text-white animate-fade-in">
-              Bereit, mit{" "}
+              Bereit, Ihre{" "}
               <span className="relative inline-block">
-                <span className="relative z-10">Leads</span>
+                <span className="relative z-10">Agentur</span>
                 <span className="absolute bottom-0 left-0 w-full h-3 bg-purple-400/30 -rotate-1"></span>
               </span>{" "}
-              überschüttet zu werden?
+              zu revolutionieren?
             </h2>
             <p className="mb-10 text-xl text-purple-100 animate-fade-in animate-delay-200 max-w-2xl mx-auto">
-              Starten Sie noch heute mit Leadboom und revolutionieren Sie Ihre Lead-Generierung.
+              Entdecken Sie das Betriebssystem für erfolgreiche Agenturen und steigern Sie Ihre Effizienz um 85%.
             </p>
 
             <Button
@@ -612,7 +757,7 @@ export default function Services() {
             >
               <Link href="/kontakt">
                 <span className="flex items-center">
-                  Kostenlose Demo anfordern
+                  Platform Demo anfordern
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
                 </span>
               </Link>
@@ -629,7 +774,7 @@ export default function Services() {
                 ))}
               </div>
               <p className="text-purple-100">
-                <span className="font-bold">500+</span> zufriedene Kunden
+                <span className="font-bold">500+</span> erfolgreiche Agenturen
               </p>
             </div>
           </div>

@@ -1,0 +1,47 @@
+import { SITE_CONFIG } from '@/lib/seo-config'
+
+export function GET() {
+  const robots = `User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: ${SITE_CONFIG.url}/sitemap.xml
+
+# Allow all search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot  
+Allow: /
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /private/
+
+# Allow specific important pages
+Allow: /
+Allow: /platform
+Allow: /demo
+Allow: /solutions/*
+Allow: /preise
+Allow: /kontakt
+Allow: /resources
+
+# Crawl delay for better server performance
+Crawl-delay: 1
+
+# Block specific files
+Disallow: /*.pdf$
+Disallow: /*.doc$
+Disallow: /*.xls$
+`
+
+  return new Response(robots, {
+    headers: {
+      'Content-Type': 'text/plain',
+      'Cache-Control': 'public, max-age=86400, s-maxage=86400'
+    }
+  })
+}

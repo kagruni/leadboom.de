@@ -11,7 +11,12 @@ import {
   Target,
   Users,
   Zap,
-  ArrowRight
+  ArrowRight,
+  BarChart3,
+  TrendingUp,
+  FileText,
+  Cog,
+  Calendar
 } from "lucide-react";
 
 interface CardData {
@@ -27,63 +32,139 @@ interface CardData {
 
 const cardData: CardData[] = [
   {
-    id: "sales",
-    title: "Sales Component",
-    subtitle: "Verkaufs-Engine",
-    description: "Vollautomatisierte Sales-Pipeline mit KI-gestützter Lead-Qualifizierung und personalisierten Verkaufsgesprächen für maximale Conversion-Raten.",
-    icon: <Target className="h-8 w-8 text-white" />,
+    id: "dashboard",
+    title: "Command Center Dashboard",
+    subtitle: "Zentrale Steuerung",
+    description: "Ihr zentrales Cockpit für alle geschäftskritischen Metriken, Cash Flow-Übersicht und Team-Performance mit Echtzeit-KPI-Dashboards.",
+    icon: <BarChart3 className="h-8 w-8 text-white" />,
     color: "from-purple-600 to-purple-800",
     gradient: "bg-gradient-to-br from-purple-500/20 to-purple-700/20",
     features: [
-      "KI-gestützte Lead-Qualifizierung",
-      "Automatisierte Follow-up Sequenzen",
-      "Personalisierte Verkaufsskripte",
-      "Real-time Conversion Analytics"
+      "Cash Flow & Revenue Analytics",
+      "Customer Acquisition Cost (CAC) Tracking",
+      "Lifetime Value (LTV) Monitoring",
+      "Team Performance Metrics",
+      "Real-time KPI Dashboards"
     ]
   },
   {
-    id: "fulfillment",
-    title: "Fulfillment System",
-    subtitle: "Auftragsabwicklung",
-    description: "Nahtlose Auftragsabwicklung von der Bestellung bis zur Lieferung mit vollständiger Transparenz und intelligenter Automatisierung.",
-    icon: <Package className="h-8 w-8 text-white" />,
+    id: "lead-engine",
+    title: "Lead Acquisition Engine",
+    subtitle: "Automatisierte Lead-Generierung",
+    description: "Intelligente Lead-Akquise mit KI-gestützter Voice-Automatisierung, Multi-Channel-Kampagnen und automatischer Lead-Qualifizierung.",
+    icon: <Target className="h-8 w-8 text-white" />,
     color: "from-purple-500 to-purple-700",
     gradient: "bg-gradient-to-br from-purple-400/20 to-purple-600/20",
     features: [
-      "Automatische Bestellabwicklung",
-      "Real-time Liefertracking",
-      "Intelligentes Inventory Management",
-      "Proaktive Kundenbenachrichtigungen"
+      "Lead-Kauf und Import-Funktionen",
+      "KI-gestützte Voice Call Automation",
+      "Multi-Channel Outreach Campaigns",
+      "Lead-Scoring und Qualifizierung"
     ]
   },
   {
-    id: "whatsapp",
-    title: "WhatsApp Business",
-    subtitle: "Messenger-Marketing",
-    description: "Professionelle WhatsApp Business Integration für direkte Kundenkommunikation und automatisierte Nachrichten mit hohen Öffnungsraten.",
+    id: "whatsapp-hub",
+    title: "WhatsApp Business Hub",
+    subtitle: "Messenger Automatisierung",
+    description: "Professionelle WhatsApp Business Integration mit KI-gesteuerten Unterhaltungen und automatisierter Terminbuchung für maximale Reichweite.",
     icon: <MessageSquare className="h-8 w-8 text-white" />,
     color: "from-purple-400 to-purple-600",
     gradient: "bg-gradient-to-br from-purple-300/20 to-purple-500/20",
     features: [
-      "WhatsApp Business API Integration",
-      "KI-gesteuerte Chatbots",
-      "Personalisierte Broadcast-Kampagnen",
-      "Multi-Media Content Support"
+      "KI-gesteuerte Unterhaltungen",
+      "Template Message Campaigns",
+      "Automatische Terminbuchung",
+      "Conversation Tracking & Analytics"
     ]
   },
   {
-    id: "voice",
-    title: "Voice Outreach",
-    subtitle: "Anruf-Automatisierung",
-    description: "Intelligente Telefon-Bots für automatisierte Anrufe, Terminvereinbarungen und Kundenbetreuung mit natürlicher Sprachverarbeitung.",
-    icon: <Phone className="h-8 w-8 text-white" />,
+    id: "sales-pipeline",
+    title: "Sales Pipeline Automation",
+    subtitle: "Verkaufsprozess-Optimierung",
+    description: "Vollautomatisierte Sales-Pipeline mit intelligenten Follow-up-Sequenzen und Conversion-Optimierung für maximale Closing-Raten.",
+    icon: <TrendingUp className="h-8 w-8 text-white" />,
     color: "from-purple-700 to-purple-900",
     gradient: "bg-gradient-to-br from-purple-600/20 to-purple-800/20",
     features: [
-      "KI-gesteuerte natürliche Gespräche",
-      "Automatische Terminbuchung",
-      "Mehrsprachiger Support",
-      "Detaillierte Call-Analytics"
+      "Automated Follow-up Sequences",
+      "Closing Rate Optimization",
+      "Pipeline Stage Management",
+      "Conversion Analytics"
+    ]
+  },
+  {
+    id: "contract-suite",
+    title: "Digital Contract Suite",
+    subtitle: "Papierlose Vertragsabwicklung",
+    description: "Komplette digitale Vertragsabwicklung von der Angebotserstellung bis zur digitalen Signatur mit integriertem Payment-Tracking.",
+    icon: <FileText className="h-8 w-8 text-white" />,
+    color: "from-purple-600 to-purple-800",
+    gradient: "bg-gradient-to-br from-purple-500/20 to-purple-700/20",
+    features: [
+      "Quote & Proposal Generation",
+      "Digital Signature Workflows",
+      "Invoice & Credit Note Management",
+      "Payment Tracking Integration"
+    ]
+  },
+  {
+    id: "fulfillment-automation",
+    title: "Fulfillment Automation",
+    subtitle: "Projektabwicklung",
+    description: "Intelligente Projektabwicklung mit automatischer Task-Erstellung, Team-Kollaboration und Echtzeit-Progress-Tracking für effiziente Lieferung.",
+    icon: <Cog className="h-8 w-8 text-white" />,
+    color: "from-purple-500 to-purple-700",
+    gradient: "bg-gradient-to-br from-purple-400/20 to-purple-600/20",
+    features: [
+      "Client-specific Task Workflows",
+      "Automated Task Population",
+      "Progress Tracking & Reporting",
+      "Team Collaboration Tools"
+    ]
+  },
+  {
+    id: "collaboration-hub",
+    title: "Client Collaboration Hub",
+    subtitle: "Kunde-Agentur Zusammenarbeit",
+    description: "Zentrale Kollaborationsplattform mit digitalen Whiteboards, Dokumentenmanagement und Client-Portal für nahtlose Zusammenarbeit.",
+    icon: <Users className="h-8 w-8 text-white" />,
+    color: "from-purple-400 to-purple-600",
+    gradient: "bg-gradient-to-br from-purple-300/20 to-purple-500/20",
+    features: [
+      "Shared Digital Whiteboards",
+      "Document Management System",
+      "Project Communication Center",
+      "Client Portal Access"
+    ]
+  },
+  {
+    id: "calendar-system",
+    title: "Smart Calendar System",
+    subtitle: "Terminmanagement",
+    description: "Intelligentes Kalendersystem mit Google Calendar Integration, automatisierten Booking-Links und Meeting-Room-Management für optimale Terminplanung.",
+    icon: <Calendar className="h-8 w-8 text-white" />,
+    color: "from-purple-700 to-purple-900",
+    gradient: "bg-gradient-to-br from-purple-600/20 to-purple-800/20",
+    features: [
+      "Google Calendar Integration",
+      "Automated Booking Links (Calendly-like)",
+      "Meeting Room Management",
+      "Availability Synchronization"
+    ]
+  },
+  {
+    id: "voice-automation",
+    title: "Voice Automation Engine",
+    subtitle: "KI-Telefonie",
+    description: "Hochmoderne KI-Telefonie mit Natural Language Processing, automatischer Terminbuchung und mehrsprachigem Support für professionelle Kommunikation.",
+    icon: <Phone className="h-8 w-8 text-white" />,
+    color: "from-purple-600 to-purple-800",
+    gradient: "bg-gradient-to-br from-purple-500/20 to-purple-700/20",
+    features: [
+      "Natural Language Processing",
+      "Automated Appointment Booking",
+      "Multi-language Support",
+      "Call Analytics & Insights"
     ]
   }
 ];
@@ -101,8 +182,8 @@ export default function StackingCards() {
     return (
       <div className="py-20">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 animate-pulse">
-            {[1, 2, 3, 4].map((i) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-pulse">
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((i) => (
               <div key={i} className="h-80 rounded-2xl bg-purple-600/20" />
             ))}
           </div>
@@ -122,7 +203,7 @@ export default function StackingCards() {
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Feature Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {cardData.map((card, index) => (
             <div
               key={card.id}

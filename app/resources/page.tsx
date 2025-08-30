@@ -284,30 +284,6 @@ export default function ResourcesPage() {
         </div>
       </section>
 
-      {/* Newsletter Signup */}
-      <section className="py-20 px-6 bg-gradient-to-r from-purple-900 via-purple-800 to-purple-900">
-        <div className="max-w-4xl mx-auto text-center text-white">
-          <h2 className="text-4xl font-bold mb-6">
-            Bleiben Sie auf dem Laufenden
-          </h2>
-          <p className="text-xl text-purple-100 mb-8">
-            Erhalten Sie neue Resources, Updates und exklusive Inhalte direkt in Ihr Postfach.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder="Ihre E-Mail-Adresse"
-              className="flex-1 px-4 py-3 rounded-lg border-0 bg-white/10 text-white placeholder-purple-200 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-white/50"
-            />
-            <Button size="lg" variant="secondary">
-              Abonnieren
-            </Button>
-          </div>
-          <p className="text-sm text-purple-200 mt-4">
-            Kostenlos, kein Spam, jederzeit abmeldbar.
-          </p>
-        </div>
-      </section>
     </div>
   )
 }

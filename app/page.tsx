@@ -7,11 +7,6 @@ import TrueFocus from "@/components/TrueFocus"
 import GradientBlinds from "@/components/GradientBlinds"
 import TargetCursor from "@/components/TargetCursor"
 import StackingCards from "@/components/StackingCards"
-import BusinessProcessFlow from "@/components/BusinessProcessFlow"
-import { PageTracker, Analytics } from "@/components/analytics/tracking"
-import { LazySection, SectionSkeleton } from "@/components/performance/lazy-section"
-import { StructuredData } from "@/components/structured-data"
-import { STRUCTURED_DATA } from "@/lib/seo-config"
 import {
   ArrowRight,
 } from "lucide-react"
@@ -19,17 +14,6 @@ import {
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Page Tracking */}
-      <PageTracker />
-      
-      {/* Structured Data for Homepage */}
-      <StructuredData 
-        data={STRUCTURED_DATA.breadcrumb([
-          { name: 'Home', url: '/' }
-        ])} 
-        id="homepage-breadcrumb"
-      />
-      
       {/* Hero Section */}
       <section className="relative h-screen bg-black overflow-hidden" 
         onMouseMove={(e) => {
@@ -67,24 +51,20 @@ export default function Home() {
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 pt-20">
           <div className="w-full mx-auto">
             <BlurText
-              text="Das Betriebssystem für erfolgreiche Agenturen"
+              text="Bereit für die volle Kontrolle?"
               delay={150}
               animateBy="words"
               direction="top"
-              className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight text-white mb-8"
+              className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight text-white mb-8 whitespace-nowrap"
             />
             
             <p className="text-xl md:text-2xl lg:text-3xl text-gray-300 mb-12 leading-relaxed opacity-0 animate-fade-in-delayed">
-              Von der Lead-Generierung bis zur Projekt-Lieferung – eine Plattform für alles
+              Die ultimative Plattform für Sales, Fulfillment und hochwertige Leads.
             </p>
             
             <div className="flex justify-center items-center">
-              <Button 
-                size="lg" 
-                className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 text-lg rounded-full animate-fade-in-button"
-                onClick={() => Analytics.trackCTAClick('demo', 'hero')}
-              >
-                <Link href="/demo" className="flex items-center">
+              <Button size="lg" className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 text-lg rounded-full animate-fade-in-button">
+                <Link href="/kontakt" className="flex items-center">
                   Demo anfordern
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
@@ -93,16 +73,16 @@ export default function Home() {
             
             <div className="mt-16 flex items-center justify-center space-x-8 text-gray-400">
               <div className="text-center">
-                <div className="text-3xl font-bold text-white">500+</div>
-                <div className="text-sm">Agenturen vertrauen uns</div>
-              </div>
-              <div className="text-center">
                 <div className="text-3xl font-bold text-white">5M+</div>
-                <div className="text-sm">verarbeitete Leads</div>
+                <div className="text-sm">Leads</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-white">85%</div>
-                <div className="text-sm">Prozessautomatisierung</div>
+                <div className="text-3xl font-bold text-white">500+</div>
+                <div className="text-sm">Kunden</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-white">35%</div>
+                <div className="text-sm">Öffnungsrate</div>
               </div>
             </div>
           </div>
@@ -136,18 +116,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stacking Cards Section - Lazy Loaded */}
-      <LazySection
-        fallback={<SectionSkeleton height="800px" />}
-        className="bg-black relative overflow-hidden"
-      >
+      {/* Stacking Cards Section */}
+      <section className="bg-black relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/5 to-transparent"></div>
         
         {/* Section Header */}
         <div className="relative z-10 text-center py-20 px-4">
           <div className="container mx-auto">
             <div className="inline-block bg-purple-100/10 px-4 py-2 rounded-full text-purple-300 text-sm font-medium mb-4">
-              Unsere Module
+              Unsere Komponenten
             </div>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8">
               Die perfekte
@@ -159,22 +136,19 @@ export default function Home() {
               </span>
             </h2>
             <p className="text-xl md:text-2xl text-gray-300 mb-16 max-w-3xl mx-auto leading-relaxed">
-              Neun mächtige Module, die zusammen Ihr Agentur-Business revolutionieren.
+              Vier mächtige Komponenten, die zusammen Ihr Business revolutionieren.
             </p>
           </div>
         </div>
 
         {/* Stacking Cards Component */}
         <StackingCards />
-      </LazySection>
+      </section>
 
-      {/* Business Process Flow Section */}
-      <BusinessProcessFlow />
-
-      {/* Enhanced CTA Section with better visuals */}
-      <section className="relative overflow-hidden py-24">
-        {/* Background with animated gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-900 via-purple-800 to-purple-950 animate-gradient"></div>
+      {/* Premium Leads Section */}
+      <section className="relative bg-black overflow-hidden py-24">
+        {/* Animated background effects */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/10 to-transparent"></div>
 
         {/* Decorative elements */}
         <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-white/10 to-transparent"></div>
@@ -187,17 +161,21 @@ export default function Home() {
 
         <div className="container relative z-10 mx-auto px-4 md:px-6 text-center">
           <div className="mx-auto max-w-3xl">
+            <div className="inline-block bg-purple-100/10 px-4 py-2 rounded-full text-purple-300 text-sm font-medium mb-4">
+              Premium Lead-Datenbank
+            </div>
+            
             <h2 className="mb-6 text-3xl md:text-5xl font-bold text-white animate-fade-in">
               Bereit, mit{" "}
               <span className="relative inline-block">
-                <span className="relative z-10">Leads</span>
+                <span className="relative z-10 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">hochwertigen Leads</span>
                 <span className="absolute bottom-0 left-0 w-full h-3 bg-purple-400/30 -rotate-1"></span>
               </span>{" "}
               überschüttet zu werden?
             </h2>
             <p className="mb-10 text-xl text-purple-100 animate-fade-in animate-delay-200 max-w-2xl mx-auto">
-              Starten Sie noch heute mit Leadboom und revolutionieren Sie Ihre Lead-Generierung mit unseren innovativen
-              Tools und Lösungen.
+              Kaufen Sie premium verifizierte Leads direkt über unsere Plattform und importieren Sie sie nahtlos in Ihr Dashboard. 
+              Keine externe Tools mehr – alles an einem Ort.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in animate-delay-400">
@@ -206,11 +184,10 @@ export default function Home() {
                 size="lg"
                 variant="outline"
                 className="group bg-white text-purple-700 border-2 border-white hover:bg-transparent hover:text-white cta-button-shine"
-                onClick={() => Analytics.trackCTAClick('demo', 'bottom_cta')}
               >
-                <Link href="/demo">
+                <Link href="/kontakt">
                   <span className="flex items-center">
-                    Demo anfordern
+                    Lead-Datenbank testen
                     <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
                   </span>
                 </Link>
@@ -221,9 +198,8 @@ export default function Home() {
                 size="lg"
                 variant="gradient"
                 className="group border-2 border-purple-400/30 hover:border-purple-400/50 cta-button btn-pulse"
-                onClick={() => Analytics.trackCTAClick('platform', 'bottom_cta')}
               >
-                <Link href="/platform">
+                <Link href="/leistungen">
                   <span className="flex items-center">
                     Plattform entdecken
                     <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
@@ -243,7 +219,7 @@ export default function Home() {
                 ))}
               </div>
               <p className="text-purple-100">
-                <span className="font-bold">500+</span> zufriedene Kunden
+                <span className="font-bold">500+</span> Agenturen vertrauen unseren Leads
               </p>
             </div>
           </div>

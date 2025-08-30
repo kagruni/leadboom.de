@@ -1,6 +1,5 @@
 import Link from "next/link"
-import { Facebook, Instagram, Linkedin, Twitter, Mail, Phone, MapPin, ArrowRight, Heart } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { Facebook, Instagram, Linkedin, Twitter, Mail, Phone, MapPin, Heart } from "lucide-react"
 
 export default function Footer() {
   return (
@@ -11,41 +10,9 @@ export default function Footer() {
       <div className="absolute bottom-0 left-0 w-1/4 h-1/4 bg-purple-500/10 rounded-tr-full blur-3xl"></div>
       <div className="absolute inset-0 bg-[url('/placeholder.svg?height=100&width=100')] bg-repeat opacity-2"></div>
 
-      {/* Newsletter Section */}
-      <div className="relative z-10 mx-auto max-w-7xl px-6 pt-16 pb-8">
-        <div className="mx-auto max-w-4xl rounded-2xl bg-gradient-to-br from-purple-900/90 to-purple-800/90 p-8 shadow-2xl backdrop-blur-sm">
-          <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
-            <div className="max-w-md">
-              <h3 className="mb-2 text-2xl font-bold text-white">Bleiben Sie auf dem Laufenden</h3>
-              <p className="text-purple-100">
-                Abonnieren Sie unseren Newsletter und erhalten Sie regelmäßig Updates zu unseren Produkten und
-                Angeboten.
-              </p>
-            </div>
-            <div className="w-full max-w-md">
-              <div className="flex flex-col space-y-3 sm:flex-row sm:space-y-0 sm:space-x-3">
-                <input
-                  type="email"
-                  placeholder="Ihre E-Mail-Adresse"
-                  className="flex-1 rounded-lg border-0 bg-white/10 px-4 py-3 text-white placeholder-purple-200 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-purple-400"
-                />
-                <Button className="group relative overflow-hidden rounded-lg bg-white px-4 py-3 font-medium text-purple-900 transition-all duration-300 hover:bg-purple-100">
-                  <span className="flex items-center">
-                    Abonnieren
-                    <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                  </span>
-                </Button>
-              </div>
-              <p className="mt-2 text-xs text-purple-200">
-                Wir respektieren Ihre Privatsphäre. Abmeldung jederzeit möglich.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
 
       {/* Main Footer Content */}
-      <div className="relative z-10 mx-auto max-w-7xl px-6 py-12">
+      <div className="relative z-10 mx-auto max-w-7xl px-6 pt-16 pb-8">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-5">
           <div className="space-y-4">
             <Link href="/" className="inline-block">

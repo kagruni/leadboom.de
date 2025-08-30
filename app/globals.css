@@ -151,6 +151,34 @@
     animation-delay: 700ms;
   }
 
+  .animate-delay-1200 {
+    animation-delay: 1200ms;
+  }
+
+  .animate-delay-1400 {
+    animation-delay: 1400ms;
+  }
+
+  .animate-delay-1600 {
+    animation-delay: 1600ms;
+  }
+
+  .animate-delay-1800 {
+    animation-delay: 1800ms;
+  }
+
+  .animate-delay-2000 {
+    animation-delay: 2000ms;
+  }
+
+  .animation-delay-2000 {
+    animation-delay: 2000ms;
+  }
+
+  .animation-delay-4000 {
+    animation-delay: 4000ms;
+  }
+
   .card-hover {
     transition: all 0.3s ease;
   }

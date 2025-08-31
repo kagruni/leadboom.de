@@ -7,6 +7,7 @@ import TrueFocus from "@/components/TrueFocus"
 import GradientBlinds from "@/components/GradientBlinds"
 import TargetCursor from "@/components/TargetCursor"
 import StackingCards from "@/components/StackingCards"
+import BusinessProcessFlow from "@/components/BusinessProcessFlow"
 import {
   ArrowRight,
 } from "lucide-react"
@@ -144,6 +145,9 @@ export default function Home() {
         {/* Stacking Cards Component */}
         <StackingCards />
       </section>
+
+      {/* Business Process Flow Section */}
+      <BusinessProcessFlow />
 
       {/* Premium Leads Section */}
       <section className="relative bg-black overflow-hidden py-24">

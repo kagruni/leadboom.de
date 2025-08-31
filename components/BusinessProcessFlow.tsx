@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { 
   Target, 
   MessageSquare, 
@@ -114,6 +114,52 @@ const automationStats = [
 
 export default function BusinessProcessFlow() {
   const [hoveredStep, setHoveredStep] = useState<string | null>(null);
+  const [visibleSteps, setVisibleSteps] = useState<Set<string>>(new Set());
+  const stepRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const [visibleStats, setVisibleStats] = useState<Set<number>>(new Set());
+  const statsRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.3,
+      rootMargin: '-50px 0px -50px 0px'
+    };
+
+    const stepObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const stepId = entry.target.getAttribute('data-step-id');
+          if (stepId) {
+            setVisibleSteps(prev => new Set([...prev, stepId]));
+          }
+        }
+      });
+    }, observerOptions);
+
+    const statsObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const statIndex = entry.target.getAttribute('data-stat-index');
+          if (statIndex !== null) {
+            setVisibleStats(prev => new Set([...prev, parseInt(statIndex)]));
+          }
+        }
+      });
+    }, observerOptions);
+
+    stepRefs.current.forEach((ref) => {
+      if (ref) stepObserver.observe(ref);
+    });
+
+    statsRefs.current.forEach((ref) => {
+      if (ref) statsObserver.observe(ref);
+    });
+
+    return () => {
+      stepObserver.disconnect();
+      statsObserver.disconnect();
+    };
+  }, []);
 
   return (
     <div className="py-20 bg-black relative overflow-hidden">
@@ -143,62 +189,109 @@ export default function BusinessProcessFlow() {
           </p>
         </div>
 
-        {/* Process Flow */}
+        {/* Scroll-Triggered Timeline */}
         <div className="mb-20">
-          <div className="relative">
-            {/* Flow Line */}
-            <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-600 via-purple-500 to-purple-400 transform -translate-y-1/2 z-0"></div>
+          <div className="relative max-w-4xl mx-auto">
+            {/* Vertical Timeline Line */}
+            <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-600 via-purple-500 to-purple-400 transform md:-translate-x-1/2"></div>
             
-            {/* Process Steps */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7 gap-8 lg:gap-4">
-              {processSteps.map((step, index) => (
-                <div
-                  key={step.id}
-                  className="relative z-10"
-                  onMouseEnter={() => setHoveredStep(step.id)}
-                  onMouseLeave={() => setHoveredStep(null)}
-                >
-                  {/* Step Container */}
-                  <div className="text-center">
-                    {/* Icon Container */}
-                    <div className="relative mx-auto mb-6">
-                      <div className={`w-20 h-20 rounded-full bg-gradient-to-br ${step.color} flex items-center justify-center text-white shadow-lg transition-all duration-300 ${
-                        hoveredStep === step.id ? 'scale-110 shadow-2xl shadow-purple-500/30' : 'hover:scale-105'
-                      }`}>
+            {/* Timeline Steps */}
+            <div className="space-y-16">
+              {processSteps.map((step, index) => {
+                const isVisible = visibleSteps.has(step.id);
+                const isLeft = index % 2 === 0;
+                
+                return (
+                  <div
+                    key={step.id}
+                    ref={(el) => stepRefs.current[index] = el}
+                    data-step-id={step.id}
+                    className={`relative flex items-center ${
+                      isLeft ? 'md:flex-row' : 'md:flex-row-reverse'
+                    } transition-all duration-1000 transform ${
+                      isVisible 
+                        ? 'opacity-100 translate-y-0' 
+                        : 'opacity-0 translate-y-16'
+                    }`}
+                    onMouseEnter={() => setHoveredStep(step.id)}
+                    onMouseLeave={() => setHoveredStep(null)}
+                  >
+                    {/* Timeline Node */}
+                    <div className="absolute left-8 md:left-1/2 transform -translate-x-1/2 z-20">
+                      <div className={`w-16 h-16 rounded-full bg-gradient-to-br ${step.color} flex items-center justify-center text-white shadow-2xl transition-all duration-500 ${
+                        isVisible ? 'scale-100' : 'scale-0'
+                      } ${
+                        hoveredStep === step.id ? 'scale-125 shadow-purple-500/50' : ''
+                      }`}
+                        style={{
+                          transitionDelay: isVisible ? `${index * 200}ms` : '0ms'
+                        }}
+                      >
                         {step.icon}
                       </div>
                       
                       {/* Step Number */}
-                      <div className="absolute -top-2 -right-2 w-8 h-8 bg-white text-purple-600 rounded-full flex items-center justify-center text-sm font-bold shadow-lg">
+                      <div className={`absolute -top-2 -right-2 w-8 h-8 bg-white text-purple-600 rounded-full flex items-center justify-center text-sm font-bold shadow-lg transition-all duration-500 ${
+                        isVisible ? 'scale-100' : 'scale-0'
+                      }`}
+                        style={{
+                          transitionDelay: isVisible ? `${index * 200 + 100}ms` : '0ms'
+                        }}
+                      >
                         {index + 1}
                       </div>
-
-                      {/* Arrow (except for last item) */}
-                      {index < processSteps.length - 1 && (
-                        <div className="hidden lg:block absolute top-1/2 -right-6 transform -translate-y-1/2">
-                          <ArrowRight className="h-5 w-5 text-purple-400" />
-                        </div>
-                      )}
                     </div>
 
-                    {/* Step Info */}
-                    <div className={`transition-all duration-300 ${
-                      hoveredStep === step.id ? 'transform -translate-y-2' : ''
+                    {/* Content Card */}
+                    <div className={`flex-1 ml-24 md:ml-0 ${
+                      isLeft ? 'md:pr-8' : 'md:pl-8'
                     }`}>
-                      <h3 className="text-lg font-bold text-white mb-2">{step.title}</h3>
-                      <p className="text-sm text-gray-300 mb-3 leading-relaxed">{step.description}</p>
-                      <div className="text-xs text-purple-400 font-medium mb-2">{step.tool}</div>
-                      {step.stats && (
-                        <div className={`text-sm font-bold transition-all duration-300 ${
-                          hoveredStep === step.id ? 'text-purple-300 scale-110' : 'text-gray-400'
+                      <div className={`bg-black/60 backdrop-blur-sm border border-purple-500/20 rounded-2xl p-6 transition-all duration-700 ${
+                        isVisible 
+                          ? 'opacity-100 transform translate-x-0' 
+                          : `opacity-0 transform ${
+                              isLeft ? '-translate-x-8' : 'translate-x-8'
+                            }`
+                      } ${
+                        hoveredStep === step.id 
+                          ? 'border-purple-400/40 shadow-2xl shadow-purple-500/20 transform scale-105' 
+                          : 'hover:border-purple-400/30'
+                      }`}
+                        style={{
+                          transitionDelay: isVisible ? `${index * 200 + 200}ms` : '0ms'
+                        }}
+                      >
+                        <div className={`text-right ${
+                          isLeft ? 'md:text-left' : 'md:text-right'
                         }`}>
-                          {step.stats}
+                          <h3 className="text-2xl font-bold text-white mb-3">{step.title}</h3>
+                          <p className="text-gray-300 mb-4 leading-relaxed">{step.description}</p>
+                          <div className="text-sm text-purple-400 font-medium mb-2">{step.tool}</div>
+                          {step.stats && (
+                            <div className={`text-lg font-bold transition-all duration-300 ${
+                              hoveredStep === step.id ? 'text-purple-300 scale-110' : 'text-purple-400'
+                            }`}>
+                              {step.stats}
+                            </div>
+                          )}
                         </div>
-                      )}
+                      </div>
                     </div>
+
+                    {/* Connecting Line to Next Step (except for last) */}
+                    {index < processSteps.length - 1 && (
+                      <div className={`absolute left-8 md:left-1/2 top-16 w-0.5 h-16 bg-purple-400/30 transform md:-translate-x-1/2 transition-all duration-700 ${
+                        isVisible ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-0'
+                      }`}
+                        style={{
+                          transformOrigin: 'top',
+                          transitionDelay: isVisible ? `${index * 200 + 400}ms` : '0ms'
+                        }}
+                      ></div>
+                    )}
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>
@@ -218,36 +311,67 @@ export default function BusinessProcessFlow() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {automationStats.map((item, index) => (
-              <div
-                key={index}
-                className="group relative overflow-hidden rounded-2xl backdrop-blur-xl bg-black/40 border border-purple-500/20 hover:border-purple-400/40 p-8 text-center transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20"
-              >
-                {/* Background Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 to-purple-800/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                
-                {/* Content */}
-                <div className="relative z-10">
-                  {/* Main Stat */}
-                  <div className="text-5xl md:text-6xl font-black text-white mb-4 group-hover:text-purple-100 transition-colors duration-300">
-                    {item.stat}
-                  </div>
+            {automationStats.map((item, index) => {
+              const isVisible = visibleStats.has(index);
+              
+              return (
+                <div
+                  key={index}
+                  ref={(el) => statsRefs.current[index] = el}
+                  data-stat-index={index}
+                  className={`group relative overflow-hidden rounded-2xl backdrop-blur-xl bg-black/40 border border-purple-500/20 hover:border-purple-400/40 p-8 text-center transition-all duration-700 hover:shadow-2xl hover:shadow-purple-500/20 transform ${
+                    isVisible 
+                      ? 'opacity-100 translate-y-0 scale-100' 
+                      : 'opacity-0 translate-y-8 scale-95'
+                  }`}
+                  style={{
+                    transitionDelay: isVisible ? `${index * 150}ms` : '0ms'
+                  }}
+                >
+                  {/* Background Gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 to-purple-800/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   
-                  {/* Label */}
-                  <div className="text-lg font-bold text-purple-300 mb-3 leading-tight">
-                    {item.label}
+                  {/* Content */}
+                  <div className="relative z-10">
+                    {/* Main Stat */}
+                    <div className={`text-5xl md:text-6xl font-black text-white mb-4 group-hover:text-purple-100 transition-all duration-500 ${
+                      isVisible ? 'transform scale-100' : 'transform scale-75'
+                    }`}
+                      style={{
+                        transitionDelay: isVisible ? `${index * 150 + 200}ms` : '0ms'
+                      }}
+                    >
+                      {item.stat}
+                    </div>
+                    
+                    {/* Label */}
+                    <div className={`text-lg font-bold text-purple-300 mb-3 leading-tight transition-all duration-500 ${
+                      isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                    }`}
+                      style={{
+                        transitionDelay: isVisible ? `${index * 150 + 300}ms` : '0ms'
+                      }}
+                    >
+                      {item.label}
+                    </div>
+                    
+                    {/* Description */}
+                    <p className={`text-sm text-gray-400 leading-relaxed group-hover:text-gray-300 transition-all duration-500 ${
+                      isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                    }`}
+                      style={{
+                        transitionDelay: isVisible ? `${index * 150 + 400}ms` : '0ms'
+                      }}
+                    >
+                      {item.description}
+                    </p>
                   </div>
-                  
-                  {/* Description */}
-                  <p className="text-sm text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
-                    {item.description}
-                  </p>
-                </div>
 
-                {/* Shine Effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -skew-x-12 transition-all duration-700 opacity-0 group-hover:opacity-100 group-hover:translate-x-full -translate-x-full"></div>
-              </div>
-            ))}
+                  {/* Shine Effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -skew-x-12 transition-all duration-700 opacity-0 group-hover:opacity-100 group-hover:translate-x-full -translate-x-full"></div>
+                </div>
+              );
+            })}
           </div>
         </div>
 

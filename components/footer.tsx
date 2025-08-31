@@ -1,14 +1,21 @@
 import Link from "next/link"
 import { Facebook, Instagram, Linkedin, Twitter, Mail, Phone, MapPin, Heart } from "lucide-react"
+import { GradientBars } from "@/components/ui/bg-bars"
 
 export default function Footer() {
   return (
     <footer className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-900 to-purple-950">
-      {/* Decorative elements */}
+      {/* Animated Background Bars */}
+      <GradientBars 
+        bars={25} 
+        colors={['#7c3aed', '#a855f7', 'transparent']} 
+      />
+      
+      {/* Decorative overlay elements */}
       <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-transparent to-gray-900/50"></div>
       <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-purple-500/10 rounded-bl-full blur-3xl"></div>
       <div className="absolute bottom-0 left-0 w-1/4 h-1/4 bg-purple-500/10 rounded-tr-full blur-3xl"></div>
-      <div className="absolute inset-0 bg-[url('/placeholder.svg?height=100&width=100')] bg-repeat opacity-2"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
 
 
       {/* Main Footer Content */}

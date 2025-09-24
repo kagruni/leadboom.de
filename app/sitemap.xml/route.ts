@@ -1,5 +1,8 @@
 import { SITE_CONFIG } from '@/lib/seo-config'
 
+// Required for static export
+export const dynamic = 'force-static'
+
 export function GET() {
   const pages = [
     {

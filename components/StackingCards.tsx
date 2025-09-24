@@ -40,11 +40,11 @@ const cardData: CardData[] = [
     color: "from-purple-600 to-purple-800",
     gradient: "bg-gradient-to-br from-purple-500/20 to-purple-700/20",
     features: [
-      "Cash Flow & Revenue Analytics",
-      "Customer Acquisition Cost (CAC) Tracking",
-      "Lifetime Value (LTV) Monitoring",
-      "Team Performance Metrics",
-      "Real-time KPI Dashboards"
+      "Cash Flow & Umsatz-Analyse",
+      "Kundenakquisitionskosten (CAC) Tracking",
+      "Customer Lifetime Value (LTV) Überwachung",
+      "Team Performance Metriken",
+      "Echtzeit-KPI-Dashboards"
     ]
   },
   {
@@ -57,8 +57,8 @@ const cardData: CardData[] = [
     gradient: "bg-gradient-to-br from-purple-400/20 to-purple-600/20",
     features: [
       "Lead-Kauf und Import-Funktionen",
-      "KI-gestützte Voice Call Automation",
-      "Multi-Channel Outreach Campaigns",
+      "KI-gestützte Anruf-Automatisierung",
+      "Multi-Channel-Kampagnen",
       "Lead-Scoring und Qualifizierung"
     ]
   },
@@ -72,9 +72,9 @@ const cardData: CardData[] = [
     gradient: "bg-gradient-to-br from-purple-300/20 to-purple-500/20",
     features: [
       "KI-gesteuerte Unterhaltungen",
-      "Template Message Campaigns",
+      "Vorlagen-Nachrichten-Kampagnen",
       "Automatische Terminbuchung",
-      "Conversation Tracking & Analytics"
+      "Gesprächsverfolgung & Analyse"
     ]
   },
   {
@@ -86,10 +86,10 @@ const cardData: CardData[] = [
     color: "from-purple-700 to-purple-900",
     gradient: "bg-gradient-to-br from-purple-600/20 to-purple-800/20",
     features: [
-      "Automated Follow-up Sequences",
-      "Closing Rate Optimization",
-      "Pipeline Stage Management",
-      "Conversion Analytics"
+      "Automatisierte Follow-up-Sequenzen",
+      "Abschlussraten-Optimierung",
+      "Pipeline-Stufen-Management",
+      "Conversion-Analysen"
     ]
   },
   {
@@ -101,10 +101,10 @@ const cardData: CardData[] = [
     color: "from-purple-600 to-purple-800",
     gradient: "bg-gradient-to-br from-purple-500/20 to-purple-700/20",
     features: [
-      "Quote & Proposal Generation",
-      "Digital Signature Workflows",
-      "Invoice & Credit Note Management",
-      "Payment Tracking Integration"
+      "Angebots- & Vorschlagserstellung",
+      "Digitale Signatur-Workflows",
+      "Rechnungs- & Gutschriftenverwaltung",
+      "Zahlungsverfolgungsintegration"
     ]
   },
   {
@@ -116,10 +116,10 @@ const cardData: CardData[] = [
     color: "from-purple-500 to-purple-700",
     gradient: "bg-gradient-to-br from-purple-400/20 to-purple-600/20",
     features: [
-      "Client-specific Task Workflows",
-      "Automated Task Population",
-      "Progress Tracking & Reporting",
-      "Team Collaboration Tools"
+      "Kundenspezifische Aufgaben-Workflows",
+      "Automatisierte Aufgabenerstellung",
+      "Fortschrittsverfolgung & Berichterstattung",
+      "Team-Kollaborationstools"
     ]
   },
   {
@@ -131,10 +131,10 @@ const cardData: CardData[] = [
     color: "from-purple-400 to-purple-600",
     gradient: "bg-gradient-to-br from-purple-300/20 to-purple-500/20",
     features: [
-      "Shared Digital Whiteboards",
-      "Document Management System",
-      "Project Communication Center",
-      "Client Portal Access"
+      "Gemeinsame digitale Whiteboards",
+      "Dokumentenverwaltungssystem",
+      "Projekt-Kommunikationszentrum",
+      "Kunden-Portal-Zugang"
     ]
   },
   {
@@ -147,9 +147,9 @@ const cardData: CardData[] = [
     gradient: "bg-gradient-to-br from-purple-600/20 to-purple-800/20",
     features: [
       "Google Calendar Integration",
-      "Automated Booking Links (Calendly-like)",
-      "Meeting Room Management",
-      "Availability Synchronization"
+      "Automatisierte Buchungslinks (wie Calendly)",
+      "Besprechungsraum-Management",
+      "Verfügbarkeits-Synchronisation"
     ]
   },
   {
@@ -161,10 +161,10 @@ const cardData: CardData[] = [
     color: "from-purple-600 to-purple-800",
     gradient: "bg-gradient-to-br from-purple-500/20 to-purple-700/20",
     features: [
-      "Natural Language Processing",
-      "Automated Appointment Booking",
-      "Multi-language Support",
-      "Call Analytics & Insights"
+      "Natürliche Sprachverarbeitung",
+      "Automatisierte Terminbuchung",
+      "Mehrsprachiger Support",
+      "Anruf-Analysen & Einblicke"
     ]
   }
 ];

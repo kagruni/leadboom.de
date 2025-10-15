@@ -184,7 +184,7 @@ export default function StackingCards() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-pulse">
             {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((i) => (
-              <div key={i} className="h-80 rounded-2xl bg-purple-600/20" />
+              <div key={i} className="h-80 rounded-2xl bg-purple-100" />
             ))}
           </div>
         </div>
@@ -196,9 +196,9 @@ export default function StackingCards() {
     <div className="py-20">
       {/* Floating background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-purple-600/10 blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-purple-400/10 blur-3xl animate-pulse animation-delay-2000"></div>
-        <div className="absolute top-3/4 left-1/2 w-48 h-48 rounded-full bg-purple-500/10 blur-3xl animate-pulse animation-delay-4000"></div>
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-purple-200/30 blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-purple-100/40 blur-3xl"></div>
+        <div className="absolute top-3/4 left-1/2 w-48 h-48 rounded-full bg-purple-200/20 blur-3xl"></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -212,53 +212,53 @@ export default function StackingCards() {
               onMouseEnter={() => setHoveredCard(card.id)}
               onMouseLeave={() => setHoveredCard(null)}
             >
-              {/* Card Background with Glass Effect */}
-              <div className="relative h-full rounded-2xl overflow-hidden backdrop-blur-xl bg-black/40 border border-purple-500/20 hover:border-purple-400/40 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-purple-500/20">
-                
+              {/* Card Background */}
+              <div className="relative h-full rounded-2xl overflow-hidden bg-white border border-gray-200 hover:border-purple-300 transition-all duration-500 shadow-lg hover:shadow-2xl group-hover:shadow-purple-200/50">
+
                 {/* Animated gradient background */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${card.color} opacity-10 group-hover:opacity-20 transition-opacity duration-500`}></div>
-                
+                <div className={`absolute inset-0 bg-gradient-to-br ${card.color} opacity-5 group-hover:opacity-10 transition-opacity duration-500`}></div>
+
                 {/* Content Container */}
                 <div className="relative z-10 p-8 h-full flex flex-col">
-                  
+
                   {/* Header with Icon */}
                   <div className="flex items-center justify-between mb-6">
                     <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${card.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                       {card.icon}
                     </div>
                     <div className="text-right">
-                      <span className="text-xs uppercase tracking-wider text-purple-400 font-medium">
+                      <span className="text-xs uppercase tracking-wider text-purple-600 font-medium">
                         {card.subtitle}
                       </span>
                     </div>
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-purple-100 transition-colors duration-300">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-purple-700 transition-colors duration-300">
                     {card.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-gray-300 leading-relaxed mb-6 flex-grow">
+                  <p className="text-gray-600 leading-relaxed mb-6 flex-grow">
                     {card.description}
                   </p>
 
                   {/* Features List */}
                   <div className="space-y-3 mb-8">
                     {card.features.map((feature, idx) => (
-                      <div 
-                        key={idx} 
+                      <div
+                        key={idx}
                         className={`flex items-center text-sm transition-all duration-300 ${
-                          hoveredCard === card.id 
-                            ? 'text-white translate-x-2' 
-                            : 'text-gray-400'
+                          hoveredCard === card.id
+                            ? 'text-gray-900 translate-x-2'
+                            : 'text-gray-600'
                         }`}
                         style={{ transitionDelay: `${idx * 100}ms` }}
                       >
                         <div className={`w-2 h-2 rounded-full mr-3 transition-all duration-300 ${
-                          hoveredCard === card.id 
-                            ? 'bg-purple-400 scale-125' 
-                            : 'bg-purple-500/50'
+                          hoveredCard === card.id
+                            ? 'bg-purple-600 scale-125'
+                            : 'bg-purple-400'
                         }`}></div>
                         {feature}
                       </div>
@@ -267,13 +267,13 @@ export default function StackingCards() {
 
                   {/* Action Button */}
                   <div className={`transition-all duration-500 ${
-                    hoveredCard === card.id 
-                      ? 'opacity-100 transform translate-y-0' 
-                      : 'opacity-70 transform translate-y-2'
+                    hoveredCard === card.id
+                      ? 'opacity-100 transform translate-y-0'
+                      : 'opacity-80 transform translate-y-2'
                   }`}>
-                    <button className="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-purple-600/20 to-purple-500/20 border border-purple-400/30 text-white font-medium hover:from-purple-600/30 hover:to-purple-500/30 hover:border-purple-300/50 hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300 backdrop-blur-sm group/btn">
+                    <button className="w-full px-6 py-3 rounded-xl bg-purple-50 border border-purple-200 text-purple-700 font-medium hover:bg-purple-100 hover:border-purple-300 hover:shadow-lg transition-all duration-300 group/btn">
                       <span className="flex items-center justify-center">
-                        Mehr erfahren 
+                        Mehr erfahren
                         <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
                       </span>
                     </button>
@@ -281,9 +281,9 @@ export default function StackingCards() {
                 </div>
 
                 {/* Subtle shine effect */}
-                <div className={`absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -skew-x-12 transition-all duration-700 ${
-                  hoveredCard === card.id 
-                    ? 'translate-x-full' 
+                <div className={`absolute inset-0 bg-gradient-to-r from-transparent via-purple-100/30 to-transparent -skew-x-12 transition-all duration-700 ${
+                  hoveredCard === card.id
+                    ? 'translate-x-full'
                     : '-translate-x-full'
                 }`}></div>
               </div>
@@ -293,11 +293,11 @@ export default function StackingCards() {
 
         {/* Bottom CTA */}
         <div className="text-center mt-16 animate-fade-in animation-delay-1000">
-          <div className="inline-block px-8 py-4 rounded-full bg-gradient-to-r from-purple-600/20 to-purple-500/20 border border-purple-400/30 backdrop-blur-sm">
-            <p className="text-gray-300 text-lg mb-2">
-              Bereit für die <span className="text-purple-400 font-semibold">ultimative Kombination</span>?
+          <div className="inline-block px-8 py-4 rounded-2xl bg-purple-50 border border-purple-200">
+            <p className="text-gray-700 text-lg mb-2">
+              Bereit für die <span className="text-purple-700 font-semibold">ultimative Kombination</span>?
             </p>
-            <button className="mt-4 px-8 py-3 bg-purple-600 hover:bg-purple-500 text-white font-medium rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/30 hover:scale-105">
+            <button className="mt-4 px-8 py-3 bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/30 hover:scale-105">
               Alle Features entdecken <ArrowRight className="ml-2 h-4 w-4 inline" />
             </button>
           </div>

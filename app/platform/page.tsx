@@ -1,17 +1,18 @@
 import { Metadata } from "next"
 import Link from "next/link"
-import { 
-  BarChart3, 
-  Target, 
-  MessageSquare, 
-  TrendingUp, 
-  FileText, 
-  Cog, 
-  Users, 
-  Calendar, 
+import {
+  BarChart3,
+  Target,
+  MessageSquare,
+  TrendingUp,
+  FileText,
+  Cog,
+  Users,
+  Calendar,
   Phone,
   ArrowRight,
-  CheckCircle
+  CheckCircle,
+  PenTool
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -20,14 +21,14 @@ import { generateMetadata as generateSEOMetadata } from "@/lib/seo-config"
 
 export const metadata: Metadata = generateSEOMetadata({
   title: "Agency Management Platform - Complete Digital Agency Operating System",
-  description: "Das führende Betriebssystem für erfolgreiche Agenturen. Sales automation software, client fulfillment system und business process automation in einer Plattform. Von der Lead-Generierung bis zur Projekt-Lieferung – alles automatisiert.",
+  description: "Das führende Betriebssystem für erfolgreiche Agenturen. Sales automation software, client fulfillment system und business process automation in einer Plattform. Vom Lead-Scraping bis zur Projekt-Lieferung – alles automatisiert.",
   keywords: [
     "Agency management platform",
     "Digital agency operating system",
     "Sales automation software", 
     "Client fulfillment system",
     "Business process automation",
-    "Lead generation automation",
+    "Lead scraping automation",
     "Agency dashboard",
     "Project management for agencies"
   ],
@@ -50,26 +51,14 @@ const platformModules = [
   },
   {
     icon: <Target className="h-8 w-8" />,
-    title: "Lead Acquisition Engine", 
-    description: "Automatisierte Lead-Generierung",
+    title: "Lead Scraping Engine",
+    description: "Self-Service Scraping-Tools",
     href: "/platform/leads",
     features: [
-      "Lead-Kauf und Import-Funktionen",
-      "KI-gestützte Voice Call Automation", 
-      "Multi-Channel Outreach Campaigns",
+      "Self-Service Data Scraping",
+      "Hochqualitative Datensätze extrahieren",
+      "Vollständige Firmendaten scrapen",
       "Lead-Scoring und Qualifizierung"
-    ]
-  },
-  {
-    icon: <MessageSquare className="h-8 w-8" />,
-    title: "WhatsApp Business Hub",
-    description: "Messenger Automatisierung", 
-    href: "/platform/whatsapp",
-    features: [
-      "KI-gesteuerte Unterhaltungen",
-      "Template Message Campaigns",
-      "Automatische Terminbuchung", 
-      "Conversation Tracking & Analytics"
     ]
   },
   {
@@ -90,10 +79,22 @@ const platformModules = [
     description: "Papierlose Vertragsabwicklung",
     href: "/platform/contracts",
     features: [
-      "Quote & Proposal Generation", 
+      "Quote & Proposal Generation",
       "Digital Signature Workflows",
       "Invoice & Credit Note Management",
       "Payment Tracking Integration"
+    ]
+  },
+  {
+    icon: <PenTool className="h-8 w-8" />,
+    title: "Leadsign - Digital Signatures",
+    description: "Digitale Vertragsunterschrift",
+    href: "/platform/leadsign",
+    features: [
+      "Send Offers Digitally",
+      "Secure Digital Signatures",
+      "Automated Reminders & Follow-ups",
+      "Real-time Status Tracking"
     ]
   },
   {
@@ -166,7 +167,7 @@ export default function PlatformPage() {
             </span>
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Von der Lead-Generierung bis zur Projekt-Lieferung – eine Plattform für alles.
+            Vom Lead-Scraping bis zur Projekt-Lieferung – eine Plattform für alles.
             Automatisieren Sie 85% Ihrer Routineaufgaben und fokussieren Sie sich auf das Wachstum.
           </p>
           
@@ -183,7 +184,7 @@ export default function PlatformPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="bg-purple-600 hover:bg-purple-700">
               <Link href="/demo">
-                Kostenlose Demo anfordern
+                Kostenlose Get Started
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
@@ -201,10 +202,10 @@ export default function PlatformPage() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              9 Kraftvolle Module
+              8 Kraftvolle Module
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Jedes Modul wurde entwickelt, um einen spezifischen Aspekt Ihres Agentur-Betriebs zu automatisieren und zu optimieren.
+              Jedes Modul wurde entwickelt, um einen spezifischen Aspekt Deines Agentur-Betriebs zu automatisieren und zu optimieren.
             </p>
           </div>
 
@@ -248,15 +249,15 @@ export default function PlatformPage() {
       <section className="py-20 px-6 bg-gradient-to-r from-purple-900 via-purple-800 to-purple-900">
         <div className="max-w-4xl mx-auto text-center text-white">
           <h2 className="text-4xl font-bold mb-6">
-            Bereit, Ihre Agentur zu transformieren?
+            Bereit, Deine Agentur zu transformieren?
           </h2>
           <p className="text-xl text-purple-100 mb-8">
-            Starten Sie noch heute und erleben Sie, wie Leadboom Ihren gesamten Geschäftsbetrieb revolutioniert.
+            Starte noch heute und erlebe, wie Leadboom Deinen gesamten Geschäftsbetrieb revolutioniert.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" variant="secondary">
               <Link href="/demo">
-                Kostenlose Demo anfordern
+                Kostenlose Get Started
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>

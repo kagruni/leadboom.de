@@ -15,14 +15,14 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = generateMetadata({
-  title: "Agency Management Platform | Complete Business Automation",
-  description: "Das führende Betriebssystem für erfolgreiche Agenturen. Von der Lead-Generierung bis zur Projekt-Lieferung – eine Plattform für alles. Sales automation software und client fulfillment system in einem.",
+  title: "Leadboom | Lead Generation & CRM Platform",
+  description: "Die All-in-One Plattform für professionellen Vertrieb. Premium-Datensätze vom eigenen Scraping, KI-gestütztes CRM und automatisierte Workflows – entwickelt für maximalen Erfolg im DACH-Markt.",
   keywords: [
-    "Agentur Management Platform",
-    "Leadgenerierung Automatisierung", 
-    "WhatsApp Business Automation",
-    "Vertriebs Pipeline Software",
-    "Kundenbetreuung System"
+    "Lead Generation",
+    "CRM Platform",
+    "Lead Scraping",
+    "Sales Automation",
+    "Vertriebsautomatisierung"
   ],
   canonical: "/",
   ogType: "website"
@@ -70,12 +70,13 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-title" content={SITE_CONFIG.name} />
         
         {/* Favicons */}
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="icon" href="/favicon.ico" sizes="32x32" />
+        <link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png" />
+        <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
         <link rel="manifest" href="/manifest.json" />
       </head>
-      <body className={`${inter.className} font-sans antialiased`}>
+      <body className={`${inter.className} font-sans antialiased bg-white`}>
         {/* Skip to main content for accessibility */}
         <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-purple-600 focus:text-white focus:top-4 focus:left-4 focus:rounded">
           Skip to main content

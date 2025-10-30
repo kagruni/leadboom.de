@@ -6,7 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 
 export const metadata: Metadata = {
   title: "Sales Organizations - Spezialisierte Verkaufsautomatisierung | Leadboom",
-  description: "Sales Pipeline Optimization, Automated Follow-up Sequences, Performance Tracking für Sales-focused Agencies und Lead Generation Companies.",
+  description: "Sales Pipeline Optimization, Automated Follow-up Sequences, Performance Tracking für Sales-focused Agencies und Lead Scraping Companies.",
 }
 
 const features = [
@@ -69,7 +69,7 @@ const salesMetrics = [
 
 const useCases = [
   {
-    title: "Lead Generation Agency (20 Sales Reps)",
+    title: "Lead Scraping Agency (20 Sales Reps)",
     challenge: "30% der Leads gingen durch langsame Follow-ups verloren",
     solution: "Automatisierte Multi-Channel Follow-up Sequences",
     result: "85% weniger verlorene Leads, 60% höhere Conversion Rate"
@@ -105,14 +105,14 @@ export default function SalesOrganizationsPage() {
             </span>
           </h1>
           <p className="text-xl text-gray-600 mb-8">
-            Automatisieren Sie Ihre Sales Pipeline, optimieren Sie Follow-up Sequenzen 
-            und steigern Sie die Performance Ihres gesamten Sales Teams.
+            Automatisiere Deine Sales Pipeline, optimiere Follow-up Sequenzen
+            und steigere die Performance Deines gesamten Sales Teams.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button asChild size="lg" className="bg-purple-600 hover:bg-purple-700">
               <Link href="/demo">
-                Kostenlose Demo anfordern
+                Kostenlose Get Started
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
@@ -147,8 +147,8 @@ export default function SalesOrganizationsPage() {
               Spezialisiert für Sales Organizations
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Unsere Sales-fokussierten Features sind darauf ausgelegt, 
-              jeden Aspekt Ihres Verkaufsprozesses zu optimieren.
+              Unsere Sales-fokussierten Features sind darauf ausgelegt,
+              jeden Aspekt Deines Verkaufsprozesses zu optimieren.
             </p>
           </div>
 
@@ -287,10 +287,10 @@ export default function SalesOrganizationsPage() {
       <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-gray-900 mb-6">
-            Berechnen Sie Ihren ROI
+            Berechne Deinen ROI
           </h2>
           <p className="text-xl text-gray-600 mb-8">
-            Finden Sie heraus, wie viel Sie mit Sales Automation sparen können.
+            Finde heraus, wie viel Du mit Sales Automation sparen kannst.
           </p>
           
           <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-8 border-0 shadow-lg">
@@ -311,7 +311,7 @@ export default function SalesOrganizationsPage() {
             
             <Button asChild size="lg" className="bg-purple-600 hover:bg-purple-700">
               <Link href="/demo">
-                Ihren ROI berechnen
+                Deinen ROI berechnen
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
@@ -331,7 +331,7 @@ export default function SalesOrganizationsPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" variant="secondary">
               <Link href="/demo">
-                Kostenlose Demo anfordern
+                Kostenlose Get Started
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>

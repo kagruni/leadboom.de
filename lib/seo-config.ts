@@ -1,28 +1,27 @@
 import { Metadata } from 'next'
 
-// Primary SEO Keywords from WEBSITE_RESTRUCTURE_PLAN.md section 8.1
+// Primary SEO Keywords
 export const PRIMARY_KEYWORDS = [
-  'Agency management platform',
-  'Sales automation software', 
-  'Client fulfillment system',
-  'Digital agency tools',
-  'Business process automation'
+  'Lead Generation',
+  'CRM Platform',
+  'Lead Scraping',
+  'Sales Automation',
+  'Vertriebsautomatisierung'
 ] as const
 
-// Long-tail keywords from section 8.2
+// Long-tail keywords
 export const LONG_TAIL_KEYWORDS = [
-  'Complete agency management solution',
-  'Automated sales pipeline for agencies', 
-  'Digital contract signing for agencies',
-  'WhatsApp automation for businesses',
-  'Agency project management software'
+  'Automatisierte Lead-Akquise',
+  'KI-gestütztes CRM System',
+  'Lead-Scraping Deutschland',
+  'Sales Pipeline Automatisierung'
 ] as const
 
 // Site-wide SEO configuration
 export const SITE_CONFIG = {
   name: 'Leadboom',
-  title: 'Leadboom - Agency Management Platform | Complete Business Automation',
-  description: 'Das führende Betriebssystem für erfolgreiche Agenturen. Von der Lead-Generierung bis zur Projekt-Lieferung – eine Plattform für alles. Sales automation software und client fulfillment system in einem.',
+  title: 'Leadboom | Lead Generation & CRM Platform',
+  description: 'Die All-in-One Plattform für professionellen Vertrieb. Premium-Datensätze vom eigenen Scraping, KI-gestütztes CRM und automatisierte Workflows – entwickelt für maximalen Erfolg im DACH-Markt.',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://leadboom.de',
   ogImage: '/og-image.jpg',
   creator: 'Leadboom Team',
@@ -184,7 +183,7 @@ export const STRUCTURED_DATA = {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'Lead Generation Automation'
+            name: 'Lead Scraping Tools'
           }
         },
         {

@@ -8,7 +8,7 @@ import { generateMetadata as generateSEOMetadata } from "@/lib/seo-config"
 
 export const metadata: Metadata = generateSEOMetadata({
   title: "Live Demo - Agency Management Platform | Leadboom",
-  description: "Buchen Sie Ihre persönliche Live-Demo der führenden agency management platform. Erleben Sie sales automation software und client fulfillment system in Aktion. Interaktive Plattform-Tour und ROI-Kalkulation für Ihre Agentur.",
+  description: "Buche Deine persönliche Live-Demo der führenden agency management platform. Erlebe sales automation software und client fulfillment system in Aktion. Interaktive Plattform-Tour und ROI-Kalkulation für Deine Agentur.",
   keywords: [
     "Agency management platform demo",
     "Sales automation software demo",
@@ -85,8 +85,8 @@ export default function DemoPage() {
             </span>
           </h1>
           <p className="text-xl text-gray-600 mb-8">
-            Buchen Sie Ihre persönliche 25-minütige Demo und entdecken Sie, 
-            wie Leadboom Ihre Agentur transformieren kann. Kostenlos und unverbindlich.
+            Buche Deine persönliche 25-minütige Demo und entdecke,
+            wie Leadboom Deine Agentur transformieren kann. Kostenlos und unverbindlich.
           </p>
 
           {/* Demo Stats */}
@@ -118,11 +118,11 @@ export default function DemoPage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Was Sie in der Demo erwartet
+              Was Dich in der Demo erwartet
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Ihre persönliche Tour durch alle wichtigen Features der Plattform, 
-              zugeschnitten auf Ihre spezifischen Anforderungen.
+              Deine persönliche Tour durch alle wichtigen Features der Plattform,
+              zugeschnitten auf Deine spezifischen Anforderungen.
             </p>
           </div>
 
@@ -151,11 +151,11 @@ export default function DemoPage() {
         <div className="max-w-6xl mx-auto text-white">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6">
-              So läuft Ihre Demo ab
+              So läuft Deine Demo ab
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Ein strukturierter 25-minütiger Durchgang durch die Plattform, 
-              der genau auf Ihre Branche und Herausforderungen zugeschnitten ist.
+              Ein strukturierter 25-minütiger Durchgang durch die Plattform,
+              der genau auf Deine Branche und Herausforderungen zugeschnitten ist.
             </p>
           </div>
 
@@ -166,7 +166,7 @@ export default function DemoPage() {
               </div>
               <h3 className="text-lg font-semibold mb-3">Minuten</h3>
               <p className="text-gray-300 text-sm">
-                Kurzes Kennenlernen und Verständnis Ihrer aktuellen Herausforderungen
+                Kurzes Kennenlernen und Verständnis Deiner aktuellen Herausforderungen
               </p>
             </div>
             
@@ -176,7 +176,7 @@ export default function DemoPage() {
               </div>
               <h3 className="text-lg font-semibold mb-3">Minuten</h3>
               <p className="text-gray-300 text-sm">
-                Live-Tour durch die Plattform mit Fokus auf Ihre Branchen-spezifischen Features
+                Live-Tour durch die Plattform mit Fokus auf Deine Branchen-spezifischen Features
               </p>
             </div>
             
@@ -186,7 +186,7 @@ export default function DemoPage() {
               </div>
               <h3 className="text-lg font-semibold mb-3">Minuten</h3>
               <p className="text-gray-300 text-sm">
-                ROI-Kalkulation basierend auf Ihren aktuellen Zahlen und Prozessen
+                ROI-Kalkulation basierend auf Deinen aktuellen Zahlen und Prozessen
               </p>
             </div>
             
@@ -208,11 +208,11 @@ export default function DemoPage() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Berechnen Sie Ihren ROI vorab
+              Berechne Deinen ROI vorab
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Nutzen Sie unseren interaktiven ROI-Rechner, um eine erste Einschätzung 
-              Ihrer möglichen Einsparungen zu erhalten.
+              Nutze unseren interaktiven ROI-Rechner, um eine erste Einschätzung
+              Deiner möglichen Einsparungen zu erhalten.
             </p>
           </div>
 
@@ -239,7 +239,7 @@ export default function DemoPage() {
               <div className="text-center">
                 <Button size="lg" className="bg-purple-600 hover:bg-purple-700">
                   <Calculator className="mr-2 h-5 w-5" />
-                  Ihren ROI berechnen
+                  Deinen ROI berechnen
                 </Button>
               </div>
             </CardContent>
@@ -305,15 +305,15 @@ export default function DemoPage() {
               },
               {
                 question: "Wie lange dauert die Demo?",
-                answer: "Die Demo dauert etwa 25 Minuten. Wir können sie aber je nach Ihren Fragen auch verkürzen oder verlängern."
+                answer: "Die Demo dauert etwa 25 Minuten. Wir können sie aber je nach Deinen Fragen auch verkürzen oder verlängern."
               },
               {
                 question: "Kann ich die Demo aufzeichnen?",
-                answer: "Gerne! Wir können die Demo auf Wunsch aufzeichnen, damit Sie sie mit Ihrem Team teilen können."
+                answer: "Gerne! Wir können die Demo auf Wunsch aufzeichnen, damit Du sie mit Deinem Team teilen kannst."
               },
               {
                 question: "Bekomme ich danach ein Angebot?",
-                answer: "Nur wenn Sie möchten. Nach der Demo besprechen wir, ob Leadboom für Sie interessant ist. Ein Angebot erhalten Sie nur auf Anfrage."
+                answer: "Nur wenn Du möchtest. Nach der Demo besprechen wir, ob Leadboom für Dich interessant ist. Ein Angebot erhältst Du nur auf Anfrage."
               }
             ].map((faq, index) => (
               <Card key={index} className="bg-white/70 backdrop-blur-sm border-0 shadow-lg">
@@ -331,11 +331,11 @@ export default function DemoPage() {
       <section className="py-20 px-6 bg-gradient-to-r from-purple-900 via-purple-800 to-purple-900">
         <div className="max-w-4xl mx-auto text-center text-white">
           <h2 className="text-4xl font-bold mb-6">
-            Bereit für Ihre persönliche Demo?
+            Bereit für Deine persönliche Demo?
           </h2>
           <p className="text-xl text-purple-100 mb-8">
-            Buchen Sie noch heute Ihren Termin und erfahren Sie, 
-            wie Leadboom Ihre Agentur revolutionieren kann.
+            Buche noch heute Deinen Termin und erfahre,
+            wie Leadboom Deine Agentur revolutionieren kann.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" className="text-lg py-6 px-8">

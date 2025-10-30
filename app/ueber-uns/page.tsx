@@ -30,7 +30,7 @@ export default function AboutUs() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button asChild size="lg" className="purple-glow">
                   <Link href="/kontakt" className="flex items-center">
-                    Demo anfordern
+                    Get Started
                     <ArrowRight className="ml-2 h-4 w-4 animate-bounce-x" />
                   </Link>
                 </Button>
@@ -69,7 +69,7 @@ export default function AboutUs() {
                 className="object-cover rounded-2xl transition-transform duration-700 hover:scale-105"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-purple-900/70 to-transparent p-6 z-20">
-                <h3 className="text-white text-xl font-bold">Unsere Reise seit 2018</h3>
+                <h3 className="text-white text-xl font-bold">Unsere Reise seit 2025</h3>
               </div>
             </div>
             <div className="space-y-6">
@@ -80,19 +80,19 @@ export default function AboutUs() {
               <div className="space-y-4 text-lg text-gray-600">
                 <p className="relative pl-6 border-l-2 border-purple-200">
                   <span className="absolute left-0 top-0 w-2 h-2 rounded-full bg-purple-500 transform -translate-x-[5px] mt-2"></span>
-                  Leadboom wurde 2018 mit einer klaren Vision gegründet: Marketing-Agenturen dabei zu helfen, mehr
+                  Leadboom wurde 2025 mit einer klaren Vision gegründet: Marketing-Agenturen dabei zu helfen, mehr
                   qualifizierte Leads zu generieren und ihre Kunden erfolgreicher zu machen.
                 </p>
                 <p className="relative pl-6 border-l-2 border-purple-200">
                   <span className="absolute left-0 top-0 w-2 h-2 rounded-full bg-purple-500 transform -translate-x-[5px] mt-2"></span>
                   Was als kleines Team von Lead-Generierungs-Experten begann, hat sich zu einem umfassenden Anbieter
-                  entwickelt, der innovative Lösungen in den Bereichen Lead-Generierung, E-Mail-Marketing und CRM
+                  entwickelt, der innovative Lösungen in den Bereichen Lead-Generierung und CRM
                   anbietet.
                 </p>
                 <p className="relative pl-6 border-l-2 border-purple-200">
                   <span className="absolute left-0 top-0 w-2 h-2 rounded-full bg-purple-500 transform -translate-x-[5px] mt-2"></span>
-                  Heute arbeiten wir mit hunderten Marketing-Agenturen im gesamten DACH-Raum zusammen und helfen ihnen,
-                  mit qualifizierten Leads überschüttet zu werden und ihr Geschäft auf die nächste Stufe zu bringen.
+                  Heute arbeiten wir mit unzähligen Marketing-Agenturen im gesamten DACH-Raum zusammen und helfen ihnen,
+                  mit qualifizierten Leads überschüttet zu werden.
                 </p>
               </div>
               <Button asChild variant="outline" className="mt-4 purple-glow">
@@ -192,7 +192,7 @@ export default function AboutUs() {
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Die Menschen hinter Leadboom</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Lernen Sie die Menschen kennen, die Leadboom zu dem machen, was es ist.
+              Lerne die Menschen kennen, die Leadboom zu dem machen, was es ist.
             </p>
           </div>
 
@@ -290,7 +290,7 @@ export default function AboutUs() {
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Zukunftsprojekte</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Entdecken Sie, woran wir arbeiten und wie wir die Zukunft der Lead-Generierung gestalten.
+              Entdecke, woran wir arbeiten und wie wir die Zukunft der Lead-Generierung gestalten.
             </p>
           </div>
 
@@ -299,7 +299,7 @@ export default function AboutUs() {
               {
                 title: "KI-gestützte Lead-Qualifizierung",
                 description:
-                  "Wir entwickeln KI-gestützte Lösungen, die Leads automatisch qualifizieren und nach Kaufwahrscheinlichkeit bewerten, um Ihre Conversion-Rate zu maximieren.",
+                  "Wir entwickeln KI-gestützte Lösungen, die Leads automatisch qualifizieren und nach Kaufwahrscheinlichkeit bewerten, um deine Conversion-Rate zu maximieren.",
                 image: "KI-Lösungen",
               },
               {
@@ -373,7 +373,7 @@ export default function AboutUs() {
               überschüttet zu werden?
             </h2>
             <p className="mb-10 text-xl text-purple-100 animate-fade-in animate-delay-200 max-w-2xl mx-auto">
-              Kontaktieren Sie uns noch heute für eine kostenlose Demo unserer Produkte.
+              Kontaktiere uns noch heute für eine kostenlose Demo unserer Produkte.
             </p>
 
             <Button
@@ -384,7 +384,7 @@ export default function AboutUs() {
             >
               <Link href="/kontakt">
                 <span className="flex items-center">
-                  Demo anfordern
+                  Get Started
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
                 </span>
               </Link>

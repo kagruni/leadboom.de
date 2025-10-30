@@ -99,20 +99,20 @@ export default function MarketingAgenciesPage() {
             Marketing Agencies
           </div>
           <h1 className="text-5xl font-bold text-gray-900 mb-6">
-            Revolutionieren Sie Ihr{" "}
+            Revolutioniere Dein{" "}
             <span className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">
               Marketing Agency
             </span>
           </h1>
           <p className="text-xl text-gray-600 mb-8">
-            Automatisieren Sie Kampagnen-Management, erstellen Sie professionelle Client-Berichte 
-            und optimieren Sie Ihre Lead-Nurturing-Prozesse für maximalen ROI.
+            Automatisiere Du Kampagnen-Management, erstelle Du professionelle Client-Berichte
+            und optimiere Du Deine Lead-Nurturing-Prozesse für maximalen ROI.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button asChild size="lg" className="bg-purple-600 hover:bg-purple-700">
               <Link href="/demo">
-                Kostenlose Demo anfordern
+                Kostenlose Get Started
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
@@ -190,7 +190,7 @@ export default function MarketingAgenciesPage() {
               Erfolgsgeschichten aus der Praxis
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Erfahren Sie, wie andere Marketing Agencies ihre Effizienz und Profitabilität 
+              Erfahre, wie andere Marketing Agencies ihre Effizienz und Profitabilität
               mit Leadboom gesteigert haben.
             </p>
           </div>
@@ -244,7 +244,7 @@ export default function MarketingAgenciesPage() {
               <div className="bg-purple-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">1</div>
               <div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">Woche 1: Demo & Analyse</h3>
-                <p className="text-gray-600">Kostenlose Demo Ihrer aktuellen Prozesse und Identifikation von Automatisierungsmöglichkeiten.</p>
+                <p className="text-gray-600">Kostenlose Demo Deiner aktuellen Prozesse und Identifikation von Automatisierungsmöglichkeiten.</p>
               </div>
             </div>
             
@@ -252,7 +252,7 @@ export default function MarketingAgenciesPage() {
               <div className="bg-purple-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">2</div>
               <div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">Woche 2: Setup & Integration</h3>
-                <p className="text-gray-600">Plattform-Setup, Integration Ihrer bestehenden Tools und Konfiguration der Workflows.</p>
+                <p className="text-gray-600">Plattform-Setup, Integration Deiner bestehenden Tools und Konfiguration der Workflows.</p>
               </div>
             </div>
             
@@ -279,15 +279,15 @@ export default function MarketingAgenciesPage() {
       <section className="py-20 px-6 bg-gradient-to-r from-purple-900 via-purple-800 to-purple-900">
         <div className="max-w-4xl mx-auto text-center text-white">
           <h2 className="text-4xl font-bold mb-6">
-            Bereit, Ihre Marketing Agency zu transformieren?
+            Bereit, Deine Marketing Agency zu transformieren?
           </h2>
           <p className="text-xl text-purple-100 mb-8">
-            Schließen Sie sich 200+ Marketing Agencies an, die bereits mit Leadboom automatisieren.
+            Schließ dich 200+ Marketing Agencies an, die bereits mit Leadboom automatisieren.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" variant="secondary">
               <Link href="/demo">
-                Kostenlose Demo anfordern
+                Kostenlose Get Started
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>

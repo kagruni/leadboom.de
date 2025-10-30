@@ -22,11 +22,11 @@ export default function DashboardPage() {
           <h1 className="text-5xl font-bold text-gray-900 mb-6">
             Zentrale Steuerung für{" "}
             <span className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">
-              Ihre Agentur
+              Deine Agentur
             </span>
           </h1>
           <p className="text-xl text-gray-600 mb-8">
-            Behalten Sie alle wichtigen Kennzahlen Ihres Unternehmens im Blick. 
+            Behalt alle wichtigen Kennzahlen Deines Unternehmens im Blick.
             Von Cash Flow bis Team Performance – alles auf einen Blick.
           </p>
           
@@ -64,7 +64,7 @@ export default function DashboardPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 mb-4">
-                  Überwachen Sie Ihren Cash Flow, Umsatz und Gewinn in Echtzeit. 
+                  Überwach Deinen Cash Flow, Umsatz und Gewinn in Echtzeit.
                   Prognosen und Trends helfen bei strategischen Entscheidungen.
                 </p>
                 <ul className="text-sm text-gray-600 space-y-1">
@@ -90,8 +90,8 @@ export default function DashboardPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 mb-4">
-                  Verstehen Sie, wie viel es kostet, neue Kunden zu gewinnen und 
-                  optimieren Sie Ihre Marketing-Ausgaben entsprechend.
+                  Versteh, wie viel es kostet, neue Kunden zu gewinnen und
+                  optimier Deine Marketing-Ausgaben entsprechend.
                 </p>
                 <ul className="text-sm text-gray-600 space-y-1">
                   <li>• CAC pro Kanal berechnen</li>
@@ -116,8 +116,8 @@ export default function DashboardPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 mb-4">
-                  Berechnen und verfolgen Sie den langfristigen Wert Ihrer Kunden. 
-                  Identifizieren Sie die wertvollsten Kundensegmente.
+                  Berechne und verfolg den langfristigen Wert Deiner Kunden.
+                  Identifizier die wertvollsten Kundensegmente.
                 </p>
                 <ul className="text-sm text-gray-600 space-y-1">
                   <li>• LTV Calculation & Tracking</li>
@@ -142,8 +142,8 @@ export default function DashboardPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 mb-4">
-                  Verfolgen Sie die Leistung Ihres Teams mit detaillierten Metriken 
-                  und identifizieren Sie Verbesserungsmöglichkeiten.
+                  Verfolg die Leistung Deines Teams mit detaillierten Metriken
+                  und identifizier Verbesserungsmöglichkeiten.
                 </p>
                 <ul className="text-sm text-gray-600 space-y-1">
                   <li>• Individual Performance Tracking</li>
@@ -168,7 +168,7 @@ export default function DashboardPage() {
           </p>
           <Button asChild size="lg" variant="secondary">
             <Link href="/demo">
-              Kostenloses Demo anfordern
+              Kostenloses Get Started
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>

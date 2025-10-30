@@ -1,9 +1,71 @@
+"use client"
+
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
-import { CheckCircle, XCircle, HelpCircle, ArrowRight, Sparkles, Shield, Clock, Zap, Users, Award, Building2, TrendingUp, Star } from "lucide-react"
+import { CheckCircle, HelpCircle, ArrowRight, Sparkles, Shield, Clock, Zap, Users, Award, Building2, Star, Package, Mail, Phone, MessageSquare, Workflow } from "lucide-react"
+import { useState } from "react"
 
 export default function Preise() {
+  // State for Credits Calculator
+  const [creditsAmount, setCreditsAmount] = useState(1000)
+  const [creditsPlan, setCreditsPlan] = useState<'flex' | 'grow3' | 'grow6' | 'grow12'>('flex')
+
+  // Staffelpreise für FLEX
+  const getFlexPrice = (amount: number): number => {
+    if (amount >= 19000) return 0.15
+    if (amount >= 16000) return 0.16
+    if (amount >= 13000) return 0.18
+    if (amount >= 9000) return 0.20
+    if (amount >= 6000) return 0.22
+    if (amount >= 3000) return 0.23
+    if (amount >= 1000) return 0.25
+    return 0.30
+  }
+
+  // Berechnung für GROW Abo (monatliche Zahlung)
+  const getGrowPrice = (monthlyAmount: number, months: 3 | 6 | 12): number => {
+    const basePrice = getFlexPrice(monthlyAmount)
+    const discounts = { 3: 0.05, 6: 0.08, 12: 0.10 }
+    return monthlyAmount * basePrice * (1 - discounts[months])
+  }
+
+  // Haupt-Berechnung für Display
+  const calculatePrice = (): { total: number; perCredit: number; period: string } => {
+    switch (creditsPlan) {
+      case 'flex':
+        const flexPrice = getFlexPrice(creditsAmount)
+        return {
+          total: creditsAmount * flexPrice,
+          perCredit: flexPrice,
+          period: 'Einmalig'
+        }
+      case 'grow3':
+        const grow3 = getGrowPrice(creditsAmount, 3)
+        return {
+          total: grow3,
+          perCredit: grow3 / creditsAmount,
+          period: 'pro Monat (3 Monate)'
+        }
+      case 'grow6':
+        const grow6 = getGrowPrice(creditsAmount, 6)
+        return {
+          total: grow6,
+          perCredit: grow6 / creditsAmount,
+          period: 'pro Monat (6 Monate)'
+        }
+      case 'grow12':
+        const grow12 = getGrowPrice(creditsAmount, 12)
+        return {
+          total: grow12,
+          perCredit: grow12 / creditsAmount,
+          period: 'pro Monat (12 Monate)'
+        }
+    }
+  }
+
+  const price = calculatePrice()
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
@@ -16,32 +78,32 @@ export default function Preise() {
           <div className="max-w-3xl mx-auto text-center animate-fade-in">
             <div className="inline-flex items-center px-4 py-2 bg-purple-100 rounded-full text-purple-800 text-sm font-medium mb-4">
               <Building2 className="h-4 w-4 mr-2" />
-              <span>Agentur-optimierte Preismodelle</span>
+              <span>Flexible Preismodelle für jedes Business</span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter mb-6">
-              Das <span className="text-gradient-purple animate-gradient">Betriebssystem</span> für Ihre Agentur
+              Investiere in <span className="text-gradient-purple animate-gradient">Wachstum</span>
             </h1>
             <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-              Von der Lead-Generierung bis zur Projekt-Lieferung – eine Plattform für alles. 
-              Preise basierend auf Ihrer Teamgröße, nicht auf Lead-Volumen.
+              Von kleinen Teams bis zu großen Organisationen – wähle das Abo, das zu Dir passt,
+              und kaufe Credits nach Bedarf.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="purple-glow">
-                <Link href="#preismodelle" className="flex items-center">
-                  Preise ansehen
+                <Link href="#abos" className="flex items-center">
+                  Abos ansehen
                   <ArrowRight className="ml-2 h-4 w-4 animate-bounce-x" />
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="purple-glow">
-                <Link href="#roi-garantie">ROI Garantie</Link>
+                <Link href="#credits">Credits-System</Link>
               </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Pricing Plans Section */}
-      <section id="preismodelle" className="py-20 bg-white relative overflow-hidden">
+      {/* Abo-Pläne Section */}
+      <section id="abos" className="py-20 bg-white relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-gray-50 to-transparent"></div>
         <div className="absolute top-1/4 right-0 w-64 h-64 bg-purple-200/30 rounded-full blur-3xl"></div>
         <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-purple-200/30 rounded-full blur-3xl"></div>
@@ -49,85 +111,75 @@ export default function Preise() {
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="text-center mb-16 animate-fade-in">
             <div className="inline-block bg-purple-100 px-4 py-2 rounded-full text-purple-800 text-sm font-medium mb-4">
-              Agentur-Preismodelle
+              Abo-Pläne
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Wählen Sie Ihre Agentur-Größe</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Wähle dein Abo</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Preismodelle basierend auf Teamgröße und Automatisierungsgrad - nicht auf Lead-Volumen.
-              Skalieren Sie Ihr Business, ohne linear mehr zu bezahlen.
+              Drei leistungsstarke Pläne für Teams jeder Größe. Alle Preise zzgl. MwSt.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                title: "Starter Agency",
-                price: "€799",
+                title: "Essentials",
+                price: "59,99€",
                 period: "/Monat",
-                teamSize: "1-5 Mitarbeiter",
-                description: "Perfekt für kleine Agenturen, die ihre Prozesse automatisieren wollen.",
+                additionalUser: "+29,99€ pro User",
+                description: "Perfekt für kleine Teams, die mit den Grundlagen starten möchten.",
                 popular: false,
-                badge: "Ideal für Start-ups",
+                badge: "Starter",
                 features: [
-                  "Vollständige Plattform-Zugriffe",
-                  "1.000 qualifizierte Leads/Monat",
-                  "Basic Workflow-Automatisierung",
-                  "WhatsApp Business Integration",
-                  "Lead-Scoring & Qualifizierung",
+                  "Vollständiges Dashboard",
+                  "Sales Modul mit Power Dialer",
+                  "100 kostenlose Lead Credits bei Sign-Up",
+                  "AI Actions",
                   "Basis CRM & Pipeline Management",
-                  "E-Mail Outreach Kampagnen",
-                  "Standard Reporting Dashboard",
                   "E-Mail Support",
                 ],
                 cta: "Jetzt starten",
-                link: "/kontakt?plan=starter-agency",
+                link: "https://app.leadboom.de/sign-up",
               },
               {
-                title: "Growth Agency",
-                price: "€1.499",
+                title: "Growth",
+                price: "139,99€",
                 period: "/Monat",
-                teamSize: "6-15 Mitarbeiter",
-                description: "Die beliebteste Wahl für wachsende Agenturen mit erweiterten Anforderungen.",
+                additionalUser: "+69,99€ pro User",
+                description: "Die beliebteste Wahl für wachsende Teams mit erweiterten Anforderungen.",
                 popular: true,
                 badge: "MOST POPULAR",
                 features: [
-                  "Alle Starter Features +",
-                  "5.000 qualifizierte Leads/Monat",
-                  "Erweiterte Workflow-Automatisierung + KI",
-                  "Voice Automation Engine",
-                  "Digital Contract Suite",
-                  "Fulfillment Automation",
-                  "Client Collaboration Hub",
-                  "Erweiterte Analytics & KPIs",
-                  "Prioritäts-Support + Training",
-                  "API Zugang & Integrationen",
+                  "Alles aus Essentials +",
+                  "500 kostenlose Lead Credits bei Sign-Up",
+                  "E-Mail-Client & Kalender",
+                  "Fakturierung (Invoicing)",
+                  "Teamchat & Collaboration",
+                  "Erweiterte Analytics",
+                  "Prioritäts-Support",
                 ],
                 cta: "Beliebteste Wahl",
-                link: "/kontakt?plan=growth-agency",
+                link: "https://app.leadboom.de/sign-up",
               },
               {
-                title: "Enterprise Agency",
-                price: "€2.999",
-                period: "/Monat",
-                teamSize: "16+ Mitarbeiter",
-                description: "Für etablierte Agenturen, die maximale Automatisierung und Skalierung benötigen.",
+                title: "Enterprise",
+                price: "Individuell",
+                period: "",
+                additionalUser: "Auf Anfrage",
+                description: "Für große Organisationen mit individuellen Anforderungen.",
                 popular: false,
                 badge: "Maximale Skalierung",
                 features: [
-                  "Alle Growth Features +",
-                  "Unbegrenzte qualifizierte Leads",
-                  "Custom Workflows + White-Label",
-                  "Vollständiger API-Zugang",
-                  "Benutzerdefinierte Integrationen",
+                  "Alles aus Growth +",
+                  "Unbegrenzte Lead Credits",
+                  "Zusätzliche Enterprise-Funktionen",
+                  "White-Label Möglichkeiten",
                   "Dedizierter Success Manager",
                   "Custom Onboarding & Training",
-                  "Strategische Beratung",
-                  "SLA-Garantien (4h Response)",
+                  "SLA-Garantien",
                   "Multi-Standort Management",
-                  "Enterprise Security Features",
                 ],
                 cta: "Kontakt aufnehmen",
-                link: "/kontakt?plan=enterprise-agency",
+                link: "https://app.leadboom.de/sign-up",
               },
             ].map((plan, index) => (
               <Card
@@ -143,22 +195,20 @@ export default function Preise() {
                   </div>
                 )}
                 <CardHeader className={`text-center pb-2 ${plan.popular ? "bg-purple-50/50 rounded-t-lg" : ""}`}>
-                  <div className="inline-block bg-purple-100 px-3 py-1 rounded-full text-purple-800 text-xs font-medium mb-2">
-                    {plan.teamSize}
-                  </div>
-                  <CardTitle className="text-2xl">{plan.title}</CardTitle>
-                  <div className="mt-4">
+                  <CardTitle className="text-2xl mb-4">{plan.title}</CardTitle>
+                  <div className="mt-2">
                     <span className="text-4xl font-bold">{plan.price}</span>
                     <span className="text-base font-normal text-gray-500">{plan.period}</span>
                   </div>
-                  <CardDescription className="mt-2 text-sm">{plan.description}</CardDescription>
+                  <div className="text-sm text-purple-600 font-medium mt-2">{plan.additionalUser}</div>
+                  <CardDescription className="mt-3 text-sm">{plan.description}</CardDescription>
                 </CardHeader>
                 <CardContent className="pt-4">
                   <ul className="space-y-3 mb-6">
                     {plan.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-start text-sm">
                         <CheckCircle className="h-4 w-4 text-primary mr-2 mt-0.5 flex-shrink-0" />
-                        <span className={feature.includes("Alle") ? "font-semibold text-purple-700" : ""}>{feature}</span>
+                        <span className={feature.includes("Alles") ? "font-semibold text-purple-700" : ""}>{feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -169,102 +219,192 @@ export default function Preise() {
               </Card>
             ))}
           </div>
-
-          <div className="text-center mt-12">
-            <p className="text-gray-600 mb-4">
-              Alle Preise verstehen sich zzgl. MwSt. Jährliche Abonnements erhalten 2 Monate gratis (16% Ersparnis).
-            </p>
-            <p className="text-gray-600">
-              Benötigen Sie eine individuelle Lösung?{" "}
-              <Link href="/kontakt" className="text-purple-600 hover:underline">
-                Kontaktieren Sie uns
-              </Link>{" "}
-              für ein maßgeschneidertes Angebot.
-            </p>
-          </div>
         </div>
       </section>
 
-      {/* ROI Guarantee Section */}
-      <section id="roi-garantie" className="py-20 bg-gradient-to-br from-purple-50 to-white relative overflow-hidden">
+      {/* Credits System Section */}
+      <section id="credits" className="py-20 bg-gradient-to-br from-purple-50 to-white relative overflow-hidden">
         <div className="absolute top-1/4 right-0 w-64 h-64 bg-purple-200/30 rounded-full blur-3xl"></div>
         <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-purple-200/30 rounded-full blur-3xl"></div>
 
         <div className="container mx-auto px-4 md:px-6 relative z-10">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12 animate-fade-in">
-              <div className="inline-block bg-green-100 px-4 py-2 rounded-full text-green-800 text-sm font-medium mb-4">
-                <TrendingUp className="h-4 w-4 inline mr-2" />
-                ROI Garantie
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Wir garantieren Ihren <span className="text-gradient-purple">Erfolg</span>
-              </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-                Leadboom ist so effektiv, dass wir eine ROI-Garantie geben können. 
-                Oder wir erstatten die Differenz zurück.
-              </p>
+          <div className="text-center mb-16 animate-fade-in">
+            <div className="inline-block bg-purple-100 px-4 py-2 rounded-full text-purple-800 text-sm font-medium mb-4">
+              <Sparkles className="h-4 w-4 inline mr-2" />
+              Credits-System
             </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Lead Credits nach Bedarf</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Kaufe Credits flexibel oder im Abo. Je mehr du kaufst, desto günstiger wird es.
+            </p>
+          </div>
 
-            <Card className="border-none shadow-2xl bg-white/80 backdrop-blur-sm overflow-hidden">
-              <CardContent className="p-8 md:p-12">
-                <div className="text-center mb-8">
-                  <div className="inline-flex items-center bg-gradient-to-r from-green-500 to-green-600 text-white px-6 py-3 rounded-full text-lg font-bold shadow-lg mb-6">
-                    <Award className="h-5 w-5 mr-2" />
-                    3x ROI in 90 Tagen - Garantiert!
-                  </div>
-                  <p className="text-lg text-gray-700 mb-6">
-                    Unsere durchschnittlichen Kunden sehen eine <strong>3-fache Rendite ihrer Investition</strong> innerhalb der ersten 90 Tage.
-                  </p>
+          {/* Interactive Credits Calculator */}
+          <Card className="max-w-4xl mx-auto mb-16 border-none shadow-2xl">
+            <CardHeader className="text-center">
+              <CardTitle className="text-2xl">Credits-Rechner</CardTitle>
+              <CardDescription>Berechne den besten Preis für deine Bedürfnisse</CardDescription>
+            </CardHeader>
+            <CardContent className="p-8">
+              {/* Credits Amount Input */}
+              <div className="mb-8">
+                <label className="block text-sm font-medium mb-3">Anzahl Credits</label>
+                <input
+                  type="range"
+                  min="1"
+                  max="20000"
+                  step="100"
+                  value={creditsAmount}
+                  onChange={(e) => setCreditsAmount(Number(e.target.value))}
+                  className="w-full h-2 bg-purple-200 rounded-lg appearance-none cursor-pointer accent-purple-600"
+                />
+                <div className="flex justify-between items-center mt-3">
+                  <span className="text-sm text-gray-600">1</span>
+                  <input
+                    type="number"
+                    value={creditsAmount}
+                    onChange={(e) => setCreditsAmount(Math.min(20000, Math.max(1, Number(e.target.value))))}
+                    className="text-2xl font-bold text-center border-2 border-purple-200 rounded-lg px-4 py-2 w-32 focus:border-purple-600 outline-none"
+                  />
+                  <span className="text-sm text-gray-600">20.000+</span>
                 </div>
+              </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-                  <div className="text-center">
-                    <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Clock className="h-8 w-8 text-purple-600" />
-                    </div>
-                    <h3 className="text-xl font-bold mb-2">85% Zeitersparnis</h3>
-                    <p className="text-gray-600">
-                      Automatisierung eliminiert manuelle Routineaufgaben und gibt Ihnen Zeit für strategisches Wachstum.
-                    </p>
+              {/* Plan Selection */}
+              <div className="mb-8">
+                <label className="block text-sm font-medium mb-3">Credit-Modell wählen</label>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                  {[
+                    { value: 'flex', label: 'FLEX', subtitle: 'Sofortkauf' },
+                    { value: 'grow3', label: 'GROW 3M', subtitle: '-5%' },
+                    { value: 'grow6', label: 'GROW 6M', subtitle: '-8%' },
+                    { value: 'grow12', label: 'GROW 12M', subtitle: '-10%' },
+                  ].map((option) => (
+                    <button
+                      key={option.value}
+                      onClick={() => setCreditsPlan(option.value as any)}
+                      className={`p-3 rounded-lg border-2 transition-all ${
+                        creditsPlan === option.value
+                          ? 'border-purple-600 bg-purple-50 text-purple-700'
+                          : 'border-gray-200 hover:border-purple-300'
+                      }`}
+                    >
+                      <div className="font-semibold text-sm">{option.label}</div>
+                      <div className="text-xs text-gray-600">{option.subtitle}</div>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Price Display */}
+              <div className="bg-gradient-to-r from-purple-600 to-purple-700 rounded-2xl p-8 text-white">
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <div className="text-sm opacity-90 mb-1">Gesamtpreis</div>
+                    <div className="text-4xl font-bold">{price.total.toFixed(2)}€</div>
+                    <div className="text-sm opacity-75 mt-1">{price.period}</div>
                   </div>
-                  <div className="text-center">
-                    <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <TrendingUp className="h-8 w-8 text-purple-600" />
-                    </div>
-                    <h3 className="text-xl font-bold mb-2">40% mehr Umsatz</h3>
-                    <p className="text-gray-600">
-                      Durch optimierte Prozesse und bessere Lead-Conversion steigt Ihr Umsatz nachweislich.
-                    </p>
-                  </div>
-                  <div className="text-center">
-                    <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Users className="h-8 w-8 text-purple-600" />
-                    </div>
-                    <h3 className="text-xl font-bold mb-2">25% höhere Margen</h3>
-                    <p className="text-gray-600">
-                      Reduzierte operative Kosten und effizientere Prozesse verbessern Ihre Gewinnmargen deutlich.
-                    </p>
+                  <div>
+                    <div className="text-sm opacity-90 mb-1">Preis pro Credit</div>
+                    <div className="text-4xl font-bold">{price.perCredit.toFixed(2)}€</div>
+                    <div className="text-sm opacity-75 mt-1">pro Credit</div>
                   </div>
                 </div>
+                <Button asChild className="w-full mt-6 bg-white text-purple-700 hover:bg-purple-50">
+                  <Link href="https://app.leadboom.de/sign-up">Credits kaufen</Link>
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
 
-                <div className="bg-gradient-to-r from-purple-50 to-purple-100 rounded-lg p-6 text-center">
-                  <p className="text-lg font-semibold text-purple-800 mb-2">
-                    Garantie-Bedingungen
-                  </p>
-                  <p className="text-gray-700">
-                    Falls Sie in den ersten 90 Tagen nicht mindestens das 3-fache Ihrer monatlichen Investition 
-                    als zusätzlichen Umsatz generieren, erstatten wir Ihnen die Differenz zurück.
-                  </p>
+          {/* Pricing Tables */}
+          <div className="space-y-8">
+            {/* FLEX Pricing Table */}
+            <Card className="border-none shadow-xl">
+              <CardHeader>
+                <CardTitle className="flex items-center">
+                  <Zap className="h-5 w-5 mr-2 text-purple-600" />
+                  Credits FLEX – Sofortkauf
+                </CardTitle>
+                <CardDescription>Sofortige Freischaltung aller Credits. Top-ups jederzeit möglich.</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="overflow-x-auto">
+                  <table className="w-full">
+                    <thead>
+                      <tr className="border-b-2 border-purple-100">
+                        <th className="text-left py-3 px-4">Credits</th>
+                        <th className="text-right py-3 px-4">€ pro Credit</th>
+                        <th className="text-right py-3 px-4">Gesamtpreis</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {[
+                        { range: '1–999', price: 0.30 },
+                        { range: '1.000–2.999', price: 0.25 },
+                        { range: '3.000–5.999', price: 0.23 },
+                        { range: '6.000–8.999', price: 0.22 },
+                        { range: '9.000–12.999', price: 0.20 },
+                        { range: '13.000–15.999', price: 0.18 },
+                        { range: '16.000–18.999', price: 0.16 },
+                        { range: '≥ 19.000', price: 0.15 },
+                      ].map((tier, index) => (
+                        <tr key={index} className={index % 2 === 0 ? 'bg-gray-50' : ''}>
+                          <td className="py-3 px-4 font-medium">{tier.range}</td>
+                          <td className="text-right py-3 px-4">{tier.price.toFixed(2)}€</td>
+                          <td className="text-right py-3 px-4 text-gray-600">
+                            ab {(tier.price * parseInt(tier.range.replace(/[^\d]/g, '')) || 0).toFixed(2)}€
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
                 </div>
+              </CardContent>
+            </Card>
 
-                <div className="text-center mt-8">
-                  <Button asChild size="lg" className="purple-glow">
-                    <Link href="/kontakt?guarantee=true" className="flex items-center">
-                      ROI Garantie einlösen
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
+            {/* GROW Abo Pricing Table */}
+            <Card className="border-none shadow-xl">
+              <CardHeader>
+                <CardTitle className="flex items-center">
+                  <Clock className="h-5 w-5 mr-2 text-purple-600" />
+                  Credits GROW – Abo (monatliche Zahlung)
+                </CardTitle>
+                <CardDescription>Monatliche Credits-Zuteilung mit Laufzeitrabatt. 3, 6 oder 12 Monate. Nur mit Launch, Scale oder Business Plan verfügbar.</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="overflow-x-auto">
+                  <table className="w-full">
+                    <thead>
+                      <tr className="border-b-2 border-purple-100">
+                        <th className="text-left py-3 px-4">Monatscredits</th>
+                        <th className="text-right py-3 px-4">3 Mon (-5%)</th>
+                        <th className="text-right py-3 px-4">6 Mon (-8%)</th>
+                        <th className="text-right py-3 px-4">12 Mon (-10%)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {[
+                        { credits: 1000, base: 0.25 },
+                        { credits: 3000, base: 0.23 },
+                        { credits: 6000, base: 0.22 },
+                        { credits: 9000, base: 0.20 },
+                      ].map((tier, index) => (
+                        <tr key={index} className={index % 2 === 0 ? 'bg-gray-50' : ''}>
+                          <td className="py-3 px-4 font-medium">{tier.credits.toLocaleString()}</td>
+                          <td className="text-right py-3 px-4">
+                            {(tier.credits * tier.base * 0.95).toFixed(2)}€/Mon
+                          </td>
+                          <td className="text-right py-3 px-4">
+                            {(tier.credits * tier.base * 0.92).toFixed(2)}€/Mon
+                          </td>
+                          <td className="text-right py-3 px-4 text-purple-600 font-semibold">
+                            {(tier.credits * tier.base * 0.90).toFixed(2)}€/Mon
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
                 </div>
               </CardContent>
             </Card>
@@ -272,374 +412,94 @@ export default function Preise() {
         </div>
       </section>
 
-      {/* Feature Comparison Section */}
-      <section id="vergleich" className="py-20 bg-gray-50 relative overflow-hidden">
-        <div className="absolute top-1/4 right-0 w-64 h-64 bg-purple-200/30 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-purple-200/30 rounded-full blur-3xl"></div>
-
-        <div className="container mx-auto px-4 md:px-6 relative z-10">
-          <div className="text-center mb-16 animate-fade-in">
-            <div className="inline-block bg-purple-100 px-4 py-2 rounded-full text-purple-800 text-sm font-medium mb-4">
-              Agentur-Vergleich
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Detaillierter Funktionsvergleich</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Verstehen Sie genau, welche Automatisierungsfeatures in jedem Agentur-Paket enthalten sind.
-            </p>
-          </div>
-
-          <div className="overflow-x-auto">
-            <div className="min-w-[800px]">
-              <div className="grid grid-cols-4 gap-4 mb-4">
-                <div className="font-bold text-lg">Feature</div>
-                <div className="text-center font-bold text-lg">Starter Agency</div>
-                <div className="text-center font-bold text-lg">Growth Agency</div>
-                <div className="text-center font-bold text-lg">Enterprise Agency</div>
-              </div>
-
-              {[
-                {
-                  category: "Team & Benutzer",
-                  features: [
-                    {
-                      name: "Team-Mitglieder",
-                      starter: "1-5 Benutzer",
-                      professional: "6-15 Benutzer",
-                      enterprise: "16+ Benutzer",
-                    },
-                    { name: "Rollen & Berechtigungen", starter: "Basic", professional: "Erweitert", enterprise: "Vollständig" },
-                    {
-                      name: "Multi-Standort Management",
-                      starter: "Nein",
-                      professional: "Nein",
-                      enterprise: "Ja",
-                    },
-                    {
-                      name: "Team Performance Analytics",
-                      starter: "Basic",
-                      professional: "Erweitert",
-                      enterprise: "Custom Dashboards",
-                    },
-                  ],
-                },
-                {
-                  category: "Lead Acquisition Engine",
-                  features: [
-                    {
-                      name: "Qualifizierte Leads/Monat",
-                      starter: "1.000",
-                      professional: "5.000",
-                      enterprise: "Unbegrenzt",
-                    },
-                    { name: "KI-Voice Call Automation", starter: "Basic", professional: "Erweitert + KI", enterprise: "Premium + Custom" },
-                    { name: "Multi-Channel Outreach", starter: "E-Mail + WhatsApp", professional: "Alle Kanäle", enterprise: "Custom Channels" },
-                    {
-                      name: "Lead-Scoring & Qualifizierung",
-                      starter: "Regelbasiert",
-                      professional: "KI-gestützt",
-                      enterprise: "Custom AI Models",
-                    },
-                  ],
-                },
-                {
-                  category: "Workflow Automation",
-                  features: [
-                    { name: "Workflow Templates", starter: "10 Standard", professional: "50 + Custom", enterprise: "Unbegrenzt + White-Label" },
-                    { name: "WhatsApp Business Hub", starter: "Basic", professional: "Vollständig", enterprise: "Premium + Templates" },
-                    { name: "Sales Pipeline Automation", starter: "Standard", professional: "Erweitert + KI", enterprise: "Vollständig + Custom" },
-                    {
-                      name: "Contract & Billing Suite",
-                      starter: "Basic",
-                      professional: "Vollständig",
-                      enterprise: "Premium + Custom",
-                    },
-                  ],
-                },
-                {
-                  category: "Client Management",
-                  features: [
-                    {
-                      name: "Client Collaboration Hub",
-                      starter: "Basic",
-                      professional: "Erweitert",
-                      enterprise: "Premium + Whiteboards",
-                    },
-                    {
-                      name: "Project Management",
-                      starter: "Task Workflows",
-                      professional: "Vollständig",
-                      enterprise: "Custom + Automation",
-                    },
-                    {
-                      name: "Document Management",
-                      starter: "Basic",
-                      professional: "Vollständig",
-                      enterprise: "Enterprise + Security",
-                    },
-                    {
-                      name: "Client Portal",
-                      starter: "Standard",
-                      professional: "Erweitert",
-                      enterprise: "White-Label",
-                    },
-                  ],
-                },
-                {
-                  category: "Analytics & Reporting",
-                  features: [
-                    {
-                      name: "Dashboard Analytics",
-                      starter: "Standard Reports",
-                      professional: "Erweiterte KPIs",
-                      enterprise: "Custom Dashboards",
-                    },
-                    {
-                      name: "ROI Tracking",
-                      starter: "Basic",
-                      professional: "Erweitert",
-                      enterprise: "Real-time + Predictions",
-                    },
-                    { name: "Performance Monitoring", starter: "Team-Level", professional: "Projekt-Level", enterprise: "Granular + AI Insights" },
-                    { name: "API & Integrationen", starter: "Nein", professional: "Standard", enterprise: "Vollständig + Custom" },
-                  ],
-                },
-                {
-                  category: "Support & Service",
-                  features: [
-                    {
-                      name: "Support-Level",
-                      starter: "E-Mail Support",
-                      professional: "Priorität + Training",
-                      enterprise: "Dedicated Manager",
-                    },
-                    {
-                      name: "Reaktionszeit",
-                      starter: "24-48h",
-                      professional: "4-8h",
-                      enterprise: "4h SLA",
-                    },
-                    { name: "Onboarding", starter: "Self-Service", professional: "Geführt + Training", enterprise: "Custom + Strategisch" },
-                    { name: "Strategische Beratung", starter: "Nein", professional: "Basis", enterprise: "Vollständig" },
-                  ],
-                },
-              ].map((section, sectionIndex) => (
-                <div key={sectionIndex} className="mb-8">
-                  <div className="grid grid-cols-4 gap-4 bg-purple-100 p-2 rounded-lg mb-2">
-                    <div className="font-bold">{section.category}</div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                  </div>
-                  {section.features.map((feature, featureIndex) => (
-                    <div
-                      key={featureIndex}
-                      className={`grid grid-cols-4 gap-4 p-2 ${featureIndex % 2 === 0 ? "bg-gray-100" : "bg-white"} rounded-lg`}
-                    >
-                      <div>{feature.name}</div>
-                      <div className="text-center">
-                        {feature.starter === "Nein" || feature.starter === "Nicht enthalten" ? (
-                          <XCircle className="h-5 w-5 text-gray-400 mx-auto" />
-                        ) : (
-                          feature.starter
-                        )}
-                      </div>
-                      <div className="text-center">
-                        {feature.professional === "Nein" || feature.professional === "Nicht enthalten" ? (
-                          <XCircle className="h-5 w-5 text-gray-400 mx-auto" />
-                        ) : (
-                          feature.professional
-                        )}
-                      </div>
-                      <div className="text-center">
-                        {feature.enterprise === "Nein" || feature.enterprise === "Nicht enthalten" ? (
-                          <XCircle className="h-5 w-5 text-gray-400 mx-auto" />
-                        ) : (
-                          feature.enterprise
-                        )}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Special Offers Section */}
-      <section className="py-20 bg-white relative overflow-hidden">
+      {/* Add-On Module Section */}
+      <section id="addons" className="py-20 bg-white relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-gray-50 to-transparent"></div>
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-16 animate-fade-in">
             <div className="inline-block bg-purple-100 px-4 py-2 rounded-full text-purple-800 text-sm font-medium mb-4">
-              Agentur-Vorteile
+              <Package className="h-4 w-4 inline mr-2" />
+              Add-On Module
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Zusätzliche Vorteile für Agenturen</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Erweitere dein Abo</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Profitieren Sie von unseren exklusiven Vorteilen und Garantien für Agenturen.
+              Extra-Module für spezielle Anforderungen. Jederzeit hinzufügbar.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <Card className="border-none shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden">
-              <div className="h-8 bg-gradient-to-r from-purple-600 to-purple-800"></div>
-              <CardContent className="p-8">
-                <div className="flex items-center mb-4">
-                  <div className="bg-purple-100 w-12 h-12 rounded-full flex items-center justify-center mr-4">
-                    <Clock className="h-6 w-6 text-purple-600" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold">Jahresabonnement</h3>
-                    <p className="text-purple-600">Sparen Sie 16%</p>
-                  </div>
-                </div>
-                <p className="text-gray-600 mb-6">
-                  Bei Abschluss eines Jahresabonnements erhalten Sie 2 Monate gratis. Das entspricht einer Ersparnis von
-                  16% gegenüber der monatlichen Zahlung.
-                </p>
-                <Button asChild className="w-full">
-                  <Link href="/kontakt?offer=yearly">Angebot sichern</Link>
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="border-none shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden">
-              <div className="h-8 bg-gradient-to-r from-purple-600 to-purple-800"></div>
-              <CardContent className="p-8">
-                <div className="flex items-center mb-4">
-                  <div className="bg-purple-100 w-12 h-12 rounded-full flex items-center justify-center mr-4">
-                    <Building2 className="h-6 w-6 text-purple-600" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold">Agentur-Startup Bonus</h3>
-                    <p className="text-purple-600">25% Rabatt für neue Agenturen</p>
-                  </div>
-                </div>
-                <p className="text-gray-600 mb-6">
-                  Agenturen unter 2 Jahren erhalten 25% Rabatt auf alle Pläne im ersten Jahr. 
-                  Starten Sie Ihre Automatisierungs-Reise mit einem besonderen Vorteil.
-                </p>
-                <Button asChild className="w-full">
-                  <Link href="/kontakt?offer=agency-startup">Agentur-Bonus sichern</Link>
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
-
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              <CardContent className="p-6">
-                <div className="flex items-center mb-4">
-                  <div className="bg-purple-100 w-10 h-10 rounded-full flex items-center justify-center mr-3">
-                    <Shield className="h-5 w-5 text-purple-600" />
-                  </div>
-                  <h3 className="text-lg font-bold">Geld-zurück-Garantie</h3>
-                </div>
-                <p className="text-gray-600">
-                  Testen Sie unsere Dienste risikofrei mit unserer 14-tägigen Geld-zurück-Garantie.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              <CardContent className="p-6">
-                <div className="flex items-center mb-4">
-                  <div className="bg-purple-100 w-10 h-10 rounded-full flex items-center justify-center mr-3">
-                    <Zap className="h-5 w-5 text-purple-600" />
-                  </div>
-                  <h3 className="text-lg font-bold">Kostenlose Migration</h3>
-                </div>
-                <p className="text-gray-600">
-                  Wir unterstützen Sie kostenlos bei der Migration von Ihrem aktuellen Anbieter zu Leadboom.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              <CardContent className="p-6">
-                <div className="flex items-center mb-4">
-                  <div className="bg-purple-100 w-10 h-10 rounded-full flex items-center justify-center mr-3">
-                    <Award className="h-5 w-5 text-purple-600" />
-                  </div>
-                  <h3 className="text-lg font-bold">Empfehlungsprogramm</h3>
-                </div>
-                <p className="text-gray-600">
-                  Empfehlen Sie uns weiter und erhalten Sie einen Monat kostenlos für jede erfolgreiche Empfehlung.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="py-20 bg-gray-50 relative overflow-hidden">
-        <div className="absolute top-1/4 right-0 w-64 h-64 bg-purple-200/30 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-purple-200/30 rounded-full blur-3xl"></div>
-
-        <div className="container mx-auto px-4 md:px-6 relative z-10">
-          <div className="text-center mb-16 animate-fade-in">
-            <div className="inline-block bg-purple-100 px-4 py-2 rounded-full text-purple-800 text-sm font-medium mb-4">
-              Erfolgsgeschichten
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Agenturen, die bereits profitieren</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Erfahren Sie, wie andere Agenturen mit Leadboom ihr Business automatisiert und skaliert haben.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {[
               {
-                quote:
-                  "Das Growth Agency Paket hat unsere komplette Agentur transformiert. 85% weniger manuelle Arbeit, 40% mehr Umsatz und unsere Kunden sind glücklicher als je zuvor. Die Automatisierung ist ein Gamechanger!",
-                author: "Sarah Müller",
-                company: "Digital Growth Agency (12 Mitarbeiter)",
-                image: "SM",
-                plan: "Growth Agency",
+                title: "E-Mail Marketing",
+                price: "59,99€",
+                icon: Mail,
+                features: [
+                  "Unbegrenzte E-Mail-Kampagnen",
+                  "E-Mail-Vorlagen & Editor",
+                  "A/B Testing",
+                  "Performance-Tracking",
+                ],
               },
               {
-                quote:
-                  "Wir haben von mehreren Tools auf Leadboom gewechselt und konnten unsere operativen Kosten um 60% reduzieren. Der dedicated Success Manager hilft uns, ständig neue Optimierungen zu finden. ROI nach 2 Monaten erreicht.",
-                author: "Thomas Schmidt",
-                company: "Schmidt Digital Solutions (25 Mitarbeiter)",
-                image: "TS",
-                plan: "Enterprise Agency",
+                title: "AI Voice Agent",
+                price: "79,99€",
+                icon: Phone,
+                features: [
+                  "KI-gestützte Anrufautomatisierung",
+                  "Natural Language Processing",
+                  "Call Recording & Transcription",
+                  "Sentiment Analysis",
+                ],
               },
               {
-                quote:
-                  "Als kleine 4-Personen-Agentur waren wir überwältigt von der Komplexität des Geschäfts. Leadboom hat uns das Betriebssystem gegeben, das wir brauchten. Jetzt skalieren wir endlich profitabel!",
-                author: "Julia Wagner",
-                company: "Wagner Creative Studio (4 Mitarbeiter)",
-                image: "JW",
-                plan: "Starter Agency",
+                title: "Marketing Hub",
+                price: "49,99€",
+                icon: Sparkles,
+                features: [
+                  "Social Media Management",
+                  "Content-Planer",
+                  "Marketing-Analytics",
+                  "Lead-Nurturing Kampagnen",
+                ],
               },
-            ].map((testimonial, index) => (
+              {
+                title: "Workflow-Modul",
+                price: "19,99€",
+                icon: Workflow,
+                features: [
+                  "Custom Workflow Builder",
+                  "Erweiterte Automatisierungen",
+                  "Multi-Step Workflows",
+                  "Integration mit externen Tools",
+                ],
+              },
+            ].map((addon, index) => (
               <Card
                 key={index}
-                className="border-none shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden"
+                className="border-none shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
               >
-                <CardContent className="p-8 relative">
-                  <div className="absolute top-0 right-0 w-20 h-20 bg-purple-100/50 rounded-bl-full -z-10"></div>
-                  <div className="inline-block bg-purple-100 px-3 py-1 rounded-full text-purple-800 text-xs font-medium mb-4">
-                    {testimonial.plan}-Paket
-                  </div>
-                  <p className="text-gray-600 mb-8 relative">
-                    <span className="absolute -top-2 -left-2 text-4xl text-purple-200">"</span>
-                    <span className="relative z-10">{testimonial.quote}</span>
-                    <span className="absolute -bottom-6 -right-2 text-4xl text-purple-200">"</span>
-                  </p>
-                  <div className="flex items-center mt-8">
-                    <div className="relative h-12 w-12 rounded-full overflow-hidden mr-3 border-2 border-purple-200">
-                      <div className="absolute inset-0 bg-purple-600 flex items-center justify-center text-white font-bold">
-                        {testimonial.image}
-                      </div>
+                <CardContent className="p-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="bg-purple-100 w-12 h-12 rounded-lg flex items-center justify-center">
+                      <addon.icon className="h-6 w-6 text-purple-600" />
                     </div>
-                    <div>
-                      <p className="font-semibold">{testimonial.author}</p>
-                      <p className="text-sm text-gray-500">{testimonial.company}</p>
+                    <div className="text-right">
+                      <div className="text-2xl font-bold text-purple-600">{addon.price}</div>
+                      <div className="text-xs text-gray-600">/Monat</div>
                     </div>
                   </div>
+                  <h3 className="text-xl font-bold mb-3">{addon.title}</h3>
+                  <ul className="space-y-2">
+                    {addon.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-start text-sm">
+                        <CheckCircle className="h-4 w-4 text-primary mr-2 mt-0.5 flex-shrink-0" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Button asChild className="w-full mt-4">
+                    <Link href={`/kontakt?addon=${addon.title.toLowerCase()}`}>Hinzufügen</Link>
+                  </Button>
                 </CardContent>
               </Card>
             ))}
@@ -648,55 +508,56 @@ export default function Preise() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-white relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-gray-50 to-transparent"></div>
-        <div className="container mx-auto px-4 md:px-6">
+      <section className="py-20 bg-gray-50 relative overflow-hidden">
+        <div className="absolute top-1/4 right-0 w-64 h-64 bg-purple-200/30 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-purple-200/30 rounded-full blur-3xl"></div>
+        <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="text-center mb-16 animate-fade-in">
             <div className="inline-block bg-purple-100 px-4 py-2 rounded-full text-purple-800 text-sm font-medium mb-4">
               FAQ
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Häufig gestellte Fragen zu unseren Preisen</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Häufig gestellte Fragen</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Hier finden Sie Antworten auf die häufigsten Fragen zu unseren Preismodellen und Leistungen.
+              Hier findest du Antworten auf die häufigsten Fragen zu unseren Preisen.
             </p>
           </div>
 
           <div className="max-w-3xl mx-auto space-y-6">
             {[
               {
-                question: "Sind die Preise wirklich teamgrößen-basiert?",
+                question: "Wie funktioniert das Credits-System?",
                 answer:
-                  "Ja! Anders als andere Anbieter berechnen wir nicht nach Lead-Volumen, sondern nach Ihrer Teamgröße. Das bedeutet: Egal ob Sie 100 oder 10.000 Leads verarbeiten - der Preis bleibt gleich. So können Sie profitabel skalieren ohne lineare Kostensteigerung.",
+                  "Credits sind deine Währung für Lead-Generierung auf unserer Plattform. Du kannst Credits entweder flexibel als FLEX-Paket sofort kaufen, oder als GROW-Abo mit monatlicher Zuteilung und Laufzeitrabatt. Je mehr Credits du kaufst, desto günstiger wird der Stückpreis durch unsere Staffelpreise.",
               },
               {
-                question: "Was passiert, wenn mein Team wächst?",
+                question: "Was ist der Unterschied zwischen FLEX und GROW?",
                 answer:
-                  "Perfekt! Das ist genau unser Ziel. Sie können jederzeit zum nächsthöheren Paket upgraden, wenn Ihr Team die Grenze überschreitet. Bei 6 Mitarbeitern wechseln Sie von Starter zu Growth Agency, bei 16+ zu Enterprise Agency. Ein Downgrade ist zum Ende der Vertragslaufzeit möglich.",
+                  "FLEX ist ein Sofortkauf – du erhältst alle Credits sofort und kannst jederzeit nachkaufen. GROW ist ein Abo mit monatlicher Credits-Zuteilung über 3, 6 oder 12 Monate. GROW bietet Laufzeitrabatte (5-10%) und bei Upfront-Zahlung zusätzlich -8% auf den Jahrespreis. Nur mit Launch, Scale oder Business Plan verfügbar.",
               },
               {
-                question: "Wie funktioniert die ROI-Garantie?",
+                question: "Kann ich Credits und Abos kombinieren?",
                 answer:
-                  "Unsere ROI-Garantie ist einfach: Wenn Sie in den ersten 90 Tagen nicht mindestens das 3-fache Ihrer monatlichen Investition als zusätzlichen Umsatz generieren, erstatten wir die Differenz. Diese Garantie gilt für alle Pakete und zeigt unser Vertrauen in die Plattform.",
+                  "Ja, absolut! Du wählst zuerst dein Basis-Abo (Essentials, Growth oder Enterprise) und kaufst dann Credits nach Bedarf – entweder als FLEX oder GROW. Die Add-On Module kannst du ebenfalls jederzeit hinzufügen.",
+              },
+              {
+                question: "Was passiert mit ungenutzten Credits?",
+                answer:
+                  "FLEX-Credits verfallen nicht und bleiben solange auf deinem Konto, bis du sie nutzt. Bei GROW-Abos werden die Credits monatlich zugeteilt. Ungenutzte Credits aus dem jeweiligen Monat verfallen am Monatsende nicht, sondern bleiben bis zum Ende der Abo-Laufzeit erhalten.",
               },
               {
                 question: "Gibt es eine Mindestvertragslaufzeit?",
                 answer:
-                  "Bei monatlicher Zahlung beträgt die Mindestvertragslaufzeit einen Monat. Bei jährlicher Zahlung beträgt die Mindestvertragslaufzeit ein Jahr. Alle Verträge verlängern sich automatisch, können aber jederzeit vor der Verlängerung gekündigt werden.",
+                  "Bei Abos mit monatlicher Zahlung beträgt die Mindestlaufzeit einen Monat. Bei GROW-Abos verpflichtest du dich zur gewählten Laufzeit (3, 6 oder 12 Monate). FLEX-Credits kannst du jederzeit ohne Vertragsbindung kaufen.",
               },
               {
-                question: "Wie schnell kann ich mit der Automatisierung starten?",
+                question: "Wie kann ich upgraden oder downgraden?",
                 answer:
-                  "Sehr schnell! Das Starter Agency Paket kann sofort eingerichtet werden. Growth Agency Kunden erhalten ein geführtes Onboarding innerhalb von 5-7 Werktagen. Enterprise Kunden bekommen einen dedizierten Success Manager für ein vollständig maßgeschneidertes Setup binnen 2 Wochen.",
+                  "Du kannst dein Abo jederzeit zum nächsthöheren Plan upgraden. Der neue Preis gilt ab dem nächsten Abrechnungszyklus. Ein Downgrade ist zum Ende der aktuellen Vertragslaufzeit möglich. Add-On Module kannst du jederzeit hinzufügen oder kündigen.",
               },
               {
-                question: "Kann ich ein individuelles Angebot erhalten?",
+                question: "Was bekomme ich bei Enterprise?",
                 answer:
-                  "Ja, für spezielle Anforderungen erstellen wir gerne ein individuelles Angebot. Kontaktieren Sie uns einfach, und wir besprechen Ihre spezifischen Bedürfnisse, um eine maßgeschneiderte Lösung zu entwickeln.",
-              },
-              {
-                question: "Wie kann ich die Dienste testen?",
-                answer:
-                  "Wir bieten eine kostenlose Demo an, bei der wir Ihnen alle Funktionen im Detail vorstellen. Zudem gewähren wir eine 14-tägige Geld-zurück-Garantie, sodass Sie unsere Dienste risikofrei testen können.",
+                  "Enterprise ist unser individuelles Paket für große Organisationen. Es enthält alle Features aus Growth, unbegrenzte Credits, White-Label-Möglichkeiten, einen dedizierten Success Manager, SLA-Garantien und vieles mehr. Kontaktiere uns für ein maßgeschneidertes Angebot.",
               },
             ].map((faq, index) => (
               <Card
@@ -721,7 +582,7 @@ export default function Preise() {
           </div>
 
           <div className="text-center mt-12">
-            <p className="text-gray-600 mb-6">Haben Sie weitere Fragen? Wir sind gerne für Sie da.</p>
+            <p className="text-gray-600 mb-6">Hast du weitere Fragen? Wir sind gerne für dich da.</p>
             <Button asChild variant="outline" className="purple-glow">
               <Link href="/kontakt" className="flex items-center">
                 Kontakt aufnehmen
@@ -732,7 +593,7 @@ export default function Preise() {
         </div>
       </section>
 
-      {/* Enhanced CTA Section with better visuals */}
+      {/* CTA Section */}
       <section className="relative overflow-hidden py-24">
         {/* Background with animated gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-purple-900 via-purple-800 to-purple-950 animate-gradient"></div>
@@ -740,7 +601,6 @@ export default function Preise() {
         {/* Decorative elements */}
         <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-white/10 to-transparent"></div>
         <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-black/20 to-transparent"></div>
-        <div className="absolute inset-0 bg-[url('/placeholder.svg?height=100&width=100')] bg-repeat opacity-5"></div>
 
         {/* Animated blobs */}
         <div className="absolute top-1/4 right-1/4 w-64 h-64 rounded-full bg-purple-600/20 blur-3xl animate-blob animation-delay-2000"></div>
@@ -749,15 +609,15 @@ export default function Preise() {
         <div className="container relative z-10 mx-auto px-4 md:px-6 text-center">
           <div className="mx-auto max-w-3xl">
             <h2 className="mb-6 text-3xl md:text-5xl font-bold text-white animate-fade-in">
-              Bereit, Ihre Agentur zu{" "}
+              Bereit für{" "}
               <span className="relative inline-block">
-                <span className="relative z-10">automatisieren</span>
+                <span className="relative z-10">Wachstum</span>
                 <span className="absolute bottom-0 left-0 w-full h-3 bg-purple-400/30 -rotate-1"></span>
               </span>{" "}
               ?
             </h2>
             <p className="mb-10 text-xl text-purple-100 animate-fade-in animate-delay-200 max-w-2xl mx-auto">
-              Wählen Sie das Agentur-Paket, das zu Ihrer Teamgröße passt, und starten Sie noch heute Ihre Automatisierungs-Reise.
+              Wähle dein Abo, kaufe Credits nach Bedarf und starte noch heute.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in animate-delay-400">
@@ -767,9 +627,9 @@ export default function Preise() {
                 variant="outline"
                 className="group bg-white text-purple-700 border-2 border-white hover:bg-transparent hover:text-white cta-button-shine"
               >
-                <Link href="/kontakt">
+                <Link href="https://app.leadboom.de/sign-up">
                   <span className="flex items-center">
-                    Demo anfordern
+                    Get Leadboom
                     <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
                   </span>
                 </Link>
@@ -781,7 +641,7 @@ export default function Preise() {
                 variant="gradient"
                 className="group border-2 border-purple-400/30 hover:border-purple-400/50 cta-button btn-pulse"
               >
-                <Link href="#preismodelle">
+                <Link href="#abos">
                   <span className="flex items-center">
                     Preise ansehen
                     <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
@@ -810,4 +670,3 @@ export default function Preise() {
     </div>
   )
 }
-

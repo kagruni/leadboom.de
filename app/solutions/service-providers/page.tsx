@@ -141,20 +141,20 @@ export default function ServiceProvidersPage() {
             Service Providers
           </div>
           <h1 className="text-5xl font-bold text-gray-900 mb-6">
-            Perfektionieren Sie Ihre{" "}
+            Perfektioniere Deine{" "}
             <span className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">
               Projektabwicklung
             </span>
           </h1>
           <p className="text-xl text-gray-600 mb-8">
-            Automatisieren Sie Projektmanagement, optimieren Sie Client-Kommunikation 
-            und liefern Sie konsistent exzellente Ergebnisse – pünktlich und im Budget.
+            Automatisiere Projektmanagement, optimiere Client-Kommunikation
+            und liefere konsistent exzellente Ergebnisse – pünktlich und im Budget.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button asChild size="lg" className="bg-purple-600 hover:bg-purple-700">
               <Link href="/demo">
-                Kostenlose Demo anfordern
+                Kostenlose Get Started
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
@@ -189,8 +189,8 @@ export default function ServiceProvidersPage() {
               Spezialisiert für Service Providers
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Unsere projektorientierten Features sind darauf ausgelegt, 
-              jeden Aspekt Ihrer Servicelieferung zu optimieren.
+              Unsere projektorientierten Features sind darauf ausgelegt,
+              jeden Aspekt Deiner Servicelieferung zu optimieren.
             </p>
           </div>
 
@@ -314,7 +314,7 @@ export default function ServiceProvidersPage() {
               Erfolgsgeschichten von Service Providers
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Erfahren Sie, wie andere Service Providers ihre Effizienz 
+              Erfahre, wie andere Service Providers ihre Effizienz
               und Client Satisfaction mit Leadboom gesteigert haben.
             </p>
           </div>
@@ -368,12 +368,12 @@ export default function ServiceProvidersPage() {
               {
                 week: "Woche 1",
                 title: "Projekt-Analyse & Setup",
-                description: "Analyse Ihrer aktuellen Projektworkflows und Konfiguration der Automation-Templates."
+                description: "Analyse Deiner aktuellen Projektworkflows und Konfiguration der Automation-Templates."
               },
               {
-                week: "Woche 2", 
+                week: "Woche 2",
                 title: "Integration & Training",
-                description: "Integration Ihrer Tools und umfassendes Team-Training für alle Workflows."
+                description: "Integration Deiner Tools und umfassendes Team-Training für alle Workflows."
               },
               {
                 week: "Woche 3",
@@ -402,12 +402,12 @@ export default function ServiceProvidersPage() {
             Bereit für perfekte Projektabwicklung?
           </h2>
           <p className="text-xl text-purple-100 mb-8">
-            Schließen Sie sich 100+ Service Providers an, die bereits mit Leadboom liefern.
+            Schließ Dich 100+ Service Providers an, die bereits mit Leadboom liefern.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" variant="secondary">
               <Link href="/demo">
-                Kostenlose Demo anfordern
+                Kostenlose Get Started
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>

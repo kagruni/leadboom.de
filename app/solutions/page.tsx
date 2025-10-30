@@ -8,7 +8,7 @@ import { generateMetadata as generateSEOMetadata } from "@/lib/seo-config"
 
 export const metadata: Metadata = generateSEOMetadata({
   title: "Industry Solutions - Specialized Agency Management Platform",
-  description: "Spezialisierte agency management platform Lösungen für Marketing Agencies, Sales Organizations und Service Providers. Maßgeschneiderte sales automation software und business process automation für Ihre Branche.",
+  description: "Spezialisierte agency management platform Lösungen für Marketing Agencies, Sales Organizations und Service Providers. Maßgeschneiderte sales automation software und business process automation für deine Branche.",
   keywords: [
     "Industry specific agency management",
     "Marketing agency automation",
@@ -39,7 +39,7 @@ const solutions = [
   {
     icon: <Users className="h-12 w-12" />,
     title: "Sales Organizations", 
-    description: "Sales-focused agencies, lead generation companies",
+    description: "Sales-focused agencies, lead scraping companies",
     href: "/solutions/sales-organizations",
     features: [
       "Sales Pipeline Optimization",
@@ -84,12 +84,12 @@ export default function SolutionsPage() {
           <h1 className="text-5xl font-bold text-gray-900 mb-6">
             Maßgeschneiderte Lösungen für{" "}
             <span className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">
-              Ihren Erfolg
+              deinen Erfolg
             </span>
           </h1>
           <p className="text-xl text-gray-600 mb-8">
-            Jede Branche hat ihre eigenen Herausforderungen. Unsere spezialisierten Lösungen 
-            sind darauf ausgelegt, genau die Probleme zu lösen, die in Ihrer Branche auftreten.
+            Jede Branche hat ihre eigenen Herausforderungen. Unsere spezialisierten Lösungen
+            sind darauf ausgelegt, genau die Probleme zu lösen, die in deiner Branche auftreten.
           </p>
 
           {/* Stats */}
@@ -109,10 +109,10 @@ export default function SolutionsPage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Wählen Sie Ihre Branche
+              Wähle deine Branche
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Entdecken Sie, wie Leadboom speziell für Ihre Branche optimiert wurde.
+              Entdecke, wie Leadboom speziell für deine Branche optimiert wurde.
             </p>
           </div>
 
@@ -178,7 +178,7 @@ export default function SolutionsPage() {
               </div>
               <h3 className="text-xl font-semibold mb-3">Branchenspezifische Workflows</h3>
               <p className="text-gray-300">
-                Vorkonfigurierte Prozesse, die auf bewährte Praktiken Ihrer Branche abgestimmt sind.
+                Vorkonfigurierte Prozesse, die auf bewährte Praktiken deiner Branche abgestimmt sind.
               </p>
             </div>
             
@@ -188,7 +188,7 @@ export default function SolutionsPage() {
               </div>
               <h3 className="text-xl font-semibold mb-3">Relevante Integrationen</h3>
               <p className="text-gray-300">
-                Nahtlose Verbindungen zu den Tools, die in Ihrer Branche am häufigsten verwendet werden.
+                Nahtlose Verbindungen zu den Tools, die in deiner Branche am häufigsten verwendet werden.
               </p>
             </div>
             
@@ -198,7 +198,7 @@ export default function SolutionsPage() {
               </div>
               <h3 className="text-xl font-semibold mb-3">Branchenspezifische KPIs</h3>
               <p className="text-gray-300">
-                Dashboards und Berichte, die die für Ihre Branche wichtigsten Kennzahlen hervorheben.
+                Dashboards und Berichte, die die für deine Branche wichtigsten Kennzahlen hervorheben.
               </p>
             </div>
           </div>
@@ -209,15 +209,15 @@ export default function SolutionsPage() {
       <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-gray-900 mb-6">
-            Bereit für Ihre branchenspezifische Lösung?
+            Bereit für deine branchenspezifische Lösung?
           </h2>
           <p className="text-xl text-gray-600 mb-8">
-            Lassen Sie uns gemeinsam die perfekte Lösung für Ihr Unternehmen entwickeln.
+            Lass uns gemeinsam die perfekte Lösung für dein Unternehmen entwickeln.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="bg-purple-600 hover:bg-purple-700">
               <Link href="/demo">
-                Kostenlose Demo anfordern
+                Kostenlose Get Started
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>

@@ -21,13 +21,13 @@ export default function Career() {
             <div className="space-y-6 animate-fade-in">
               <div className="inline-flex items-center px-4 py-2 bg-purple-100 rounded-full text-purple-800 text-sm font-medium mb-2">
                 <Sparkles className="h-4 w-4 mr-2" />
-                <span>Wachsen Sie mit uns</span>
+                <span>Wachse mit uns</span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter">
                 Karriere bei <span className="text-gradient-purple animate-gradient">Leadboom</span>
               </h1>
               <p className="text-xl text-gray-600 max-w-md">
-                Werden Sie Teil eines innovativen Teams und gestalten Sie mit uns die Zukunft.
+                Werde Teil eines innovativen Teams und gestalte mit uns die Zukunft.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button asChild size="lg" className="purple-glow">
@@ -72,7 +72,7 @@ export default function Career() {
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Warum Leadboom?</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Bei Leadboom bieten wir mehr als nur einen Job. Entdecken Sie die Vorteile, die unsere Mitarbeiter
+              Bei Leadboom bieten wir mehr als nur einen Job. Entdecke die Vorteile, die unsere Mitarbeiter
               genießen.
             </p>
           </div>
@@ -89,25 +89,25 @@ export default function Career() {
                 icon: <Clock className="h-6 w-6 text-purple-600" />,
                 title: "Flexible Arbeitszeiten",
                 description:
-                  "Wir bieten flexible Arbeitszeiten, damit Sie Ihre beruflichen und privaten Verpflichtungen optimal miteinander vereinbaren können.",
+                  "Wir bieten flexible Arbeitszeiten, damit Du Deine beruflichen und privaten Verpflichtungen optimal miteinander vereinbaren kannst.",
               },
               {
                 icon: <Users className="h-6 w-6 text-purple-600" />,
                 title: "Teamarbeit",
                 description:
-                  "Bei uns arbeiten Sie in einem dynamischen Team mit flachen Hierarchien und einer offenen Kommunikationskultur.",
+                  "Bei uns arbeitest Du in einem dynamischen Team mit flachen Hierarchien und einer offenen Kommunikationskultur.",
               },
               {
                 icon: <Zap className="h-6 w-6 text-purple-600" />,
                 title: "Innovative Projekte",
                 description:
-                  "Arbeiten Sie an spannenden und innovativen Projekten, die einen echten Unterschied machen und die Zukunft gestalten.",
+                  "Arbeite an spannenden und innovativen Projekten, die einen echten Unterschied machen und die Zukunft gestalten.",
               },
               {
                 icon: <Award className="h-6 w-6 text-purple-600" />,
                 title: "Weiterbildung",
                 description:
-                  "Wir fördern Ihre persönliche und berufliche Entwicklung durch regelmäßige Weiterbildungsmöglichkeiten und Schulungen.",
+                  "Wir fördern Deine persönliche und berufliche Entwicklung durch regelmäßige Weiterbildungsmöglichkeiten und Schulungen.",
               },
               {
                 icon: <Heart className="h-6 w-6 text-purple-600" />,
@@ -148,7 +148,7 @@ export default function Career() {
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Offene Stellen</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Entdecken Sie unsere aktuellen Stellenangebote und finden Sie die Position, die zu Ihnen passt.
+              Entdecke unsere aktuellen Stellenangebote und finde die Position, die zu Dir passt.
             </p>
           </div>
 
@@ -160,7 +160,7 @@ export default function Career() {
                 location: "Berlin",
                 type: "Vollzeit",
                 description:
-                  "Als Senior Berater sind Sie verantwortlich für die strategische Beratung unserer Kunden und die Leitung von Projekten.",
+                  "Als Senior Berater bist Du verantwortlich für die strategische Beratung unserer Kunden und die Leitung von Projekten.",
               },
               {
                 title: "Softwareentwickler (m/w/d)",
@@ -168,7 +168,7 @@ export default function Career() {
                 location: "München",
                 type: "Vollzeit",
                 description:
-                  "Als Softwareentwickler arbeiten Sie an der Entwicklung innovativer Lösungen für unsere Kunden.",
+                  "Als Softwareentwickler arbeitest Du an der Entwicklung innovativer Lösungen für unsere Kunden.",
               },
               {
                 title: "UX/UI Designer (m/w/d)",
@@ -176,7 +176,7 @@ export default function Career() {
                 location: "Hamburg",
                 type: "Vollzeit",
                 description:
-                  "Als UX/UI Designer gestalten Sie benutzerfreundliche und ästhetisch ansprechende Interfaces für unsere digitalen Produkte.",
+                  "Als UX/UI Designer gestaltest Du benutzerfreundliche und ästhetisch ansprechende Interfaces für unsere digitalen Produkte.",
               },
               {
                 title: "Marketing Manager (m/w/d)",
@@ -184,7 +184,7 @@ export default function Career() {
                 location: "Berlin",
                 type: "Vollzeit",
                 description:
-                  "Als Marketing Manager sind Sie verantwortlich für die Planung und Umsetzung unserer Marketingstrategien.",
+                  "Als Marketing Manager bist Du verantwortlich für die Planung und Umsetzung unserer Marketingstrategien.",
               },
               {
                 title: "Werkstudent (m/w/d)",
@@ -192,7 +192,7 @@ export default function Career() {
                 location: "Berlin, München, Hamburg",
                 type: "Teilzeit",
                 description:
-                  "Als Werkstudent unterstützen Sie unser Team in verschiedenen Projekten und sammeln wertvolle praktische Erfahrungen.",
+                  "Als Werkstudent unterstützt Du unser Team in verschiedenen Projekten und sammelst wertvolle praktische Erfahrungen.",
               },
             ].map((job, index) => (
               <Card
@@ -263,25 +263,25 @@ export default function Career() {
                   step: "1",
                   title: "Bewerbung einreichen",
                   description:
-                    "Reichen Sie Ihre Bewerbung online ein. Bitte fügen Sie Ihren Lebenslauf und ein Anschreiben bei.",
+                    "Reiche Deine Bewerbung online ein. Bitte füge Deinen Lebenslauf und ein Anschreiben bei.",
                 },
                 {
                   step: "2",
                   title: "Erstes Gespräch",
                   description:
-                    "Bei Interesse laden wir Sie zu einem ersten Gespräch ein, das telefonisch oder per Videocall stattfinden kann.",
+                    "Bei Interesse laden wir Dich zu einem ersten Gespräch ein, das telefonisch oder per Videocall stattfinden kann.",
                 },
                 {
                   step: "3",
                   title: "Persönliches Kennenlernen",
                   description:
-                    "Im nächsten Schritt lernen Sie unser Team persönlich kennen und erhalten einen Einblick in unsere Arbeitsweise.",
+                    "Im nächsten Schritt lernst Du unser Team persönlich kennen und erhältst einen Einblick in unsere Arbeitsweise.",
                 },
                 {
                   step: "4",
                   title: "Angebot & Onboarding",
                   description:
-                    "Bei gegenseitigem Interesse unterbreiten wir Ihnen ein Angebot und starten den Onboarding-Prozess.",
+                    "Bei gegenseitigem Interesse unterbreiten wir Dir ein Angebot und starten den Onboarding-Prozess.",
                 },
               ].map((step, index) => (
                 <div
@@ -319,7 +319,7 @@ export default function Career() {
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Was unsere Mitarbeiter sagen</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Erfahren Sie aus erster Hand, wie es ist, bei Leadboom zu arbeiten.
+              Erfahre aus erster Hand, wie es ist, bei Leadboom zu arbeiten.
             </p>
           </div>
 
@@ -406,7 +406,7 @@ export default function Career() {
               zu werden?
             </h2>
             <p className="mb-10 text-xl text-purple-100 animate-fade-in animate-delay-200 max-w-2xl mx-auto">
-              Bewerben Sie sich jetzt und starten Sie Ihre Karriere bei Leadboom.
+              Bewirb Dich jetzt und starte Deine Karriere bei Leadboom.
             </p>
 
             <Button

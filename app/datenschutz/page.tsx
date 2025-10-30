@@ -53,8 +53,8 @@ export default function DatenschutzPage() {
                 </p>
                 <div className="bg-white rounded-lg p-4 space-y-2 text-gray-700">
                   <p className="font-semibold">Leadboom GmbH</p>
-                  <p>Musterstraße 123</p>
-                  <p>10115 Berlin</p>
+                  <p>Dortmunder Straße 2</p>
+                  <p>04357 Leipzig</p>
                   <p>Deutschland</p>
                   <p className="pt-2">
                     <span className="font-semibold">E-Mail:</span>{" "}
@@ -64,8 +64,8 @@ export default function DatenschutzPage() {
                   </p>
                   <p>
                     <span className="font-semibold">Telefon:</span>{" "}
-                    <a href="tel:+4930123456" className="text-purple-600 hover:text-purple-700">
-                      +49 30 1234567
+                    <a href="tel:+491778710181" className="text-purple-600 hover:text-purple-700">
+                      +49 177 8710181
                     </a>
                   </p>
                 </div>

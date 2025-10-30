@@ -21,6 +21,7 @@ import {
   Building2,
   Workflow,
   Clock,
+  PenTool,
 } from "lucide-react"
 
 export default function PlatformOverview() {
@@ -48,7 +49,7 @@ export default function PlatformOverview() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button asChild size="lg" className="purple-glow">
                   <Link href="/kontakt" className="flex items-center">
-                    Platform Demo anfordern
+                    Platform Get Started
                     <ArrowRight className="ml-2 h-4 w-4 animate-bounce-x" />
                   </Link>
                 </Button>
@@ -97,15 +98,9 @@ export default function PlatformOverview() {
               },
               {
                 icon: <Target className="h-6 w-6 text-purple-600" />,
-                title: "Lead Acquisition",
-                description: "Automatisierte Lead-Generierung mit KI-gestützter Voice Call Automation und Multi-Channel Outreach.",
-                link: "#lead-acquisition",
-              },
-              {
-                icon: <MessageSquare className="h-6 w-6 text-purple-600" />,
-                title: "WhatsApp Business Hub",
-                description: "KI-gesteuerte Messenger-Automatisierung mit Template Campaigns und Conversation Analytics.",
-                link: "#whatsapp-hub",
+                title: "Lead Scraping",
+                description: "Self-Service Lead-Scraping mit professionellen Scraping-Tools für hochqualitative Datensätze.",
+                link: "#lead-scraping",
               },
               {
                 icon: <TrendingUp className="h-6 w-6 text-purple-600" />,
@@ -118,6 +113,12 @@ export default function PlatformOverview() {
                 title: "Digital Contract Suite",
                 description: "Papierlose Vertragsabwicklung mit Quote Generation, Digital Signatures und Payment Tracking.",
                 link: "#contract-suite",
+              },
+              {
+                icon: <PenTool className="h-6 w-6 text-purple-600" />,
+                title: "Leadsign",
+                description: "Digitale Vertragsunterschrift - Versende Angebote und hole rechtssichere Signaturen ein wie DocuSign.",
+                link: "#leadsign",
               },
               {
                 icon: <Cog className="h-6 w-6 text-purple-600" />,
@@ -192,9 +193,9 @@ export default function PlatformOverview() {
               <div className="inline-block bg-purple-100 px-3 py-1 rounded-full text-purple-600 text-sm font-medium">
                 Command Center
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold">Zentrale Steuerung Ihrer Agentur</h2>
+              <h2 className="text-3xl md:text-4xl font-bold">Zentrale Steuerung Deiner Agentur</h2>
               <p className="text-lg text-gray-600">
-                Behalten Sie den Überblick über alle wichtigen Kennzahlen Ihrer Agentur. Von Cash Flow Analytics bis zu Team Performance Metrics – alles in einem zentralen Dashboard.
+                Behalte den Überblick über alle wichtigen Kennzahlen Deiner Agentur. Von Cash Flow Analytics bis zu Team Performance Metrics – alles in einem zentralen Dashboard.
               </p>
               <ul className="space-y-4">
                 {[
@@ -214,64 +215,10 @@ export default function PlatformOverview() {
               </ul>
               <Button asChild className="purple-glow mt-4">
                 <Link href="/kontakt" className="flex items-center">
-                  Dashboard Demo anfordern
+                  Dashboard Get Started
                   <ArrowRight className="ml-2 h-4 w-4 animate-bounce-x" />
                 </Link>
               </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* WhatsApp Business Hub - Enhanced with better layout and visuals */}
-      <section id="whatsapp-hub" className="py-20 bg-white relative overflow-hidden">
-        <div className="absolute top-1/4 left-0 w-64 h-64 bg-purple-200/30 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-0 w-64 h-64 bg-purple-200/30 rounded-full blur-3xl"></div>
-
-        <div className="container mx-auto px-4 md:px-6 relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6 md:order-first order-last animate-slide-left">
-              <div className="inline-block bg-primary/10 px-3 py-1 rounded-full text-primary text-sm font-medium">
-                WhatsApp Business Hub
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold">Messenger Automatisierung</h2>
-              <p className="text-lg text-gray-600">
-                Revolutionieren Sie Ihre Kundenkommunikation mit KI-gesteuerten WhatsApp Conversations. Automatisierte Template Campaigns, intelligente Terminbuchung und umfassende Conversation Analytics.
-              </p>
-              <ul className="space-y-4">
-                {[
-                  "KI-gesteuerte Unterhaltungen mit natürlicher Spracherkennung",
-                  "Automatisierte Template Message Campaigns",
-                  "Intelligente Terminbuchung direkt im Chat",
-                  "Conversation Tracking & detaillierte Analytics",
-                  "Multi-Agent Support für Teamarbeit",
-                ].map((feature, index) => (
-                  <li key={index} className="flex items-start group">
-                    <div className="mt-1 mr-3 flex-shrink-0 w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center group-hover:bg-primary transition-colors duration-300">
-                      <CheckCircle className="h-3 w-3 text-primary group-hover:text-white transition-colors duration-300" />
-                    </div>
-                    <span className="text-gray-700">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-              <Button asChild className="mt-4">
-                <Link href="/kontakt" className="flex items-center">
-                  WhatsApp Hub testen
-                  <ArrowRight className="ml-2 h-4 w-4 animate-bounce-x" />
-                </Link>
-              </Button>
-            </div>
-            <div className="relative h-[400px] animate-slide-right">
-              <div className="absolute -z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-purple-100/30 rounded-full blur-xl"></div>
-              <Image
-                src="/placeholder.svg?height=400&width=600"
-                alt="WhatsApp Business Hub"
-                fill
-                className="object-cover rounded-2xl shadow-xl"
-              />
-              <div className="absolute -top-6 -right-6 w-24 h-24 bg-white rounded-xl shadow-lg flex items-center justify-center rotate-6 animate-float-slow">
-                <span className="text-purple-600 font-bold text-sm text-center">KI-gestützt</span>
-              </div>
             </div>
           </div>
         </div>
@@ -302,7 +249,7 @@ export default function PlatformOverview() {
               </div>
               <h2 className="text-3xl md:text-4xl font-bold">Papierlose Vertragsabwicklung</h2>
               <p className="text-lg text-gray-600">
-                Revolutionieren Sie Ihren Vertragsabschluss mit automatischer Quote Generation, digitalen Signaturen und integriertem Payment Tracking. Von der Anfrage bis zur Bezahlung – alles digital.
+                Revolutioniere Deinen Vertragsabschluss mit automatischer Quote Generation, digitalen Signaturen und integriertem Payment Tracking. Von der Anfrage bis zur Bezahlung – alles digital.
               </p>
               <ul className="space-y-4">
                 {[
@@ -344,7 +291,7 @@ export default function PlatformOverview() {
               </div>
               <h2 className="text-3xl md:text-4xl font-bold">Automatisierte Projektabwicklung</h2>
               <p className="text-lg text-gray-600">
-                Revolutionieren Sie Ihre Projektabwicklung mit kundenspezifischen Task-Workflows. Automatische Task-Population, Progress Tracking und nahtlose Team Collaboration für maximale Effizienz.
+                Revolutioniere Deine Projektabwicklung mit kundenspezifischen Task-Workflows. Automatische Task-Population, Progress Tracking und nahtlose Team Collaboration für maximale Effizienz.
               </p>
               <ul className="space-y-4">
                 {[
@@ -410,7 +357,7 @@ export default function PlatformOverview() {
               </div>
               <h2 className="text-3xl md:text-4xl font-bold">Kunde-Agentur Zusammenarbeit</h2>
               <p className="text-lg text-gray-600">
-                Fördern Sie die Zusammenarbeit mit Ihren Kunden durch gemeinsame Digital Whiteboards, zentrales Document Management und ein integriertes Project Communication Center.
+                Fördere die Zusammenarbeit mit Deinen Kunden durch gemeinsame Digital Whiteboards, zentrales Document Management und ein integriertes Project Communication Center.
               </p>
               <ul className="space-y-4">
                 {[
@@ -448,7 +395,7 @@ export default function PlatformOverview() {
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Vom Lead bis zur Lieferung – alles automatisiert</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Sehen Sie, wie unsere Platform jeden Schritt Ihres Geschäftsprozesses optimiert und automatisiert.
+              Sieh, wie unsere Platform jeden Schritt Deines Geschäftsprozesses optimiert und automatisiert.
             </p>
           </div>
 
@@ -456,15 +403,15 @@ export default function PlatformOverview() {
             {[
               {
                 step: "01",
-                title: "Lead Generation",
-                description: "KI Voice Outreach & Multi-Channel Campaigns generieren qualifizierte Leads automatisch",
+                title: "Lead Scraping",
+                description: "Scrape hochqualitative Datensätze selbst mit unseren Tools für erfolgreiche Kaltakquise",
                 icon: <Target className="h-8 w-8 text-purple-600" />,
                 automation: "85% automatisiert"
               },
               {
                 step: "02",
                 title: "Qualification",
-                description: "WhatsApp & Voice Automation qualifizieren Leads und buchen Termine direkt in Ihren Kalender",
+                description: "Voice Automation qualifiziert Leads und bucht Termine direkt in Deinen Kalender",
                 icon: <MessageSquare className="h-8 w-8 text-purple-600" />,
                 automation: "90% automatisiert"
               },
@@ -553,7 +500,7 @@ export default function PlatformOverview() {
                 icon: <Workflow className="h-6 w-6 text-primary" />,
                 title: "85% Prozessautomatisierung",
                 description:
-                  "Automatisieren Sie 85% Ihrer Routine-Tasks und gewinnen Sie 20+ Stunden pro Woche für strategische Arbeit zurück.",
+                  "Automatisiere 85% Deiner Routine-Tasks und gewinne 20+ Stunden pro Woche für strategische Arbeit zurück.",
               },
               {
                 icon: <TrendingUp className="h-6 w-6 text-primary" />,
@@ -565,25 +512,25 @@ export default function PlatformOverview() {
                 icon: <Clock className="h-6 w-6 text-primary" />,
                 title: "60% Schnellere Projektlieferung",
                 description:
-                  "Mit automatisierten Fulfillment-Workflows liefern Sie Projekte 60% schneller und steigern die Kundenzufriedenheit nachhaltig.",
+                  "Mit automatisierten Fulfillment-Workflows lieferst Du Projekte 60% schneller und steigerst die Kundenzufriedenheit nachhaltig.",
               },
               {
                 icon: <BarChart3 className="h-6 w-6 text-primary" />,
                 title: "Real-time Analytics",
                 description:
-                  "Behalten Sie mit unserem Command Center Dashboard alle wichtigen KPIs im Blick – von Cash Flow bis Team Performance.",
+                  "Behalte mit unserem Command Center Dashboard alle wichtigen KPIs im Blick – von Cash Flow bis Team Performance.",
               },
               {
                 icon: <Shield className="h-6 w-6 text-primary" />,
                 title: "Enterprise-Security",
                 description:
-                  "DSGVO-konform und bankensicher – unsere Plattform erfüllt höchste Sicherheitsstandards für Ihre sensiblen Geschäftsdaten.",
+                  "DSGVO-konform und bankensicher – unsere Plattform erfüllt höchste Sicherheitsstandards für Deine sensiblen Geschäftsdaten.",
               },
               {
                 icon: <Building2 className="h-6 w-6 text-primary" />,
                 title: "Skalierbarkeit ohne Grenzen",
                 description:
-                  "Wachsen Sie ohne lineare Kostensteigerung – unsere Plattform skaliert mit Ihrem Erfolg und unterstützt Agenturen von 5 bis 500+ Mitarbeiter.",
+                  "Wachse ohne lineare Kostensteigerung – unsere Plattform skaliert mit Deinem Erfolg und unterstützt Agenturen von 5 bis 500+ Mitarbeiter.",
               },
             ].map((benefit, index) => (
               <Card
@@ -605,117 +552,54 @@ export default function PlatformOverview() {
         </div>
       </section>
 
-      {/* Pricing - Enhanced with better cards */}
-      <section className="py-20 bg-gray-50 relative overflow-hidden">
+      {/* Pricing CTA Section */}
+      <section className="py-20 bg-gradient-to-br from-purple-50 to-white relative overflow-hidden">
         <div className="absolute top-1/4 right-0 w-64 h-64 bg-purple-200/30 rounded-full blur-3xl"></div>
         <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-purple-200/30 rounded-full blur-3xl"></div>
 
         <div className="container mx-auto px-4 md:px-6 relative z-10">
-          <div className="text-center mb-16">
+          <div className="max-w-3xl mx-auto text-center">
             <div className="inline-block bg-purple-100 px-4 py-2 rounded-full text-purple-800 text-sm font-medium mb-4">
-              Preise
+              Preise & Pakete
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Platform-Preise</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Transparent, skalierbar, ROI-garantiert – wählen Sie die passende Lösung für Ihre Agentur.
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Bereit für <span className="text-gradient-purple">Leadboom</span>?
+            </h2>
+            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+              Entdecke unsere flexiblen Abo-Modelle und das Credits-System. Von kleinen Teams bis zu großen Organisationen.
             </p>
-          </div>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button asChild size="lg" className="purple-glow">
+                <Link href="/preise" className="flex items-center">
+                  Alle Preise ansehen
+                  <ArrowRight className="ml-2 h-4 w-4 animate-bounce-x" />
+                </Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="purple-glow">
+                <Link href="/kontakt">Kontakt aufnehmen</Link>
+              </Button>
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Starter Agency",
-                price: "€799",
-                popular: false,
-                features: [
-                  "Team: 1-5 Mitarbeiter",
-                  "1.000 qualifizierte Leads/Monat",
-                  "Basis Workflow-Automatisierung",
-                  "Core Platform Module",
-                  "E-Mail-Support",
-                ],
-              },
-              {
-                title: "Growth Agency",
-                price: "€1.499",
-                popular: true,
-                features: [
-                  "Team: 6-15 Mitarbeiter",
-                  "5.000 qualifizierte Leads/Monat",
-                  "Erweiterte Workflows + KI-Features",
-                  "Vollständige Platform + Analytics",
-                  "Priority Support + Training",
-                  "WhatsApp & Voice Automation",
-                ],
-              },
-              {
-                title: "Enterprise Agency",
-                price: "€2.999",
-                popular: false,
-                features: [
-                  "Team: 16+ Mitarbeiter",
-                  "Unbegrenzte Leads",
-                  "Custom Workflows + White-Label",
-                  "API-Zugang + Integrations",
-                  "Dedicated Success Manager",
-                  "SLA-Garantien + Premium Support",
-                ],
-              },
-            ].map((plan, index) => (
-              <Card
-                key={index}
-                className={`bg-white relative border-none shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 ${plan.popular ? "md:scale-105 z-10" : ""}`}
-              >
-                {plan.popular && (
-                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm font-medium">
-                    Beliebt
-                  </div>
-                )}
-                <CardHeader className={`text-center pb-2 ${plan.popular ? "bg-purple-50 rounded-t-lg" : ""}`}>
-                  <CardTitle className="text-2xl">{plan.title}</CardTitle>
-                  <p className="text-4xl font-bold mt-4">
-                    {plan.price}
-                    <span className="text-base font-normal">/Monat</span>
-                  </p>
-                </CardHeader>
-                <CardContent className="pt-4">
-                  <ul className="space-y-3 mb-6">
-                    {plan.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-start">
-                        <CheckCircle className="h-5 w-5 text-primary mr-2 mt-0.5" />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Button asChild className={`w-full ${plan.popular ? "bg-primary hover:bg-primary/90" : ""}`}>
-                    <Link href="/kontakt">Jetzt starten</Link>
-                  </Button>
+            {/* Quick Stats */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+              <Card className="border-none shadow-lg">
+                <CardContent className="p-6 text-center">
+                  <div className="text-3xl font-bold text-purple-600 mb-2">ab 59,99€</div>
+                  <div className="text-sm text-gray-600">Monatlich starten</div>
                 </CardContent>
               </Card>
-            ))}
-          </div>
-
-          {/* ROI Guarantee Section */}
-          <div className="text-center mt-16">
-            <div className="max-w-4xl mx-auto bg-gradient-to-r from-purple-900 to-purple-800 rounded-3xl p-8 text-white">
-              <h3 className="text-2xl md:text-3xl font-bold mb-4">ROI-Garantie für Ihre Agentur</h3>
-              <p className="text-lg text-purple-100 mb-6">
-                Oder wir erstatten die Differenz zurück. Unsere durchschnittlichen Kunden sehen einen 3x ROI innerhalb von 90 Tagen.
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-                <div>
-                  <div className="text-3xl font-bold text-purple-200">20+</div>
-                  <div className="text-sm text-purple-300">Stunden pro Woche gespart</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-purple-200">3x</div>
-                  <div className="text-sm text-purple-300">ROI in 90 Tagen</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-purple-200">25%</div>
-                  <div className="text-sm text-purple-300">Höhere Gewinnmargen</div>
-                </div>
-              </div>
+              <Card className="border-none shadow-lg">
+                <CardContent className="p-6 text-center">
+                  <div className="text-3xl font-bold text-purple-600 mb-2">Flexible Credits</div>
+                  <div className="text-sm text-gray-600">Kaufen oder Abo</div>
+                </CardContent>
+              </Card>
+              <Card className="border-none shadow-lg">
+                <CardContent className="p-6 text-center">
+                  <div className="text-3xl font-bold text-purple-600 mb-2">5 Add-Ons</div>
+                  <div className="text-sm text-gray-600">Jederzeit erweiterbar</div>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </div>
@@ -738,7 +622,7 @@ export default function PlatformOverview() {
         <div className="container relative z-10 mx-auto px-4 md:px-6 text-center">
           <div className="mx-auto max-w-3xl">
             <h2 className="mb-6 text-3xl md:text-5xl font-bold text-white animate-fade-in">
-              Bereit, Ihre{" "}
+              Bereit, Deine{" "}
               <span className="relative inline-block">
                 <span className="relative z-10">Agentur</span>
                 <span className="absolute bottom-0 left-0 w-full h-3 bg-purple-400/30 -rotate-1"></span>
@@ -746,7 +630,7 @@ export default function PlatformOverview() {
               zu revolutionieren?
             </h2>
             <p className="mb-10 text-xl text-purple-100 animate-fade-in animate-delay-200 max-w-2xl mx-auto">
-              Entdecken Sie das Betriebssystem für erfolgreiche Agenturen und steigern Sie Ihre Effizienz um 85%.
+              Entdecke das Betriebssystem für erfolgreiche Agenturen und steigere Deine Effizienz um 85%.
             </p>
 
             <Button
@@ -757,7 +641,7 @@ export default function PlatformOverview() {
             >
               <Link href="/kontakt">
                 <span className="flex items-center">
-                  Platform Demo anfordern
+                  Platform Get Started
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
                 </span>
               </Link>

@@ -39,8 +39,8 @@ export default function ImpressumPage() {
                   <div className="flex items-start">
                     <MapPin className="h-5 w-5 text-purple-600 mr-3 mt-0.5 flex-shrink-0" />
                     <div>
-                      Musterstraße 123<br />
-                      10115 Berlin<br />
+                      Dortmunder Straße 2<br />
+                      04357 Leipzig<br />
                       Deutschland
                     </div>
                   </div>
@@ -55,8 +55,8 @@ export default function ImpressumPage() {
                 <div className="space-y-4 text-gray-600">
                   <div className="flex items-center">
                     <Phone className="h-5 w-5 text-purple-600 mr-3 flex-shrink-0" />
-                    <a href="tel:+4930123456" className="hover:text-purple-600 transition-colors">
-                      +49 30 1234567
+                    <a href="tel:+491778710181" className="hover:text-purple-600 transition-colors">
+                      +49 177 8710181
                     </a>
                   </div>
                   <div className="flex items-center">
@@ -85,7 +85,7 @@ export default function ImpressumPage() {
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Vertretungsberechtigte</h2>
               <div className="bg-gray-50 border border-gray-200 rounded-xl p-6">
                 <p className="text-gray-600">
-                  <span className="font-semibold text-gray-900">Geschäftsführer:</span> Max Mustermann
+                  <span className="font-semibold text-gray-900">Geschäftsführer:</span> Karel Grunert
                 </p>
               </div>
             </div>

@@ -5,8 +5,8 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
 export const metadata: Metadata = {
-  title: "Resources - Ihr Leadboom Lernzentrum | Leadboom",
-  description: "Entdecken Sie unsere umfassende Resource-Bibliothek: Platform Demo, Implementation Guide, Success Stories, API Documentation und Training Center.",
+  title: "Resources - Dein Leadboom Lernzentrum | Leadboom",
+  description: "Entdecke unsere umfassende Resource-Bibliothek: Platform Demo, Implementation Guide, Success Stories, API Documentation und Training Center.",
 }
 
 const resourceCategories = [
@@ -112,7 +112,7 @@ export default function ResourcesPage() {
       <section className="pt-32 pb-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-5xl font-bold text-gray-900 mb-6">
-            Ihr Leadboom{" "}
+            Dein Leadboom{" "}
             <span className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">
               Lernzentrum
             </span>
@@ -225,7 +225,7 @@ export default function ResourcesPage() {
               Featured Resources
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Unsere beliebtesten und wertvollsten Inhalte für Ihren Erfolg mit Leadboom.
+              Unsere beliebtesten und wertvollsten Inhalte für deinen Erfolg mit Leadboom.
             </p>
           </div>
 

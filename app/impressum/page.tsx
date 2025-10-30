@@ -34,12 +34,12 @@ export default function ImpressumPage() {
             <div className="mb-12">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Anbieter</h2>
               <div className="bg-gray-50 border border-gray-200 rounded-xl p-6">
-                <p className="text-gray-900 font-semibold text-lg mb-2">Leadboom GmbH</p>
+                <p className="text-gray-900 font-semibold text-lg mb-2">GOLDEN SOUL UG</p>
                 <div className="space-y-3 text-gray-600">
                   <div className="flex items-start">
                     <MapPin className="h-5 w-5 text-purple-600 mr-3 mt-0.5 flex-shrink-0" />
                     <div>
-                      Dortmunder Straße 2<br />
+                      Dortmunder Str. 2<br />
                       04357 Leipzig<br />
                       Deutschland
                     </div>
@@ -74,8 +74,8 @@ export default function ImpressumPage() {
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Registereintrag</h2>
               <div className="bg-gray-50 border border-gray-200 rounded-xl p-6">
                 <div className="space-y-2 text-gray-600">
-                  <p><span className="font-semibold text-gray-900">Registergericht:</span> Amtsgericht Berlin-Charlottenburg</p>
-                  <p><span className="font-semibold text-gray-900">Registernummer:</span> HRB 123456 B</p>
+                  <p><span className="font-semibold text-gray-900">Registergericht:</span> Amtsgericht Leipzig</p>
+                  <p><span className="font-semibold text-gray-900">Registernummer:</span> HRB 37310</p>
                 </div>
               </div>
             </div>
@@ -96,7 +96,7 @@ export default function ImpressumPage() {
               <div className="bg-gray-50 border border-gray-200 rounded-xl p-6">
                 <p className="text-gray-600">
                   Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br />
-                  <span className="font-semibold text-gray-900">DE123456789</span>
+                  <span className="font-semibold text-gray-900">DE329933559</span>
                 </p>
               </div>
             </div>

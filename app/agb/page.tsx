@@ -35,7 +35,7 @@ export default function AGBPage() {
               <h2 className="text-2xl font-bold text-gray-900 mb-6">§ 1 Geltungsbereich</h2>
               <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 space-y-4 text-gray-600">
                 <p>
-                  (1) Diese Allgemeinen Geschäftsbedingungen (nachfolgend "AGB") gelten für alle Verträge über die Nutzung der Leadboom-Plattform und die damit verbundenen Dienstleistungen zwischen der Leadboom GmbH (nachfolgend "Leadboom" oder "Anbieter") und dem Kunden (nachfolgend "Kunde" oder "Nutzer").
+                  (1) Diese Allgemeinen Geschäftsbedingungen (nachfolgend "AGB") gelten für alle Verträge über die Nutzung der Leadboom-Plattform und die damit verbundenen Dienstleistungen zwischen der GOLDEN SOUL UG (nachfolgend "Leadboom" oder "Anbieter") und dem Kunden (nachfolgend "Kunde" oder "Nutzer").
                 </p>
                 <p>
                   (2) Abweichende, entgegenstehende oder ergänzende Allgemeine Geschäftsbedingungen des Kunden werden nicht Vertragsbestandteil, es sei denn, ihrer Geltung wurde ausdrücklich schriftlich zugestimmt.

@@ -52,8 +52,8 @@ export default function DatenschutzPage() {
                   Verantwortlich für die Datenverarbeitung auf dieser Website ist:
                 </p>
                 <div className="bg-white rounded-lg p-4 space-y-2 text-gray-700">
-                  <p className="font-semibold">Leadboom GmbH</p>
-                  <p>Dortmunder Straße 2</p>
+                  <p className="font-semibold">GOLDEN SOUL UG</p>
+                  <p>Dortmunder Str. 2</p>
                   <p>04357 Leipzig</p>
                   <p>Deutschland</p>
                   <p className="pt-2">

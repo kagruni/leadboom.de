@@ -34,11 +34,11 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <Link
-                  href="#contact"
+                  href="https://app.leadboom.de/login"
                   className="group flex items-center text-gray-700 transition-colors hover:text-purple-600"
                 >
                   <span className="mr-2 h-1 w-0 rounded-full bg-purple-600 transition-all duration-300 group-hover:w-3"></span>
-                  Kontakt
+                  Login
                 </Link>
               </li>
               <li>
@@ -80,15 +80,6 @@ export default function Footer() {
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-gray-900">Service</h3>
             <ul className="space-y-3">
-              <li>
-                <Link
-                  href="#contact"
-                  className="group flex items-center text-gray-700 transition-colors hover:text-purple-600"
-                >
-                  <span className="mr-2 h-1 w-0 rounded-full bg-purple-600 transition-all duration-300 group-hover:w-3"></span>
-                  Get Started
-                </Link>
-              </li>
               <li>
                 <Link
                   href="#pricing"

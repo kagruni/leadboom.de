@@ -18,16 +18,16 @@ export function PricingSection() {
   // State for Pricing Tables Tab
   const [pricingTab, setPricingTab] = useState<'flex' | 'grow'>('flex')
 
-  // Staffelpreise für FLEX
+  // Staffelpreise für FLEX (inkl. 19% MwSt.)
   const getFlexPrice = (amount: number): number => {
-    if (amount >= 19000) return 0.15
-    if (amount >= 16000) return 0.16
-    if (amount >= 13000) return 0.18
-    if (amount >= 9000) return 0.20
-    if (amount >= 6000) return 0.22
-    if (amount >= 3000) return 0.23
-    if (amount >= 1000) return 0.25
-    return 0.30
+    if (amount >= 19000) return 0.1785
+    if (amount >= 16000) return 0.1904
+    if (amount >= 13000) return 0.2142
+    if (amount >= 9000) return 0.238
+    if (amount >= 6000) return 0.2618
+    if (amount >= 3000) return 0.2737
+    if (amount >= 1000) return 0.2975
+    return 0.357
   }
 
   // Berechnung für GROW Abo (monatliche Zahlung)
@@ -100,7 +100,7 @@ export function PricingSection() {
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Wähle dein Abo</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
-              Drei leistungsstarke Pläne für Teams jeder Größe. Alle Preise zzgl. MwSt.
+              Drei leistungsstarke Pläne für Teams jeder Größe. Alle Preise inklusive MwSt.
             </p>
 
             {/* Billing Period Toggle */}
@@ -137,8 +137,9 @@ export function PricingSection() {
                 title: "Launch",
                 priceMonthly: 59.99,
                 priceYearly: 53.99,
-                additionalUserMonthly: 39.99,
-                additionalUserYearly: 39.99,
+                additionalUserMonthly: 44.99,
+                additionalUserYearly: 44.99,
+                userLimit: 3,
                 description: "Perfekt für kleine Teams, die mit den Grundlagen starten möchten.",
                 popular: false,
                 badge: "Starter",
@@ -160,6 +161,7 @@ export function PricingSection() {
                 priceYearly: 125.99,
                 additionalUserMonthly: 99.99,
                 additionalUserYearly: 99.99,
+                userLimit: 20,
                 description: "Die beliebteste Wahl für wachsende Teams mit erweiterten Anforderungen.",
                 popular: true,
                 badge: "MOST POPULAR",
@@ -183,6 +185,7 @@ export function PricingSection() {
                 priceYearly: null,
                 additionalUserMonthly: null,
                 additionalUserYearly: null,
+                userLimit: null,
                 description: "Für große Organisationen mit individuellen Anforderungen.",
                 popular: false,
                 badge: "Maximale Skalierung",
@@ -197,7 +200,7 @@ export function PricingSection() {
                   "Multi-Standort Management",
                 ],
                 cta: "Kontakt aufnehmen",
-                link: "#contact",
+                link: "#",
               },
             ].map((plan, index) => {
               const currentPrice = plan.priceMonthly ? (billingPeriod === 'yearly' ? plan.priceYearly : plan.priceMonthly) : null
@@ -241,7 +244,22 @@ export function PricingSection() {
                     </div>
                   )}
                   <div className="text-sm text-purple-600 font-medium mt-2">
-                    {plan.isFree ? 'Keine Kreditkarte erforderlich' : currentAdditionalUser ? `+${currentAdditionalUser.toFixed(2).replace('.', ',')}€ pro User` : 'Auf Anfrage'}
+                    {plan.isFree ? (
+                      'Keine Kreditkarte erforderlich'
+                    ) : plan.userLimit !== undefined ? (
+                      <div className="flex flex-col gap-1">
+                        <span className="font-semibold">
+                          {plan.userLimit ? `Bis zu ${plan.userLimit} Nutzer` : 'Unbegrenzte Nutzer'}
+                        </span>
+                        <span className="text-xs text-gray-600">
+                          {currentAdditionalUser
+                            ? `+${currentAdditionalUser.toFixed(2).replace('.', ',')}€ pro zusätzlichem User`
+                            : 'Auf Anfrage'}
+                        </span>
+                      </div>
+                    ) : (
+                      'Auf Anfrage'
+                    )}
                   </div>
                   <CardDescription className="mt-3 text-sm">{plan.description}</CardDescription>
                 </CardHeader>
@@ -328,6 +346,7 @@ export function PricingSection() {
                   {[
                     "Leads Scraping Zugriff",
                     "Scrape deine eigenen Leads in der Plattform",
+                    "Aufgabenmanagement",
                   ].map((feature, index) => (
                     <div key={index} className="flex items-center">
                       <CheckCircle className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
@@ -359,7 +378,7 @@ export function PricingSection() {
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Compute Credits für on-demand Scraping</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Starte Scraper nach deinen Kriterien. Wähle gewünschte Datenpunkte und erhalte frisch gesammelte Firmendaten. Je mehr Compute Credits, desto günstiger. Alle Preise zzgl. MwSt.
+              Starte Scraper nach deinen Kriterien. Wähle gewünschte Datenpunkte und erhalte frisch gesammelte Firmendaten. Je mehr Compute Credits, desto günstiger. Alle Preise inklusive MwSt.
             </p>
           </div>
 
@@ -573,14 +592,14 @@ export function PricingSection() {
                       </thead>
                       <tbody>
                         {[
-                          { range: '1–999', price: 0.30 },
-                          { range: '1.000–2.999', price: 0.25 },
-                          { range: '3.000–5.999', price: 0.23 },
-                          { range: '6.000–8.999', price: 0.22 },
-                          { range: '9.000–12.999', price: 0.20 },
-                          { range: '13.000–15.999', price: 0.18 },
-                          { range: '16.000–18.999', price: 0.16 },
-                          { range: '≥ 19.000', price: 0.15 },
+                          { range: '1–999', price: 0.36 },
+                          { range: '1.000–2.999', price: 0.30 },
+                          { range: '3.000–5.999', price: 0.27 },
+                          { range: '6.000–8.999', price: 0.26 },
+                          { range: '9.000–12.999', price: 0.24 },
+                          { range: '13.000–15.999', price: 0.21 },
+                          { range: '16.000–18.999', price: 0.19 },
+                          { range: '≥ 19.000', price: 0.18 },
                         ].map((tier, index) => (
                           <tr key={index} className={index % 2 === 0 ? 'bg-gray-50' : ''}>
                             <td className="py-3 px-4 font-medium">{tier.range}</td>
@@ -613,10 +632,10 @@ export function PricingSection() {
                       </thead>
                       <tbody>
                         {[
-                          { credits: 1000, base: 0.25 },
-                          { credits: 3000, base: 0.23 },
-                          { credits: 6000, base: 0.22 },
-                          { credits: 9000, base: 0.20 },
+                          { credits: 1000, base: 0.2975 },
+                          { credits: 3000, base: 0.2737 },
+                          { credits: 6000, base: 0.2618 },
+                          { credits: 9000, base: 0.238 },
                         ].map((tier, index) => (
                           <tr key={index} className={index % 2 === 0 ? 'bg-gray-50' : ''}>
                             <td className="py-3 px-4 font-medium">{tier.credits.toLocaleString('de-DE')}</td>

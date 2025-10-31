@@ -18,7 +18,6 @@ const navigation: NavigationItem[] = [
   { name: "Features", href: "#features" },
   { name: "Prozess", href: "#process" },
   { name: "Preise", href: "#pricing" },
-  { name: "Kontakt", href: "#contact" },
 ]
 
 export default function Header() {

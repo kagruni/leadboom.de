@@ -223,30 +223,98 @@ export default function DatenschutzPage() {
               </div>
             </div>
 
-            {/* 7. Cookies */}
+            {/* 7. Google Kalender Integration */}
             <div className="mb-12">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">7. Cookies</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">7. Google Kalender Integration</h2>
               <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 space-y-4 text-gray-600">
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">7.1 Beschreibung und Umfang</h3>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">7.1 Datenerhebung</h3>
+                  <p className="mb-3">
+                    Wenn Sie Ihre Google Kalender-Integration in LeadBoom aktivieren, erheben und speichern wir:
+                  </p>
+                  <ul className="list-disc list-inside space-y-2 ml-4">
+                    <li>Kalendernamen und Kalender-IDs</li>
+                    <li>Termininformationen (Titel, Beschreibung, Datum, Uhrzeit, Ort)</li>
+                    <li>Teilnehmerinformationen</li>
+                    <li>Terminstatus (bestätigt, abgesagt, etc.)</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">7.2 Verwendungszweck</h3>
+                  <p className="mb-3">
+                    Wir verwenden Ihre Kalenderdaten um:
+                  </p>
+                  <ul className="list-disc list-inside space-y-2 ml-4">
+                    <li>Termine in LeadBoom anzuzeigen und zu synchronisieren</li>
+                    <li>Verfügbarkeitszeiten zu ermitteln</li>
+                    <li>Terminvorschläge für Leads und Kontakte zu generieren</li>
+                    <li>Erinnerungen und Benachrichtigungen zu senden</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">7.3 Datenspeicherung</h3>
+                  <p>
+                    Ihre Google Kalenderdaten werden in unserer Datenbank gespeichert und regelmäßig mit Ihrem Google Kalender synchronisiert. Die Daten werden auf sicheren Servern in <span className="font-semibold text-purple-600">[Deutschland/EU - specify your server location]</span> gespeichert und durch moderne Verschlüsselungstechnologien geschützt.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">7.4 Weitergabe von Daten</h3>
+                  <p>
+                    Ihre Google Kalenderdaten werden NICHT an Dritte weitergegeben, verkauft oder für Werbezwecke verwendet. Die Daten verbleiben ausschließlich in Ihrem LeadBoom-Account.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">7.5 Löschung der Daten</h3>
+                  <p className="mb-3">
+                    Sie können die Kalenderverbindung jederzeit in Ihren LeadBoom-Einstellungen trennen. Bei Trennung der Verbindung werden alle gespeicherten Kalenderdaten innerhalb von <span className="font-semibold text-purple-600">[X Tagen - specify timeframe]</span> aus unserer Datenbank gelöscht.
+                  </p>
+                  <p>
+                    Bei Löschung Ihres LeadBoom-Accounts werden alle Kalenderdaten sofort und unwiderruflich gelöscht.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">7.6 Zugriffsberechtigung</h3>
+                  <p className="mb-3">
+                    LeadBoom benötigt folgende Berechtigungen:
+                  </p>
+                  <ul className="list-disc list-inside space-y-2 ml-4">
+                    <li>Lesezugriff auf Ihre Kalender und Termine</li>
+                    <li className="font-semibold text-purple-600">[Schreibzugriff zum Erstellen von Terminen - if applicable, otherwise remove this line]</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">7.7 Rechtsgrundlage</h3>
+                  <p>
+                    Rechtsgrundlage für die Verarbeitung Ihrer Google Kalenderdaten ist Art. 6 Abs. 1 lit. a DSGVO (Einwilligung). Sie erteilen diese Einwilligung bei der Aktivierung der Kalender-Integration. Die Einwilligung kann jederzeit durch Trennen der Verbindung widerrufen werden.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* 8. Cookies */}
+            <div className="mb-12">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">8. Cookies</h2>
+              <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 space-y-4 text-gray-600">
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">8.1 Beschreibung und Umfang</h3>
                   <p>
                     Unsere Website verwendet Cookies. Cookies sind Textdateien, die im Internetbrowser bzw. vom Internetbrowser auf dem Computersystem des Nutzers gespeichert werden. Ruft ein Nutzer eine Website auf, so kann ein Cookie auf dem Betriebssystem des Nutzers gespeichert werden.
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">7.2 Rechtsgrundlage</h3>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">8.2 Rechtsgrundlage</h3>
                   <p>
                     Rechtsgrundlage für die Verarbeitung personenbezogener Daten unter Verwendung technisch notwendiger Cookies ist Art. 6 Abs. 1 lit. f DSGVO. Für Cookies, die zu Marketing- oder Analysezwecken eingesetzt werden, ist die Rechtsgrundlage Art. 6 Abs. 1 lit. a DSGVO (Einwilligung).
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">7.3 Zweck der Datenverarbeitung</h3>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">8.3 Zweck der Datenverarbeitung</h3>
                   <p>
                     Der Zweck der Verwendung technisch notwendiger Cookies ist, die Nutzung von Websites für die Nutzer zu vereinfachen. Einige Funktionen unserer Website können ohne den Einsatz von Cookies nicht angeboten werden.
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">7.4 Speicherdauer und Widerspruchsmöglichkeit</h3>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">8.4 Speicherdauer und Widerspruchsmöglichkeit</h3>
                   <p>
                     Cookies werden auf dem Rechner des Nutzers gespeichert. Daher haben Sie als Nutzer die volle Kontrolle über die Verwendung von Cookies. Sie können die Übertragung von Cookies deaktivieren oder einschränken, indem Sie die Einstellungen Ihres Internetbrowsers ändern.
                   </p>
@@ -254,57 +322,57 @@ export default function DatenschutzPage() {
               </div>
             </div>
 
-            {/* 8. Ihre Rechte */}
+            {/* 9. Ihre Rechte */}
             <div className="mb-12">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">8. Ihre Rechte als betroffene Person</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">9. Ihre Rechte als betroffene Person</h2>
               <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 space-y-4 text-gray-600">
                 <p className="mb-4">
                   Werden personenbezogene Daten von Ihnen verarbeitet, sind Sie Betroffener im Sinne der DSGVO und es stehen Ihnen folgende Rechte zu:
                 </p>
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">8.1 Auskunftsrecht (Art. 15 DSGVO)</h3>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">9.1 Auskunftsrecht (Art. 15 DSGVO)</h3>
                   <p>
                     Sie haben das Recht, eine Bestätigung darüber zu verlangen, ob Sie betreffende personenbezogene Daten verarbeitet werden. Liegt eine solche Verarbeitung vor, können Sie Auskunft über diese personenbezogenen Daten verlangen.
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">8.2 Recht auf Berichtigung (Art. 16 DSGVO)</h3>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">9.2 Recht auf Berichtigung (Art. 16 DSGVO)</h3>
                   <p>
                     Sie haben das Recht, die Berichtigung Sie betreffender unrichtiger personenbezogener Daten zu verlangen. Unter Berücksichtigung der Zwecke der Verarbeitung haben Sie das Recht, die Vervollständigung unvollständiger personenbezogener Daten zu verlangen.
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">8.3 Recht auf Löschung (Art. 17 DSGVO)</h3>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">9.3 Recht auf Löschung (Art. 17 DSGVO)</h3>
                   <p>
                     Sie haben das Recht, von uns zu verlangen, dass die Sie betreffenden personenbezogenen Daten unverzüglich gelöscht werden, sofern einer der gesetzlich vorgesehenen Gründe zutrifft und soweit die Verarbeitung nicht erforderlich ist.
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">8.4 Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)</h3>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">9.4 Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)</h3>
                   <p>
                     Sie haben das Recht, von uns die Einschränkung der Verarbeitung zu verlangen, wenn eine der gesetzlichen Voraussetzungen gegeben ist.
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">8.5 Recht auf Datenübertragbarkeit (Art. 20 DSGVO)</h3>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">9.5 Recht auf Datenübertragbarkeit (Art. 20 DSGVO)</h3>
                   <p>
                     Sie haben das Recht, die Sie betreffenden personenbezogenen Daten, die Sie uns bereitgestellt haben, in einem strukturierten, gängigen und maschinenlesbaren Format zu erhalten. Sie haben außerdem das Recht, diese Daten einem anderen Verantwortlichen ohne Behinderung durch uns zu übermitteln.
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">8.6 Widerspruchsrecht (Art. 21 DSGVO)</h3>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">9.6 Widerspruchsrecht (Art. 21 DSGVO)</h3>
                   <p>
                     Sie haben das Recht, aus Gründen, die sich aus Ihrer besonderen Situation ergeben, jederzeit gegen die Verarbeitung Sie betreffender personenbezogener Daten, die aufgrund von Art. 6 Abs. 1 lit. e oder f DSGVO erfolgt, Widerspruch einzulegen.
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">8.7 Recht auf Widerruf der Einwilligung (Art. 7 Abs. 3 DSGVO)</h3>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">9.7 Recht auf Widerruf der Einwilligung (Art. 7 Abs. 3 DSGVO)</h3>
                   <p>
                     Sie haben das Recht, Ihre datenschutzrechtliche Einwilligungserklärung jederzeit zu widerrufen. Durch den Widerruf der Einwilligung wird die Rechtmäßigkeit der aufgrund der Einwilligung bis zum Widerruf erfolgten Verarbeitung nicht berührt.
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">8.8 Beschwerderecht (Art. 77 DSGVO)</h3>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">9.8 Beschwerderecht (Art. 77 DSGVO)</h3>
                   <p>
                     Sie haben das Recht, sich bei einer Aufsichtsbehörde zu beschweren, insbesondere in dem Mitgliedstaat Ihres Aufenthaltsorts, Ihres Arbeitsplatzes oder des Orts des mutmaßlichen Verstoßes, wenn Sie der Ansicht sind, dass die Verarbeitung der Sie betreffenden personenbezogenen Daten gegen die DSGVO verstößt.
                   </p>
@@ -312,9 +380,9 @@ export default function DatenschutzPage() {
               </div>
             </div>
 
-            {/* 9. Datensicherheit */}
+            {/* 10. Datensicherheit */}
             <div className="mb-12">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">9. Datensicherheit</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">10. Datensicherheit</h2>
               <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 space-y-4 text-gray-600">
                 <p>
                   Wir verwenden innerhalb des Website-Besuchs das verbreitete SSL-Verfahren (Secure Socket Layer) in Verbindung mit der jeweils höchsten Verschlüsselungsstufe, die von Ihrem Browser unterstützt wird. Ob eine einzelne Seite unseres Internetauftrittes verschlüsselt übertragen wird, erkennen Sie an der geschlossenen Darstellung des Schüssel- beziehungsweise Schloss-Symbols in der unteren Statusleiste Ihres Browsers.
@@ -325,9 +393,9 @@ export default function DatenschutzPage() {
               </div>
             </div>
 
-            {/* 10. Aktualität */}
+            {/* 11. Aktualität */}
             <div className="mb-12">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">10. Aktualität und Änderung dieser Datenschutzerklärung</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">11. Aktualität und Änderung dieser Datenschutzerklärung</h2>
               <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 text-gray-600">
                 <p>
                   Diese Datenschutzerklärung ist aktuell gültig und hat den Stand {new Date().toLocaleDateString('de-DE', { year: 'numeric', month: 'long' })}. Durch die Weiterentwicklung unserer Website oder aufgrund geänderter gesetzlicher beziehungsweise behördlicher Vorgaben kann es notwendig werden, diese Datenschutzerklärung zu ändern. Die jeweils aktuelle Datenschutzerklärung kann jederzeit auf der Website von Ihnen abgerufen und ausgedruckt werden.
